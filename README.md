@@ -82,11 +82,9 @@ For this course, we suggest you use the [anaconda](https://store.continuum.io/cs
 
 If you are intending to use these notes on your opwn computer, you will need a relatively comprehensive installation of Python (such as that from [anaconda](https://store.continuum.io/cshop/anaconda/)), and will also need [GDAL](http://www.gdal.org/) installed for some of the work. You may also find it of value to have [git](http://git-scm.com/) installed.
 
-We are assuming that you are new to computing in this course, but that you are aware of the basic unix material covered in the previous lecture.
+We are assuming that you are new to computing in this course. We will not explicitly go through unix (operating system) notes, but you should make yourself familiar with the basic concepts. 
 
 ### Using the course notes
-
-### 2.2.2 Running Python  
 
 We will generally use the `ipython` interpreter for running interactive Python programs.
 
@@ -97,18 +95,18 @@ If you are taking this course at UCL, the notes should already have been downloa
 If so, then:
 
 ```
-berlin% cd ~/DATA/geogg122
+berlin% cd ~/DATA/geog0111
 berlin% git reset --hard HEAD
 berlin% git pull
 ```
 
 will update the notes (for any changes I make over the sessions).
 
-If you need to download the notes and want to run the session directly in the notebook, you will need to download the course material from [github](https://github.com/profLewis/geogg122) and run the notebook with e.g.:
+If you need to download the notes and want to run the session directly in the notebook, you will need to download the course material from [github](https://github.com/profLewis/geog0111) and run the notebook with e.g.:
 
 ```
 berlin% cd ~/DATA
-berlin% git clone https://github.com/profLewis/geogg122.git
+berlin% git clone https://github.com/profLewis/geog0111.git
 ```
 
 to obtain the notes. 
@@ -128,9 +126,9 @@ berlin% /opt/anaconda/bin/ipython
 
 in place of where it says `ipython` in these notes, or modify your shell initialisation file (`~/.bashrc` if you are using `bash` or `~/.cshrc` for `tcsh` or `csh`) to include `/opt/anaconda/bin` early on in the `PATH`. For running notebooks, we use `jupyter` rather than `ipython`.
 
-To go to the directory for this session:  
+To go to the directory for the first session:  
 
-`berlin% cd ~/Data/geogg122/Chapter2_Python_intro`  
+`berlin% cd ~/Data/geogg122`  
 `berlin% jupyter notebook python101.ipynb --pylab=inline`  
 
 You quit an `jupyter` notebook session with `^C` (`Control C`).
@@ -139,16 +137,11 @@ To exectute ('run') blocks of Python code in the notebook, use `^<return>` (`SHI
 
 Alternatively, just run `ipython`:  
 ```
-berlin% cd ~/DATA/geogg122/Chapter2_Python_intro
+berlin% cd ~/DATA/geog0111
 berlin% jupyter notebook
 ```
 
 and type your own commands in at the prompt, following the class or the material on the webpages.
-
-
-
-
-
 
 
 ### Course Notes
