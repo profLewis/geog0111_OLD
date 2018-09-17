@@ -65,6 +65,15 @@ See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for
 
 [Course Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
 
+### Python version
+
+These notes assume you are using python version 3.6
+
+To list the versions of Python that are available to install, in your Terminal window or an Anaconda Prompt, run:
+
+`conda search python`
+
+
 ### Structure of the Course
 
 [Course notes](index.ipynb)  
