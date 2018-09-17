@@ -14,9 +14,13 @@ N.B. 2018-19 Course Convenors: Dr Qingling Wu and Dr. Jose Gomez-Dans
 ### Course and Contributing Staff
 
 [Prof Philip Lewis] (http://www.geog.ucl.ac.uk/~plewis)  
+
 [Dr. Jose Gomez-Dans](http://www.geog.ucl.ac.uk/about-the-department/people/research-staff/research-staff/jose-gomez-dans/)
+
 [Dr Qingling Wu](http://www.geog.ucl.ac.uk/about-the-department/people/research-staff/research-staff/qingling-wu/)
+
 [Mr Feng Yin](https://www.geog.ucl.ac.uk/people/research-staff/feng-yin)
+
 
 ### Purpose of this course
 
@@ -49,17 +53,17 @@ The course takes place over 10 weeks in term 1, in the Geography Department Unix
 
 Classes take place from the second week of term to the final week of term, other than Reading week. See UCL [term dates](http://www.ucl.ac.uk/staff/term-dates) for further information.
 
-[The timetable is available on the UCL Academic Calendar](http://timetable.ucl.ac.uk/ics/id/QZZYIMRWMSXS0DN)
+The timetable is available on the UCL Academic Calendar
 
 ### Assessment
 
-Assessment is through one piece of coursework that is submitted in both paper form and electronically via Moodle. See the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=13891) for more details.
+Assessment is through two pieces of coursework, submitted in both paper form and electronically via Moodle. 
+
+See the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=13891) for more details.
 
 ### Useful links
 
 [Course Moodle page] (http://moodle.ucl.ac.uk/course/view.php?id=13891)  
-
-[A useful reading list for basic and advanced Unix.] (http://www.ee.surrey.ac.uk/Teaching/Unix/books-uk.html)  
 
 ### Structure of the Course
 
