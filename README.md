@@ -75,6 +75,6 @@ To verify that the current environment uses the new Python version, in your Term
 
 If this doesn't show 3.7.* then you may need to [update your environment and/or install a new version of python.](https://conda.io/docs/user-guide/tasks/manage-python.html)
 
-### Structure of the Course
+### Course Notes
 
 [Course notes](index.ipynb)  
