@@ -97,7 +97,7 @@ Create the new environment:
 
       To verify that the current environment uses the new Python version, in your Terminal window or an Anaconda Prompt, run:
 
-    `python --version`
+    python --version
 
 ### Structure of the Course
 
