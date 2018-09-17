@@ -79,7 +79,23 @@ If this doesn't show 3.7.* then you may need to [update your environment and/or 
 
 The main coursenote repository is on [GitHub](https://github.com/profLewis/geog0111). You can acccess and download the notes from there.
 
-To install these notes, 
+To install these notes:
+
+1. Make sure you are running the correct version of python (3.7) (see above)
+
+2. make sure your conda and anaconda distributions are up to date
+
+``
+
+`conda update anaconda`
+
+3. Make sure you have git and pip installed
+
+`conda install git pip`
+
+4. install the notes
+
+`pip install git+git://github.com/profLewis/geog0111@master`
 
 ### Course Notes
 
