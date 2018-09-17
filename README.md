@@ -59,11 +59,11 @@ The timetable is available on the UCL Academic Calendar
 
 Assessment is through two pieces of coursework, submitted in both paper form and electronically via Moodle. 
 
-See the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=13891) for more details.
+See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for more details.
 
 ### Useful links
 
-[Course Moodle page] (https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
+[Course Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
 
 ### Structure of the Course
 
@@ -82,9 +82,9 @@ See the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=13891) for mor
 
 
 -  0.0 Introduction  
-In this session, we will outline the purpose and structure of the course.
+    In this session, we will outline the purpose and structure of the course.
 
-  [Introductory notes](http://nbviewer.ipython.org/urls/raw.github.com/profLewis/geogg122/master/Chapter0_Introduction/f1_index.ipynb)  
+      [Introductory notes](index.ipynb)  
 
 
 -  1.0 Unix  
