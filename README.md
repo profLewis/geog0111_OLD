@@ -97,6 +97,10 @@ If either of these fail, try the following first:
 
 `conda install git pip`
 
+You may also need:
+
+`pip install --upgrade pip`
+
 4. install the notes
 
 `pip install git+git://github.com/profLewis/geog0111@master`
