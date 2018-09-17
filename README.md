@@ -65,6 +65,90 @@ See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for
 
 [Course Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
 
+### Using Python
+
+[Python](http://www.python.org/) is a high level programming language that is freely available, relatively easy to learn and portable across different computing systems. In Python, you can rapidly develop solutions for the sorts of problems you might need to solve in your MSc courses and in the world beyond. Code written in Python is also easy to maintain, is (or should be) self-documented, and can easily be linked to code written in other languages.
+
+Relevant features include: 
+
+- it is automatically compiled and executed 
+- code is portable provided you have the appropriate Python modules. 
+- for compute intensive tasks, you can easily make calls to methods written in (faster) lower-level languages such as C or FORTRAN 
+- there is an active user and development community, which means that new capabilities appear over time and there are many existing extensions and enhancements easily available to you.
+
+For further background on Python, look over the material on [Advanced Scientific Programming in Python](https://python.g-node.org/wiki/schedule) or [python.org](http://www.python.org/) web sites.
+
+For this course, we suggest you use the [anaconda](https://store.continuum.io/cshop/anaconda/) Python distribution (this is what is installed in the unix lab computers), though you are free to use whichever version of it you like on your own computers.
+
+If you are intending to use these notes on your opwn computer, you will need a relatively comprehensive installation of Python (such as that from [anaconda](https://store.continuum.io/cshop/anaconda/)), and will also need [GDAL](http://www.gdal.org/) installed for some of the work. You may also find it of value to have [git](http://git-scm.com/) installed.
+
+We are assuming that you are new to computing in this course, but that you are aware of the basic unix material covered in the previous lecture.
+
+### Using the course notes
+
+### 2.2.2 Running Python  
+
+We will generally use the `ipython` interpreter for running interactive Python programs.
+
+You will probably want to run each session and store scripts in your `Data` (or `DATA`) directory.
+
+If you are taking this course at UCL, the notes should already have been downloaded to your `DATA` directory.
+
+If so, then:
+
+```
+berlin% cd ~/DATA/geogg122
+berlin% git reset --hard HEAD
+berlin% git pull
+```
+
+will update the notes (for any changes I make over the sessions).
+
+If you need to download the notes and want to run the session directly in the notebook, you will need to download the course material from [github](https://github.com/profLewis/geogg122) and run the notebook with e.g.:
+
+```
+berlin% cd ~/DATA
+berlin% git clone https://github.com/profLewis/geogg122.git
+```
+
+to obtain the notes. 
+
+You should next check that you are using the version of Python that we intend:
+
+```
+berlin% which ipython
+/opt/anaconda/bin/ipython
+```
+
+If this isn't the version of Python that you are picking up (note the use of the unix command `which` here), then you can either just type the full path name:
+
+```
+berlin% /opt/anaconda/bin/ipython  
+```
+
+in place of where it says `ipython` in these notes, or modify your shell initialisation file (`~/.bashrc` if you are using `bash` or `~/.cshrc` for `tcsh` or `csh`) to include `/opt/anaconda/bin` early on in the `PATH`. For running notebooks, we use `jupyter` rather than `ipython`.
+
+To go to the directory for this session:  
+
+`berlin% cd ~/Data/geogg122/Chapter2_Python_intro`  
+`berlin% jupyter notebook python101.ipynb --pylab=inline`  
+
+You quit an `jupyter` notebook session with `^C` (`Control C`).
+
+To exectute ('run') blocks of Python code in the notebook, use `^<return>` (`SHIFT` and `RETURN` keys together).
+
+Alternatively, just run `ipython`:  
+```
+berlin% cd ~/DATA/geogg122/Chapter2_Python_intro
+berlin% jupyter notebook
+```
+
+and type your own commands in at the prompt, following the class or the material on the webpages.
+
+
+
+
+
 
 
 ### Course Notes
