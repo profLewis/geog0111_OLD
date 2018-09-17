@@ -73,31 +73,7 @@ To verify that the current environment uses the new Python version, in your Term
 
 `python --version`
 
-If this doesn't show 3.7.* then you may need to update your environment and/or install a new version of python.
-
-#### Installing a different version of Python
-
-To install a different version of Python without overwriting the current version, create a new environment and install the second Python version into it:
-
-Create the new environment:
-
-1.  To create the new environment for Python 3.7, in your Terminal window or an Anaconda Prompt, run:
-
-    `conda create -n py37 python=3.7 anaconda`
-
-    NOTE: Replace py37 with the name of the environment you want to create. anaconda is the metapackage that includes all of the Python packages comprising the Anaconda distribution. python=3.7 is the package and version you want to install in this new environment. This could be any package, such as numpy=1.7, or multiple packages.
-    
-    To create the new environment for Python 2.7, in your Terminal window or an Anaconda Prompt, run:
-    
-    `conda create -n py37 python=3.7 anaconda`
-    
-2.  [Activate the new environment.](https://conda.io/docs/user-guide/tasks/manage-environments.html#activate-env)
-
-3.   Verify that the new environment is your [current environment.](https://conda.io/docs/user-guide/tasks/manage-environments.html#determine-current-env)
-
-      To verify that the current environment uses the new Python version, in your Terminal window or an Anaconda Prompt, run:
-
-    python --version
+If this doesn't show 3.7.* then you may need to [update your environment and/or install a new version of python.](https://conda.io/docs/user-guide/tasks/manage-python.html)
 
 ### Structure of the Course
 
