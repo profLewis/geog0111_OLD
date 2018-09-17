@@ -3,6 +3,8 @@ UCL Geography: Level 7 course, Scientific Computing
 
 ![](images/ucl_logo.png)
 
+[Go to Binder version](https://mybinder.org/v2/gh/profLewis/geog0111.git/master)
+
 ## Course information
 
 ### Course Convenor
