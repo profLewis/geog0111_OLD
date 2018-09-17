@@ -65,49 +65,7 @@ See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for
 
 [Course Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
 
-### Python version
 
-These notes assume you are using python version 3.6
-
-To verify that the current environment uses the new Python version, in your Terminal window or an Anaconda Prompt, run:
-
-`python --version`
-
-If this doesn't show 3.6.* then you may need to [update your environment and/or install a new version of python.](https://conda.io/docs/user-guide/tasks/manage-python.html)
-
-If you have python 3.6 installed already, you may be able to just activate it (from `bash shell` command prompt, assuming you installed it as `py36`):
-
-`source activate py36`
-
-### Obtaining and running course notes
-
-The main coursenote repository is on [GitHub](https://github.com/profLewis/geog0111). You can acccess and download the notes from there.
-
-To install these notes:
-
-1. Make sure you are running the correct version of python (3.6) (see above)
-
-2. make sure your conda and anaconda distributions are up to date
-
-`conda update conda`
-
-`conda update anaconda`
-
-If either of these fail, try the following first:
-
-`conda install conda`
-
-3. Make sure you have git and pip installed
-
-`conda install git pip`
-
-You may also need:
-
-`pip install --upgrade pip`
-
-4. install the required dependencies
-
-`pip install git+git://github.com/profLewis/geog0111@master`
 
 ### Course Notes
 
@@ -115,23 +73,3 @@ You may also need:
 
 
 
-### Problems
-
-If you have trouble installing (or compiling) gdal, try:
-
-    pip install --global-option=build_ext GDAL
-
-If that fails, try installing an older version of gdal:
-
-    pip install --global-option=build_ext GDAL==2.2
-    
-or failing that:
-
-    pip install --global-option=build_ext GDAL==2.1
-
-
-OS X:  make sure xcode command line tools installed. Run at the command prompt:
-
-  `xcode-select --install`
-
-and then check for updates in the usual way.
