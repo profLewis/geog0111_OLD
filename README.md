@@ -1,7 +1,7 @@
 # Welcome to geog0111: Scientific Computing 
 UCL Geography: Level 7 course, Scientific Computing
 
-![](https://raw.github.com/profLewis/geogg122/master/images/ucl_logo.png)
+![](images/ucl_logo.png)
 
 ## Course information
 
@@ -74,6 +74,12 @@ To verify that the current environment uses the new Python version, in your Term
 `python --version`
 
 If this doesn't show 3.7.* then you may need to [update your environment and/or install a new version of python.](https://conda.io/docs/user-guide/tasks/manage-python.html)
+
+### Obtaining and running course notes
+
+The main coursenote repository is on [GitHub](https://github.com/profLewis/geog0111). You can acccess and download the notes from there.
+
+To install these notes, 
 
 ### Course Notes
 
