@@ -101,7 +101,7 @@ You may also need:
 
 `pip install --upgrade pip`
 
-4. install the notes
+4. install the required dependencies
 
 `pip install git+git://github.com/profLewis/geog0111@master`
 
