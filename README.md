@@ -63,7 +63,7 @@ See the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=13891) for mor
 
 ### Useful links
 
-[Course Moodle page] (http://moodle.ucl.ac.uk/course/view.php?id=13891)  
+[Course Moodle page] (https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
 
 ### Structure of the Course
 
