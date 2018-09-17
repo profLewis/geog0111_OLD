@@ -13,7 +13,7 @@ N.B. 2018-19 Course Convenors: Dr Qingling Wu and Dr. Jose Gomez-Dans
 
 ### Course and Contributing Staff
 
-[Prof Philip Lewis] (http://www.geog.ucl.ac.uk/~plewis)  
+[Prof Philip Lewis](http://www.geog.ucl.ac.uk/~plewis)  
 
 [Dr. Jose Gomez-Dans](http://www.geog.ucl.ac.uk/about-the-department/people/research-staff/research-staff/jose-gomez-dans/)
 
