@@ -115,7 +115,7 @@ You may also need:
 
 If you have trouble installing (or compiling) gdal, try:
 
-`pip install --global-option=build_ext GDAL==\`gdal-config --version\``
+`pip install --global-option=build_ext GDAL==``gdal-config --version```
 
 
 OS X:  make sure xcode command line tools installed
