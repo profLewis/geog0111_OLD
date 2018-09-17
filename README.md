@@ -129,7 +129,7 @@ in place of where it says `ipython` in these notes, or modify your shell initial
 To go to the directory for the first session:  
 
 `berlin% cd ~/Data/geogg122`  
-`berlin% jupyter notebook python101.ipynb --pylab=inline`  
+`berlin% jupyter notebook Chapter1_Python_intro.ipynb`  
 
 You quit an `jupyter` notebook session with `^C` (`Control C`).
 
@@ -138,7 +138,7 @@ To exectute ('run') blocks of Python code in the notebook, use `^<return>` (`SHI
 Alternatively, just run `ipython`:  
 ```
 berlin% cd ~/DATA/geog0111
-berlin% jupyter notebook
+berlin% ipython
 ```
 
 and type your own commands in at the prompt, following the class or the material on the webpages.
