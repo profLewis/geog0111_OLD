@@ -85,9 +85,13 @@ To install these notes:
 
 2. make sure your conda and anaconda distributions are up to date
 
-``
+`conda update conda`
 
 `conda update anaconda`
+
+If either of these fail, try the following first:
+
+`conda install conda`
 
 3. Make sure you have git and pip installed
 
