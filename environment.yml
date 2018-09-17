@@ -4,6 +4,7 @@ channels:
 dependencies:
   - python
   - numpy
+  - matplotlib
   - pandas
   - gdal
   - pip:
