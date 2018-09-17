@@ -108,3 +108,13 @@ You may also need:
 ### Course Notes
 
 [Course notes](index.ipynb)  
+
+
+
+### Additional
+
+OS X:  make sure xcode command line tools installed
+
+`xcode-select --install`
+
+and then check for updates in the usual way.
