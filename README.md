@@ -72,4 +72,8 @@ See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for
 [Course notes](index.ipynb)  
 
 
+### Help
 
+[Connections to the lab](Connections.ipynb)
+
+[Installation problems](Problems.ipynb)
