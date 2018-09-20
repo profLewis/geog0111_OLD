@@ -2,7 +2,7 @@ name: geog0111
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.7
   - numpy
   - matplotlib
   - pandas
