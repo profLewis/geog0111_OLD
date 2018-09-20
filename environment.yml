@@ -1,4 +1,4 @@
-name: example-environment
+name: geog0111
 channels:
   - conda-forge
 dependencies:
@@ -7,9 +7,4 @@ dependencies:
   - matplotlib
   - pandas
   - gdal
-  - pip:
-    - gdal
-    - nbgitpuller
-    - sphinx-gallery
-    - pandas
-    - matplotlib
+
