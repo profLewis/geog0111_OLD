@@ -88,7 +88,7 @@ We are assuming that you are new to computing in this course. We will not explic
 
 ### Using the course notes
 
-We will generally use the `ipython` interpreter for running interactive Python programs.
+We will generally use the `jupyter` notebooks for running interactive Python programs.
 
 You will probably want to run each session and store scripts in your `Data` (or `DATA`) directory.
 
@@ -113,20 +113,28 @@ berlin% git clone https://github.com/profLewis/geog0111.git
 
 to obtain the notes. 
 
-You should next check that you are using the version of Python that we intend:
+### Using python
+
+We suggest you use the [anaconda python distribution](http://www.anaconda.com). if you are *not* using the UCL resources (i.e. using your own comnputer), you should download and install an [anaconda distribution](https://www.anaconda.com/download). If you *are* using the UCL computers, then it should be there already.
+
+Assuming you have a copy of the notes in the directory ('folder') `~/DATA/geog0111` then you can set up a specific 'environment' in which to run these notes:
+
 
 ```
-berlin% which ipython
-/opt/anaconda/bin/ipython
+berlin% cd ~/DATA/geog0111
+berlin% conda env create -f environment.yml
 ```
 
-If this isn't the version of Python that you are picking up (note the use of the unix command `which` here), then you can either just type the full path name:
+This will create an environment called `geog0111` and make sure you have all of the required dependencies.
+
+If you have created the environment, you can activate it with:
 
 ```
-berlin% /opt/anaconda/bin/ipython  
+berlin% conda activate geog0111
 ```
 
-in place of where it says `ipython` in these notes, or modify your shell initialisation file (`~/.bashrc` if you are using `bash` or `~/.cshrc` for `tcsh` or `csh`) to include `/opt/anaconda/bin` early on in the `PATH`. For running notebooks, we use `jupyter` rather than `ipython`.
+For further advice on checking, setting or deleting `conda` environments, see the (conda help pages)[https://conda.io/docs/user-guide/tasks/manage-environments.html].
+
 
 To go to the directory for the first session:  
 
