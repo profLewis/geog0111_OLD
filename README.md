@@ -133,7 +133,7 @@ If you have created the environment, you can activate it with:
 berlin% conda activate geog0111
 ```
 
-For further advice on checking, setting or deleting `conda` environments, see the (conda help pages)[https://conda.io/docs/user-guide/tasks/manage-environments.html].
+For further advice on checking, setting or deleting `conda` environments, see the [conda help pages](https://conda.io/docs/user-guide/tasks/manage-environments.html).
 
 
 To go to the directory for the first session:  
