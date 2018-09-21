@@ -67,7 +67,7 @@ See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for
 
 [Course Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
 
-### Using Python
+### Python
 
 [Python](http://www.python.org/) is a high level programming language that is freely available, relatively easy to learn and portable across different computing systems. In Python, you can rapidly develop solutions for the sorts of problems you might need to solve in your MSc courses and in the world beyond. Code written in Python is also easy to maintain, is (or should be) self-documented, and can easily be linked to code written in other languages.
 
@@ -79,10 +79,6 @@ Relevant features include:
 - there is an active user and development community, which means that new capabilities appear over time and there are many existing extensions and enhancements easily available to you.
 
 For further background on Python, look over the material on [Advanced Scientific Programming in Python](https://python.g-node.org/wiki/schedule) or [python.org](http://www.python.org/) web sites.
-
-For this course, we suggest you use the [anaconda](https://store.continuum.io/cshop/anaconda/) Python distribution (this is what is installed in the unix lab computers), though you are free to use whichever version of it you like on your own computers.
-
-If you are intending to use these notes on your opwn computer, you will need a relatively comprehensive installation of Python (such as that from [anaconda](https://store.continuum.io/cshop/anaconda/)), and will also need [GDAL](http://www.gdal.org/) installed for some of the work. You may also find it of value to have [git](http://git-scm.com/) installed.
 
 We are assuming that you are new to computing in this course. We will not explicitly go through unix (operating system) notes, but you should make yourself familiar with the basic concepts. 
 
@@ -117,8 +113,9 @@ to obtain the notes.
 
 We suggest you use the [anaconda python distribution](http://www.anaconda.com). if you are *not* using the UCL resources (i.e. using your own comnputer), you should download and install an [anaconda distribution](https://www.anaconda.com/download). If you *are* using the UCL computers, then it should be there already.
 
-Assuming you have a copy of the notes in the directory ('folder') `~/DATA/geog0111` then you can set up a specific 'environment' in which to run these notes:
+You may also find it of value to have [git](http://git-scm.com/) installed.
 
+Assuming you have a copy of the notes in the directory ('folder') `~/DATA/geog0111` then you can set up a specific 'environment' in which to run these notes:
 
 ```
 berlin% cd ~/DATA/geog0111
@@ -152,7 +149,6 @@ berlin% ipython
 ```
 
 and type your own commands in at the prompt, following the class or the material on the webpages.
-
 
 ### Course Notes
 
