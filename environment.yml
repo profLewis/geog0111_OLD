@@ -34,3 +34,7 @@ dependencies:
     - pyflakes 
     - autopep8 
     - yapf
+    - anaconda-client
+    - anaconda-navigator
+    - conda-build
+    - cartopy
