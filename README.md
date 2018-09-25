@@ -23,6 +23,8 @@ N.B. 2018-19 Course Convenors: Dr Qingling Wu and Dr. Jose Gomez-Dans
 
 [Mr Feng Yin](https://www.geog.ucl.ac.uk/people/research-staff/feng-yin)
 
+[Mr James Brennan](https://www.geog.ucl.ac.uk/people/research-students/james-brennan)
+
 
 ### Purpose of this course
 
@@ -122,6 +124,13 @@ berlin% cd ~/DATA/geog0111
 berlin% conda env create -f environment.yml
 ```
 
+If you are updating the notes, and geog0111 already exists, use instead:
+
+```
+berlin% cd ~/DATA/geog0111
+berlin% conda env update -f environment.yml
+```
+
 This will create an environment called `geog0111` and make sure you have all of the required dependencies.
 
 If you have created the environment, you can activate it with:
@@ -129,6 +138,7 @@ If you have created the environment, you can activate it with:
 ```
 berlin% conda activate geog0111
 ```
+
 
 For further advice on checking, setting or deleting `conda` environments, see the [conda help pages](https://conda.io/docs/user-guide/tasks/manage-environments.html).
 
