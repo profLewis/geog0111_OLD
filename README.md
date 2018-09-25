@@ -23,6 +23,8 @@ N.B. 2018-19 Course Convenors: Dr Qingling Wu and Dr. Jose Gomez-Dans
 
 [Mr Feng Yin](https://www.geog.ucl.ac.uk/people/research-staff/feng-yin)
 
+[Mr James Brennan](https://www.geog.ucl.ac.uk/people/research-students/james-brennan)
+
 
 ### Purpose of this course
 
