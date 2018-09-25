@@ -1,12 +1,40 @@
 name: geog0111
 channels:
-  - conda-forge
+    - anaconda
+    - conda-forge
 dependencies:
-  - python>=3.7
-  - ipython
-  - jupyter
-  - numpy
-  - matplotlib
-  - pandas
-  - gdal>=2.3
-
+    - python>=3.6
+    - ipython
+    - numpy 
+    - scipy
+    - matplotlib 
+    - gdal>2.2
+    - pandas  
+    - fiona
+    - rasterio 
+    - jupyter_contrib_nbextensions 
+    - jupyter_latex_envs 
+    - jupyter_nbextensions_configurator 
+    - jupyterlab 
+    - jupyterlab_launcher
+    - ipyleaflet 
+    - scikit-learn 
+    - scikit-image 
+    - geopandas 
+    - sphinx 
+    - pandoc 
+    - seaborn 
+    - shapely 
+    - spyder 
+    - statsmodels 
+    - xarray 
+    - pyephem 
+    - requests 
+    - pep8 
+    - pyflakes 
+    - autopep8 
+    - yapf
+    - anaconda-client
+    - anaconda-navigator
+    - conda-build
+    - cartopy
