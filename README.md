@@ -145,7 +145,7 @@ For further advice on checking, setting or deleting `conda` environments, see th
 
 To go to the directory for the first session:  
 
-`berlin% cd ~/Data/geogg122`  
+`berlin% cd ~/DATA/geog0111`  
 `berlin% jupyter notebook Chapter1_Python_intro.ipynb`  
 
 You quit an `jupyter` notebook session with `^C` (`Control C`).
