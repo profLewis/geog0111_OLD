@@ -164,9 +164,7 @@ and type your own commands in at the prompt, following the class or the material
 
 [Course notes](index.ipynb)  
 
-
 ### Help
 
+[Help](Chapter0_help.ipynb)
 [Connections to the lab](Connection.ipynb)
-
-[Installation issues](Issues.ipynb)
