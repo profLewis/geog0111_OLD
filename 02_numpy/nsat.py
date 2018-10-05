@@ -18,7 +18,7 @@ class nsat():
     
     '''
 
-    def __init__(self,year0,year1):
+    def __init__(self,year0=1957,year1=2019):
         '''
         check to see if data table available
         else, scrape
