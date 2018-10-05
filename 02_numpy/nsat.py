@@ -23,12 +23,13 @@ class nsat():
         check to see if data table available
         else, scrape
         '''
-        years = (year0,year1)
+        self.years = (year0,year1)
         try:
-            data=np.loadtxt(f'satellites-{years[0]}-{years[1]}.gz')
+            data=np.loadtxt(f'satellites-{self.years[0]}-{self.years[1]}.gz')
         except:
-            data = self.scrape_data(years)
-            np.savetxt(f'satellites-{years[0]}-{years[1]}.gz',data,fmt='%d')
+            data = self.scrape_data(self.years)
+            np.savetxt(f'satellites-{self.years[0]}-{self.years[1]}.gz'\
+                       ,data,fmt='%d')
         self.data = data.astype(int)
             
     def scrape_data(self,years):
