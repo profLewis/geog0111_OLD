@@ -24,12 +24,13 @@ class nsat():
         else, scrape
         '''
         self.years = (year0,year1)
+        filename = f'satellites-{self.years[0]}-{self.years[1]}.gz'
         try:
-            data=np.loadtxt(f'satellites-{self.years[0]}-{self.years[1]}.gz')
+            data=np.loadtxt(filename)
         except:
+            print(f'scraping {filename}')
             data = self.scrape_data(self.years)
-            np.savetxt(f'satellites-{self.years[0]}-{self.years[1]}.gz'\
-                       ,data,fmt='%d')
+            np.savetxt(filename,data,fmt='%d')
         self.data = data.astype(int)
             
     def scrape_data(self,years):
