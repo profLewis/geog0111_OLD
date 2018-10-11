@@ -8,6 +8,7 @@ dependencies:
     - numpy 
     - scipy
     - matplotlib 
+    - ncurses
     - gdal>2.2
     - pandas  
     - fiona
