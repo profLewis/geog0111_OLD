@@ -5,6 +5,8 @@ __pycache__/
 *.npz
 */*.npz
 */*.nc
+data/*hdf
+data/test.bin
 
 # C extensions
 *.so
