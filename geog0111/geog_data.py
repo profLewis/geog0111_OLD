@@ -18,7 +18,7 @@ so if you want to provide data in folders, provide a dataset for each of the fol
 import urllib.request
 from pathlib import Path
 from socket import getfqdn
-
+from geog0111.get_modis_files import get_modis_files
 from bs4 import BeautifulSoup
 
 __author__ = "J Gomez-Dans"
@@ -37,14 +37,44 @@ def procure_dataset(dataset_name, destination_folder="data",
     filesystem (`location`), and the external URL (`url`). It is assumed that in
     either case, `datasest_name` is a valid folder under both `location` and `url`.
     """
+    dest_path = Path(destination_folder)
+    if not dest_path.exists():
+        dest_path.mkdir()
+    output_fname = dest_path.joinpath(dataset_name)
+    if output_fname.exists():
+        return True
+
+    done = False
     fully_qualified_hostname = getfqdn()
     if fully_qualified_hostname.find("geog.ucl.ac.uk") >= 0:
         print("Running on UCL's Geography computers")
-        generate_symlinks(dataset_name, location, destination_folder=destination_folder)
+        done =generate_symlinks(dataset_name, location, destination_folder=destination_folder)
     else:
-        print("Running outside UCL Geography. Will need to download data. This might take a while!")
-        download_data(dataset_name, url, destination_folder=destination_folder)
-
+        print("Running outside UCL Geography. Will try to download data. This might take a while!")
+        done=download_data(dataset_name, url, destination_folder=destination_folder)
+        if not done:
+           # maybe a modis dataset: try that
+           print("Testing to see if can download from NASA server")
+           try:
+               info = dataset_name.split('.')
+               product = info[0]
+               tile = info[2]
+               version = int(info[3])
+               year = int(info[1][1:5])
+               doy = int(info[1][5:])
+               for url in ['https://e4ftl01.cr.usgs.gov/MOTA']:
+                   try:
+                       filename = get_modis_files(doy,year,[tile],base_url=url,\
+                                           version=version,\
+                                           destination_folder=destination_folder,\
+                                           product=product)[0]
+                       done = True
+                   except:
+                       pass
+           except:
+               pass
+    return(done)           
+          
 def generate_symlinks(dataset_name, location, destination_folder, verbose=True):
     """Generates symbolic links for a given dataset."""
     dest_path = Path(destination_folder)
@@ -61,7 +91,7 @@ def generate_symlinks(dataset_name, location, destination_folder, verbose=True):
                 (dest_path/Path(fich.name)).symlink_to(fich)
             if verbose:
                 print(f"Linking {fich} to {dest_path/Path(fich.name)}")
-
+        return(True)
 
 def download_data(dataset_name, url, destination_folder, verbose=True):
     """Downloads a dataset from UCL servers."""
@@ -70,9 +100,12 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
         if verbose:
             print("Creating destination directory")
         dest_path.mkdir()
-    resp = urllib.request.urlopen(f"{url:s}/{dataset_name:s}")
+    try:
+        resp = urllib.request.urlopen(f"{url:s}/{dataset_name:s}")
+    except:
+        return False
     if resp.code != 200:
-        raise IOError("The server sends an error back...")
+        return False
     soup = BeautifulSoup(resp, "lxml",
                          from_encoding=resp.info().get_param('charset'))
 
@@ -96,3 +129,4 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
             if verbose:
                 print(f"Remote file: {link['href']:s} ({remote_size:d} bytes) " +
                       f"-> {dest_file.absolute()} ({local_size:d} bytes) -> " + u'\u2713')
+    return True    
