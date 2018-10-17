@@ -7,6 +7,8 @@ __pycache__/
 */*.nc
 data/*hdf
 data/test.bin
+images/MCD*
+images/joinedup.pdf
 
 # C extensions
 *.so
