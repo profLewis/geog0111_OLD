@@ -123,14 +123,18 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
     suffix = this_url.split('.')[-1]
     outfile = str(dest_path.joinpath(dataset_name))
 
+    import pdb;pdb.set_trace()
     if (suffix=='npz') or (suffix=='zip') or (suffix=='hdf') \
        or (suffix=='nc') or (suffix=='bin'):
         try:
             with open(outfile,'wb') as fp:
                 d = fp.write(response(this_url).get().content)
- 
+            if d:
+                return(True)
+            else:
+                Path(outfile).unlink()
         except:
-            pass
+            return(False)
 
 
     soup = BeautifulSoup(resp, "lxml",
