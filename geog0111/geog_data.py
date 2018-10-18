@@ -26,15 +26,17 @@ __copyright__ = "Copyright 2018 J Gomez-Dans"
 __license__ = "GPLv3"
 __email__ = "j.gomez-dans@ucl.ac.uk"
 
-def procure_dataset(dataset_name, destination_folder="data",
-                    location="/data/selene/ucfajlg/geog011_data/",
-                    url="http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/"):
+def procure_dataset(dataset_name, destination_folder="data",verbose=False,
+                    locations=["/data/selene/ucfajlg/geog011_data/",\
+                               "/archive/rsu_raid_0/plewis/public_html/geog_data"],\
+                    urls=["http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/",\
+                          "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"]):
 
     """Procure a Geog0111 dataset. This function will look for the dataset called
     `dataset_name`, and either provide symbolic links or download the relevant
     files to a local folder called by default `data`, or with a user-provided name.
     The other two options are to do with the location of the dataset witin the UCL
-    filesystem (`location`), and the external URL (`url`). It is assumed that in
+    filesystem (`location`), and the external URL (list `urls`). It is assumed that in
     either case, `datasest_name` is a valid folder under both `location` and `url`.
     """
     dest_path = Path(destination_folder)
@@ -48,10 +50,18 @@ def procure_dataset(dataset_name, destination_folder="data",
     fully_qualified_hostname = getfqdn()
     if fully_qualified_hostname.find("geog.ucl.ac.uk") >= 0:
         print("Running on UCL's Geography computers")
-        done =generate_symlinks(dataset_name, location, destination_folder=destination_folder)
+        for location in locations:
+            if(verbose): print(f'trying {location}')
+            done =generate_symlinks(dataset_name, location, destination_folder=destination_folder)
+            if done:
+                break
     else:
         print("Running outside UCL Geography. Will try to download data. This might take a while!")
-        done=download_data(dataset_name, url, destination_folder=destination_folder)
+        for url in list(urls):
+            if(verbose): print(f'trying {url}')
+            done=download_data(dataset_name, url, destination_folder=destination_folder)
+            if done:
+                break
         if not done:
            # maybe a modis dataset: try that
            print("Testing to see if can download from NASA server")
@@ -64,7 +74,7 @@ def procure_dataset(dataset_name, destination_folder="data",
                doy = int(info[1][5:])
                for url in ['https://e4ftl01.cr.usgs.gov/MOTA']:
                    try:
-                       filename = get_modis_files(doy,year,[tile],base_url=url,\
+dest_path/Path(link['href']                       filename = get_modis_files(doy,year,[tile],base_url=url,\
                                            version=version,\
                                            destination_folder=destination_folder,\
                                            product=product)[0]
@@ -110,7 +120,7 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
                          from_encoding=resp.info().get_param('charset'))
 
     for pos, link in enumerate(soup.find_all('a', href=True)):
-        if pos > 4:
+        try:
             # Skip first crufty links...
             file_to_download = f"{url:s}/{dataset_name:s}/{link['href']:s}"
             dest_file = dest_path/Path(link['href'])
@@ -129,4 +139,6 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
             if verbose:
                 print(f"Remote file: {link['href']:s} ({remote_size:d} bytes) " +
                       f"-> {dest_file.absolute()} ({local_size:d} bytes) -> " + u'\u2713')
+        except:
+            pass
     return True    
