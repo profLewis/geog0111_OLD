@@ -123,7 +123,6 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
     suffix = this_url.split('.')[-1]
     outfile = str(dest_path.joinpath(dataset_name))
 
-    import pdb;pdb.set_trace()
     if (suffix=='npz') or (suffix=='zip') or (suffix=='hdf') \
        or (suffix=='nc') or (suffix=='bin'):
         try:
