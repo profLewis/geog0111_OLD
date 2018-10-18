@@ -74,7 +74,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                doy = int(info[1][5:])
                for url in ['https://e4ftl01.cr.usgs.gov/MOTA']:
                    try:
-dest_path/Path(link['href']                       filename = get_modis_files(doy,year,[tile],base_url=url,\
+                       filename = get_modis_files(doy,year,[tile],base_url=url,\
                                            version=version,\
                                            destination_folder=destination_folder,\
                                            product=product)[0]
@@ -102,6 +102,7 @@ def generate_symlinks(dataset_name, location, destination_folder, verbose=True):
             if verbose:
                 print(f"Linking {fich} to {dest_path/Path(fich.name)}")
         return(True)
+import requests
 
 def download_data(dataset_name, url, destination_folder, verbose=True):
     """Downloads a dataset from UCL servers."""
@@ -116,6 +117,22 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
         return False
     if resp.code != 200:
         return False
+
+    # try some easy things
+    this_url = f"{url:s}/{dataset_name:s}"
+    suffix = this_url.split('.')[-1]
+    outfile = str(dest_path.joinpath(dataset_name))
+
+    if (suffix=='npz') or (suffix=='zip') or (suffix=='hdf') \
+       or (suffix=='nc') or (suffix=='bin'):
+        try:
+            with open(outfile,'wb') as fp:
+                d = fp.write(response(this_url).get().content)
+ 
+        except:
+            pass
+
+
     soup = BeautifulSoup(resp, "lxml",
                          from_encoding=resp.info().get_param('charset'))
 
