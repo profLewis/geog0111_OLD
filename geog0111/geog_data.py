@@ -128,7 +128,7 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
        or (suffix=='nc') or (suffix=='bin'):
         try:
             with open(outfile,'wb') as fp:
-                d = fp.write(response(this_url).get().content)
+                d = fp.write(requests(this_url).get().content)
             if d:
                 return(True)
             else:
