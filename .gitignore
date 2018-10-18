@@ -9,6 +9,7 @@ data/*hdf
 data/test.bin
 images/MCD*
 images/joinedup.pdf
+data/TM_WORLD_BORDERS*
 
 # C extensions
 *.so
