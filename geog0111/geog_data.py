@@ -29,6 +29,13 @@ __email__ = "j.gomez-dans@ucl.ac.uk"
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     locations=["/data/selene/ucfajlg/geog011_data/",\
                                "/archive/rsu_raid_0/plewis/public_html/geog_data"],\
+                    modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
+                                'https://e4ftl01.cr.usgs.gov/MOLT',\
+                                'https://e4ftl01.cr.usgs.gov/MOLA',\
+                                'https://e4ftl01.cr.usgs.gov/VIIRS',\
+                                'https://n5eil01u.ecs.nsidc.org/MOSA/',\
+                                'https://n5eil01u.ecs.nsidc.org/MOSA/',\
+                                'https://n5eil01u.ecs.nsidc.org/VIIRS/']
                     urls=["http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/",\
                           "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"]):
 
@@ -72,7 +79,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                version = int(info[3])
                year = int(info[1][1:5])
                doy = int(info[1][5:])
-               for url in ['https://e4ftl01.cr.usgs.gov/MOTA']:
+               for url in modis_urls:
                    try:
                        filename = get_modis_files(doy,year,[tile],base_url=url,\
                                            version=version,\
