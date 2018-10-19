@@ -35,7 +35,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                                 'https://e4ftl01.cr.usgs.gov/VIIRS',\
                                 'https://n5eil01u.ecs.nsidc.org/MOSA/',\
                                 'https://n5eil01u.ecs.nsidc.org/MOSA/',\
-                                'https://n5eil01u.ecs.nsidc.org/VIIRS/']
+                                'https://n5eil01u.ecs.nsidc.org/VIIRS/'],\
                     urls=["http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/",\
                           "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"]):
 
