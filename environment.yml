@@ -3,6 +3,7 @@ channels:
     - conda-forge
     - anaconda
 dependencies:
+    - bs4
     - python=3.6
     - ipython
     - numpy 
