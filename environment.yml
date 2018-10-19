@@ -3,6 +3,7 @@ channels:
     - conda-forge
     - anaconda
 dependencies:
+    - scp
     - lxml
     - requests
     - numpy
