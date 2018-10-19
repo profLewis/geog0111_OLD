@@ -14,7 +14,7 @@ destination_folder = 'data'
 
 for year in years:
     ndoys = (datetime(year,12,31) - datetime(year,1,1)).days + 1
-    for doy in range(109+4,ndoys+1,4):
+    for doy in range(1,ndoys+1,4):
         print(year,ndoys,doy,end=' ')
         filenames = get_modis_files(doy,year,tiles,base_url='https://e4ftl01.cr.usgs.gov/MOTA',\
                                            version=6,\
