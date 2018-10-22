@@ -15,6 +15,9 @@ data/Readme.txt
 */*vrt
 */.?*icloud
 *.jpg
+*.swp
+*/*.swp
+*/.?*swp
 
 # C extensions
 *.so
