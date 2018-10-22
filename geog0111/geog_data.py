@@ -56,14 +56,14 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
     done = False
     fully_qualified_hostname = getfqdn()
     if fully_qualified_hostname.find("geog.ucl.ac.uk") >= 0:
-        print("Running on UCL's Geography computers")
+        if(verbose): print("Running on UCL's Geography computers")
         for location in locations:
             if(verbose): print(f'trying {location}')
             done =generate_symlinks(dataset_name, location, destination_folder=destination_folder)
             if done:
                 break
     else:
-        print("Running outside UCL Geography. Will try to download data. This might take a while!")
+        if(verbose): print("Running outside UCL Geography. Will try to download data. This might take a while!")
         for url in list(urls):
             if(verbose): print(f'trying {url}')
             done=download_data(dataset_name, url, destination_folder=destination_folder)
@@ -71,7 +71,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                 break
         if not done:
            # maybe a modis dataset: try that
-           print("Testing to see if can download from NASA server")
+           if(verbose): print("Testing to see if can download from NASA server")
            try:
                info = dataset_name.split('.')
                product = info[0]
