@@ -11,7 +11,10 @@ images/MCD*
 images/joinedup.pdf
 data/TM_WORLD_BORDERS*
 data/Readme.txt
-
+*vrt
+*/*vrt
+*/.?*icloud
+*.jpg
 
 # C extensions
 *.so
