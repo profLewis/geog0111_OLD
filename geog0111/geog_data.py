@@ -29,6 +29,13 @@ __email__ = "j.gomez-dans@ucl.ac.uk"
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     locations=["/data/selene/ucfajlg/geog011_data/",\
                                "/archive/rsu_raid_0/plewis/public_html/geog_data"],\
+                    modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
+                                'https://e4ftl01.cr.usgs.gov/MOLT',\
+                                'https://e4ftl01.cr.usgs.gov/MOLA',\
+                                'https://e4ftl01.cr.usgs.gov/VIIRS',\
+                                'https://n5eil01u.ecs.nsidc.org/MOST/',\
+                                'https://n5eil01u.ecs.nsidc.org/MOSA/',\
+                                'https://n5eil01u.ecs.nsidc.org/VIIRS/'],\
                     urls=["http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/",\
                           "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"]):
 
@@ -49,14 +56,14 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
     done = False
     fully_qualified_hostname = getfqdn()
     if fully_qualified_hostname.find("geog.ucl.ac.uk") >= 0:
-        print("Running on UCL's Geography computers")
+        if(verbose): print("Running on UCL's Geography computers")
         for location in locations:
             if(verbose): print(f'trying {location}')
             done =generate_symlinks(dataset_name, location, destination_folder=destination_folder)
             if done:
                 break
     else:
-        print("Running outside UCL Geography. Will try to download data. This might take a while!")
+        if(verbose): print("Running outside UCL Geography. Will try to download data. This might take a while!")
         for url in list(urls):
             if(verbose): print(f'trying {url}')
             done=download_data(dataset_name, url, destination_folder=destination_folder)
@@ -64,7 +71,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                 break
         if not done:
            # maybe a modis dataset: try that
-           print("Testing to see if can download from NASA server")
+           if(verbose): print("Testing to see if can download from NASA server")
            try:
                info = dataset_name.split('.')
                product = info[0]
@@ -72,7 +79,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                version = int(info[3])
                year = int(info[1][1:5])
                doy = int(info[1][5:])
-               for url in ['https://e4ftl01.cr.usgs.gov/MOTA']:
+               for url in modis_urls:
                    try:
                        filename = get_modis_files(doy,year,[tile],base_url=url,\
                                            version=version,\
@@ -127,10 +134,13 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
        or (suffix=='nc') or (suffix=='bin'):
         try:
             with open(outfile,'wb') as fp:
-                d = fp.write(response(this_url).get().content)
- 
+                d = fp.write(requests.get(this_url).content)
+            if d:
+                return(True)
+            else:
+                Path(outfile).unlink()
         except:
-            pass
+            return(False)
 
 
     soup = BeautifulSoup(resp, "lxml",

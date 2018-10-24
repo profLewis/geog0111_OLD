@@ -137,6 +137,7 @@ If you have created the environment, you can activate it with:
 
 ```
 berlin% conda activate geog0111
+berlin% python setup.py install
 ```
 
 
