@@ -20,7 +20,7 @@ from pathlib import Path
 from socket import getfqdn
 from geog0111.get_modis_files import get_modis_files
 from bs4 import BeautifulSoup
-
+import requests
 __author__ = "J Gomez-Dans"
 __copyright__ = "Copyright 2018 J Gomez-Dans"
 __license__ = "GPLv3"
@@ -59,7 +59,8 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
         if(verbose): print("Running on UCL's Geography computers")
         for location in locations:
             if(verbose): print(f'trying {location}')
-            done =generate_symlinks(dataset_name, location, destination_folder=destination_folder)
+            done =generate_symlinks(dataset_name, location, 
+                                    destination_folder=destination_folder, verbose=verbose)
             if done:
                 break
     else:
@@ -103,7 +104,6 @@ def generate_symlinks(dataset_name, location, destination_folder, verbose=True):
     
     if the_path.exists():
         files = [f for f in the_path.rglob("**/*")]
-        print(files)
         for fich in files:
             try:
                 (dest_path/Path(fich.name)).symlink_to(fich)
@@ -113,7 +113,7 @@ def generate_symlinks(dataset_name, location, destination_folder, verbose=True):
             if verbose:
                 print(f"Linking {fich} to {dest_path/Path(fich.name)}")
         return(True)
-import requests
+
 
 def download_data(dataset_name, url, destination_folder, verbose=True):
     """Downloads a dataset from UCL servers."""
