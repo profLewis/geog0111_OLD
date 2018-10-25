@@ -18,6 +18,7 @@ data/Readme.txt
 *.swp
 */*.swp
 */.?*swp
+None*
 
 # C extensions
 *.so
