@@ -27,8 +27,8 @@ __license__ = "GPLv3"
 __email__ = "j.gomez-dans@ucl.ac.uk"
 
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
-                    locations=["/data/selene/ucfajlg/geog011_data/",\
-                               "/archive/rsu_raid_0/plewis/public_html/geog_data"],\
+                    locations=["/data/selene/ucfajlg/geog0111_data/",\
+                               "/archive/rsu_raid_0/plewis/public_html/geog0111_data"],\
                     modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
                                 'https://e4ftl01.cr.usgs.gov/MOLT',\
                                 'https://e4ftl01.cr.usgs.gov/MOLA',\
@@ -97,9 +97,13 @@ def generate_symlinks(dataset_name, location, destination_folder, verbose=True):
     dest_path = Path(destination_folder)
     if not dest_path.exists():
         dest_path.mkdir()
+        if verbose:
+             print(f"Creating {str(dest_path):s}")
     the_path = Path(location)/Path(dataset_name)
+    
     if the_path.exists():
         files = [f for f in the_path.rglob("**/*")]
+        print(files)
         for fich in files:
             try:
                 (dest_path/Path(fich.name)).symlink_to(fich)
