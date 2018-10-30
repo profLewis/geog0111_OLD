@@ -3,6 +3,7 @@ channels:
     - conda-forge
     - anaconda
 dependencies:
+    - ecmwf-api-client
     - scp
     - lxml
     - requests
