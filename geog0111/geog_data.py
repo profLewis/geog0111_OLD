@@ -28,7 +28,7 @@ __email__ = "j.gomez-dans@ucl.ac.uk"
 
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     locations=["/data/selene/ucfajlg/geog0111_data/",\
-                               "/archive/rsu_raid_0/plewis/public_html/geog0111_data"],\
+                               "/archive/rsu_raid_0/plewis/public_html/geog0111_data"][::-1],\
                     modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
                                 'https://e4ftl01.cr.usgs.gov/MOLT',\
                                 'https://e4ftl01.cr.usgs.gov/MOLA',\
@@ -37,7 +37,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                                 'https://n5eil01u.ecs.nsidc.org/MOSA/',\
                                 'https://n5eil01u.ecs.nsidc.org/VIIRS/'],\
                     urls=["http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/",\
-                          "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"]):
+                          "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"][::-1]):
 
     """Procure a Geog0111 dataset. This function will look for the dataset called
     `dataset_name`, and either provide symbolic links or download the relevant
@@ -67,7 +67,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
         if(verbose): print("Running outside UCL Geography. Will try to download data. This might take a while!")
         for url in list(urls):
             if(verbose): print(f'trying {url}')
-            done=download_data(dataset_name, url, destination_folder=destination_folder)
+            done=download_data(dataset_name, url, verbose=verbose,destination_folder=destination_folder)
             if done:
                 break
         if not done:
