@@ -1,6 +1,9 @@
 from osgeo import gdal, gdalconst,osr
 import numpy as np
 from geog0111.process_timeseries import mosaic_and_clip
+from datetime import datetime,timedelta
+
+
 
 def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
                          country_code='LU',shpfile="data/TM_WORLD_BORDERS-0.3.shp",\
@@ -86,3 +89,28 @@ def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
     if verbose: print(f'writing to {dst_filename}')
     del dst # Flush
     return(dst_filename)
+
+
+def calibrate_t2(dst_filename,meta):
+    '''
+    apply scaling etc to temperature data t 2m
+    '''
+    # get time info
+    timer = np.array([(datetime(1900,1,1) + timedelta(days=float(i)/24.)) \
+         for i in meta['NETCDF_DIM_time_VALUES'][1:-1].split(',')])
+
+    t2 = gdal.Open(dst_filename, gdalconst.GA_ReadOnly)
+    t2 = np.array([t2.GetRasterBand(i+1).ReadAsArray() \
+                   for i in range(timer.shape[0])])
+    offset = float(meta['t2m#add_offset'])
+    scale = float(meta['t2m#scale_factor'])
+    missing = int(meta['t2m#missing_value'])
+    # set missing to nan
+    nodata = (t2 == missing)
+    # convert to C
+    temp2 = t2 * scale + offset - 273.15
+    temp2[nodata] = np.nan
+    return timer,temp2
+
+
+
