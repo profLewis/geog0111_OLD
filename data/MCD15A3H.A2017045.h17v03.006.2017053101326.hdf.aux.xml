@@ -1,0 +1,383 @@
+<PAMDataset>
+  <Subdataset name="MOD_Grid_MCD15A3H:Lai_500m">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="add_offset">0</MDI>
+        <MDI key="add_offset_err">0</MDI>
+        <MDI key="ALGORITHMPACKAGEACCEPTANCEDATE">10-01-2004</MDI>
+        <MDI key="ALGORITHMPACKAGEMATURITYCODE">Normal</MDI>
+        <MDI key="ALGORITHMPACKAGENAME">MCDPR_15A3</MDI>
+        <MDI key="ALGORITHMPACKAGEVERSION">6</MDI>
+        <MDI key="ASSOCIATEDINSTRUMENTSHORTNAME.1">MODIS</MDI>
+        <MDI key="ASSOCIATEDINSTRUMENTSHORTNAME.2">MODIS</MDI>
+        <MDI key="ASSOCIATEDPLATFORMSHORTNAME.1">Terra</MDI>
+        <MDI key="ASSOCIATEDPLATFORMSHORTNAME.2">Aqua</MDI>
+        <MDI key="ASSOCIATEDSENSORSHORTNAME.1">MODIS</MDI>
+        <MDI key="ASSOCIATEDSENSORSHORTNAME.2">MODIS</MDI>
+        <MDI key="AUTOMATICQUALITYFLAG.1">Passed</MDI>
+        <MDI key="AUTOMATICQUALITYFLAGEXPLANATION.1">No automatic quality assessment is performed in the PGE</MDI>
+        <MDI key="calibrated_nt">21</MDI>
+        <MDI key="CHARACTERISTICBINANGULARSIZE500M">15.0</MDI>
+        <MDI key="CHARACTERISTICBINSIZE500M">463.312716527778</MDI>
+        <MDI key="DATACOLUMNS500M">2400</MDI>
+        <MDI key="DATAROWS500M">2400</MDI>
+        <MDI key="DAYNIGHTFLAG">Day</MDI>
+        <MDI key="DESCRREVISION">6.0</MDI>
+        <MDI key="EASTBOUNDINGCOORDINATE">0.016666666662491</MDI>
+        <MDI key="ENGINEERING_DATA">(none-available)
+</MDI>
+        <MDI key="EXCLUSIONGRINGFLAG.1">N</MDI>
+        <MDI key="GEOANYABNORMAL">False</MDI>
+        <MDI key="GEOESTMAXRMSERROR">50.0</MDI>
+        <MDI key="GLOBALGRIDCOLUMNS500M">86400</MDI>
+        <MDI key="GLOBALGRIDROWS500M">43200</MDI>
+        <MDI key="GRANULEBEGINNINGDATETIME">2017-02-16T10:25:37.000Z</MDI>
+        <MDI key="GRANULEDAYNIGHTFLAG">Day</MDI>
+        <MDI key="GRANULEENDINGDATETIME">2017-02-16T10:25:37.000Z</MDI>
+        <MDI key="GRINGPOINTLATITUDE.1">49.7394264948349, 59.9999999946118, 60.0089388384779, 49.7424953501575</MDI>
+        <MDI key="GRINGPOINTLONGITUDE.1">-15.4860189105775, -19.9999999949462, 0.0325645816155362, 0.0125638874822839</MDI>
+        <MDI key="GRINGPOINTSEQUENCENO.1">1, 2, 3, 4</MDI>
+        <MDI key="HDFEOSVersion">HDFEOS_V2.17</MDI>
+        <MDI key="HORIZONTALTILENUMBER">17</MDI>
+        <MDI key="identifier_product_doi">10.5067/MODIS/MCD15A3H.006</MDI>
+        <MDI key="identifier_product_doi">10.5067/MODIS/MCD15A3H.006</MDI>
+        <MDI key="identifier_product_doi_authority">http://dx.doi.org</MDI>
+        <MDI key="identifier_product_doi_authority">http://dx.doi.org</MDI>
+        <MDI key="INPUTPOINTER">MYD15A1H.A2017048.h17v03.006.2017050060914.hdf, MYD15A1H.A2017047.h17v03.006.2017049094106.hdf, MYD15A1H.A2017046.h17v03.006.2017048064901.hdf, MYD15A1H.A2017045.h17v03.006.2017047060809.hdf, MOD15A1H.A2017048.h17v03.006.2017050103059.hdf, MOD15A1H.A2017047.h17v03.006.2017053100630.hdf, MOD15A1H.A2017046.h17v03.006.2017052201108.hdf, MOD15A1H.A2017045.h17v03.006.2017047102537.hdf, MCD15A3_ANC_RI4.hdf</MDI>
+        <MDI key="LOCALGRANULEID">MCD15A3H.A2017045.h17v03.006.2017053101326.hdf</MDI>
+        <MDI key="LOCALVERSIONID">5.0.4</MDI>
+        <MDI key="LONGNAME">MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500m SIN Grid</MDI>
+        <MDI key="long_name">MCD15A3H MODIS/Terra Gridded 500M Leaf Area Index LAI (4-day composite)</MDI>
+        <MDI key="MAXIMUMOBSERVATIONS500M">1</MDI>
+        <MDI key="MOD15A1_ANC_BUILD_CERT">mtAncUtil v. 1.8 Rel. 09.11.2000 17:36 API v. 2.5.6 release 09.14.2000 16:33 Rev.Index 102 (J.Glassy)
+</MDI>
+        <MDI key="MOD15A2_FILLVALUE_DOC">MOD15A2 FILL VALUE LEGEND
+255 = _Fillvalue, assigned when:
+    * the MOD09GA suf. reflectance for channel VIS, NIR was assigned its _Fillvalue, or
+    * land cover pixel itself was assigned _Fillvalus 255 or 254.
+254 = land cover assigned as perennial salt or inland fresh water.
+253 = land cover assigned as barren, sparse vegetation (rock, tundra, desert.)
+252 = land cover assigned as perennial snow, ice.
+251 = land cover assigned as "permanent" wetlands/inundated marshlands.
+250 = land cover assigned as urban/built-up.
+249 = land cover assigned as "unclassified" or not able to determine.
+</MDI>
+        <MDI key="MOD15A2_FILLVALUE_DOC">MOD15A2 FILL VALUE LEGEND
+255 = _Fillvalue, assigned when:
+    * the MOD09GA suf. reflectance for channel VIS, NIR was assigned its _Fillvalue, or
+    * land cover pixel itself was assigned _Fillvalus 255 or 254.
+254 = land cover assigned as perennial salt or inland fresh water.
+253 = land cover assigned as barren, sparse vegetation (rock, tundra, desert.)
+252 = land cover assigned as perennial snow, ice.
+251 = land cover assigned as "permanent" wetlands/inundated marshlands.
+250 = land cover assigned as urban/built-up.
+249 = land cover assigned as "unclassified" or not able to determine.
+</MDI>
+        <MDI key="MOD15A2_FparExtra_QC_DOC">FparExtra_QC 6 BITFIELDS IN 8 BITWORD
+LANDSEA PASS-THROUGH START 0 END 1 VALIDS 4
+LANDSEA   00 = 0 LAND       AggrQC(3,5)values{001}
+LANDSEA   01 = 1 SHORE      AggrQC(3,5)values{000,010,100}
+LANDSEA   10 = 2 FRESHWATER AggrQC(3,5)values{011,101}
+LANDSEA   11 = 3 OCEAN      AggrQC(3,5)values{110,111}
+SNOW_ICE (from Aggregate_QC bits) START 2 END 2 VALIDS 2
+SNOW_ICE  0 = No snow/ice detected
+SNOW_ICE  1 = Snow/ice were detected
+AEROSOL START 3 END 3 VALIDS 2
+AEROSOL   0 = No or low atmospheric aerosol levels detected
+AEROSOL   1 = Average or high aerosol levels detected
+CIRRUS (from Aggregate_QC bits {8,9} ) START 4 END 4 VALIDS 2
+CIRRUS    0 = No cirrus detected
+CIRRUS    1 = Cirrus was detected
+INTERNAL_CLOUD_MASK START 5 END 5 VALIDS 2
+INTERNAL_CLOUD_MASK 0 = No clouds
+INTERNAL_CLOUD_MASK 1 = Clouds were detected
+CLOUD_SHADOW START 6 END 6 VALIDS 2
+CLOUD_SHADOW        0 = No cloud shadow detected
+CLOUD_SHADOW        1 = Cloud shadow detected
+SCF_BIOME_MASK START 7 END 7 VALIDS 2
+SCF_BIOME_MASK  0 = Biome outside interval &lt;1,4&gt;
+SCF_BIOME_MASK  1 = Biome in interval &lt;1,4&gt;
+</MDI>
+        <MDI key="MOD15A2_FparLai_QC_DOC">FparLai_QC 5 BITFIELDS IN 8 BITWORD
+MODLAND_QC START 0 END 0 VALIDS 2
+MODLAND_QC   0 = Good Quality (main algorithm with or without saturation)
+MODLAND_QC   1 = Other Quality (back-up algorithm or fill value)
+SENSOR START 1 END 1 VALIDS 2
+SENSOR       0  = Terra
+SENSOR       1  = Aqua
+DEADDETECTOR START 2 END 2 VALIDS 2
+DEADDETECTOR 0 = Detectors apparently fine for up to 50% of channels 1,2
+DEADDETECTOR 1 = Dead detectors caused &gt;50% adjacent detector retrieval
+CLOUDSTATE START 3 END 4 VALIDS 4 (this inherited from Aggregate_QC bits {0,1} cloud state)
+CLOUDSTATE   00 = 0 Significant clouds NOT present (clear)
+CLOUDSTATE   01 = 1 Significant clouds WERE present
+CLOUDSTATE   10 = 2 Mixed cloud present on pixel
+CLOUDSTATE   11 = 3 Cloud state not defined,assumed clear
+SCF_QC START 5 END 7 VALIDS 5
+SCF_QC       000=0 Main (RT) algorithm used, best result possible (no saturation)
+SCF_QC       001=1 Main (RT) algorithm used, saturation occured. Good, very usable.
+SCF_QC       010=2 Main algorithm failed due to bad geometry, empirical algorithm used
+SCF_QC       011=3 Main algorithm faild due to problems other than geometry, empirical algorithm used
+SCF_QC       100=4 Pixel not produced at all, value coudn't be retrieved (possible reasons: bad L1B data, unusable MOD09GA data)
+</MDI>
+        <MDI key="MOD15A2_StdDev_QC_DOC">MOD15A2 STANDARD DEVIATION FILL VALUE LEGEND
+255 = _Fillvalue, assigned when:
+    * the MOD09GA suf. reflectance for channel VIS, NIR was assigned its _Fillvalue, or
+    * land cover pixel itself was assigned _Fillvalus 255 or 254.
+254 = land cover assigned as perennial salt or inland fresh water.
+253 = land cover assigned as barren, sparse vegetation (rock, tundra, desert.)
+252 = land cover assigned as perennial snow, ice.
+251 = land cover assigned as "permanent" wetlands/inundated marshlands.
+250 = land cover assigned as urban/built-up.
+249 = land cover assigned as "unclassified" or not able to determine.
+248 = no standard deviation available, pixel produced using backup method.
+</MDI>
+        <MDI key="NADIRDATARESOLUTION500M">500m</MDI>
+        <MDI key="NDAYS_COMPOSITED">8</MDI>
+        <MDI key="NORTHBOUNDINGCOORDINATE">59.9999999946118</MDI>
+        <MDI key="NUMBEROFGRANULES">1</MDI>
+        <MDI key="PARAMETERNAME.1">MCDPR15A3H</MDI>
+        <MDI key="PGEVERSION">6.0.5</MDI>
+        <MDI key="PROCESSINGCENTER">MODAPS</MDI>
+        <MDI key="PROCESSINGENVIRONMENT">Linux minion6010 2.6.32-642.6.2.el6.x86_64 #1 SMP Wed Oct 26 06:52:09 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</MDI>
+        <MDI key="PRODUCTIONDATETIME">2017-02-22T10:13:27.000Z</MDI>
+        <MDI key="QAPERCENTCLOUDCOVER.1">12</MDI>
+        <MDI key="QAPERCENTEMPIRICALMODEL">30</MDI>
+        <MDI key="QAPERCENTGOODFPAR">70</MDI>
+        <MDI key="QAPERCENTGOODLAI">70</MDI>
+        <MDI key="QAPERCENTGOODQUALITY">70</MDI>
+        <MDI key="QAPERCENTINTERPOLATEDDATA.1">0</MDI>
+        <MDI key="QAPERCENTMAINMETHOD">70</MDI>
+        <MDI key="QAPERCENTMISSINGDATA.1">77</MDI>
+        <MDI key="QAPERCENTOTHERQUALITY">100</MDI>
+        <MDI key="QAPERCENTOUTOFBOUNDSDATA.1">77</MDI>
+        <MDI key="RANGEBEGINNINGDATE">2017-02-14</MDI>
+        <MDI key="RANGEBEGINNINGTIME">00:00:00</MDI>
+        <MDI key="RANGEENDINGDATE">2017-02-17</MDI>
+        <MDI key="RANGEENDINGTIME">23:59:59</MDI>
+        <MDI key="REPROCESSINGACTUAL">reprocessed</MDI>
+        <MDI key="REPROCESSINGPLANNED">further update is anticipated</MDI>
+        <MDI key="scale_factor">0.1</MDI>
+        <MDI key="scale_factor_err">0</MDI>
+        <MDI key="SCIENCEQUALITYFLAG.1">Not Investigated</MDI>
+        <MDI key="SCIENCEQUALITYFLAGEXPLANATION.1">See http://landweb.nascom/nasa.gov/cgi-bin/QA_WWW/qaFlagPage.cgi?sat=aqua the product Science Quality status.</MDI>
+        <MDI key="SHORTNAME">MCD15A3H</MDI>
+        <MDI key="SOUTHBOUNDINGCOORDINATE">49.9999999955098</MDI>
+        <MDI key="SPSOPARAMETERS">5367, 2680</MDI>
+        <MDI key="SYSTEMFILENAME">MYD15A1H.A2017048.h17v03.006.2017050060914.hdf, MYD15A1H.A2017047.h17v03.006.2017049094106.hdf, MYD15A1H.A2017046.h17v03.006.2017048064901.hdf, MYD15A1H.A2017045.h17v03.006.2017047060809.hdf, MOD15A1H.A2017048.h17v03.006.2017050103059.hdf, MOD15A1H.A2017047.h17v03.006.2017053100630.hdf, MOD15A1H.A2017046.h17v03.006.2017052201108.hdf, MOD15A1H.A2017045.h17v03.006.2017047102537.hdf</MDI>
+        <MDI key="TileID">51017003</MDI>
+        <MDI key="UM_VERSION">U.MONTANA MODIS PGE34 Vers 5.0.4 Rev 4 Release 10.18.2006 23:59</MDI>
+        <MDI key="units">m^2/m^2</MDI>
+        <MDI key="valid_range">0, 100</MDI>
+        <MDI key="VERSIONID">6</MDI>
+        <MDI key="VERTICALTILENUMBER">03</MDI>
+        <MDI key="WESTBOUNDINGCOORDINATE">-19.9999999949462</MDI>
+        <MDI key="_FillValue">255</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Description>MCD15A3H MODIS/Terra Gridded 500M Leaf Area Index LAI (4-day composite)</Description>
+        <Metadata>
+          <MDI key="STATISTICS_MAXIMUM">254</MDI>
+          <MDI key="STATISTICS_MEAN">197.5806692449</MDI>
+          <MDI key="STATISTICS_MINIMUM">0</MDI>
+          <MDI key="STATISTICS_STDDEV">103.87553463306</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+  <Subdataset name="MOD_Grid_MCD15A3H:FparLai_QC">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="ALGORITHMPACKAGEACCEPTANCEDATE">10-01-2004</MDI>
+        <MDI key="ALGORITHMPACKAGEMATURITYCODE">Normal</MDI>
+        <MDI key="ALGORITHMPACKAGENAME">MCDPR_15A3</MDI>
+        <MDI key="ALGORITHMPACKAGEVERSION">6</MDI>
+        <MDI key="ASSOCIATEDINSTRUMENTSHORTNAME.1">MODIS</MDI>
+        <MDI key="ASSOCIATEDINSTRUMENTSHORTNAME.2">MODIS</MDI>
+        <MDI key="ASSOCIATEDPLATFORMSHORTNAME.1">Terra</MDI>
+        <MDI key="ASSOCIATEDPLATFORMSHORTNAME.2">Aqua</MDI>
+        <MDI key="ASSOCIATEDSENSORSHORTNAME.1">MODIS</MDI>
+        <MDI key="ASSOCIATEDSENSORSHORTNAME.2">MODIS</MDI>
+        <MDI key="AUTOMATICQUALITYFLAG.1">Passed</MDI>
+        <MDI key="AUTOMATICQUALITYFLAGEXPLANATION.1">No automatic quality assessment is performed in the PGE</MDI>
+        <MDI key="CHARACTERISTICBINANGULARSIZE500M">15.0</MDI>
+        <MDI key="CHARACTERISTICBINSIZE500M">463.312716527778</MDI>
+        <MDI key="DATACOLUMNS500M">2400</MDI>
+        <MDI key="DATAROWS500M">2400</MDI>
+        <MDI key="DAYNIGHTFLAG">Day</MDI>
+        <MDI key="DESCRREVISION">6.0</MDI>
+        <MDI key="EASTBOUNDINGCOORDINATE">0.016666666662491</MDI>
+        <MDI key="ENGINEERING_DATA">(none-available)
+</MDI>
+        <MDI key="EXCLUSIONGRINGFLAG.1">N</MDI>
+        <MDI key="FparLai_QC_DOC">
+FparLai_QC 5 BITFIELDS IN 8 BITWORD
+MODLAND_QC START 0 END 0 VALIDS 2
+MODLAND_QC   0 = Good Quality (main algorithm with or without saturation)
+MODLAND_QC   1 = Other Quality (back-up algorithm or fill value)
+SENSOR START 1 END 1 VALIDS 2
+SENSOR       0  = Terra
+SENSOR       1  = Aqua
+DEADDETECTOR START 2 END 2 VALIDS 2
+DEADDETECTOR 0 = Detectors apparently fine for up to 50% of channels 1,2
+DEADDETECTOR 1 = Dead detectors caused &gt;50% adjacent detector retrieval
+CLOUDSTATE START 3 END 4 VALIDS 4 (this inherited from Aggregate_QC bits {0,1} cloud state)
+CLOUDSTATE   00 = 0 Significant clouds NOT present (clear)
+CLOUDSTATE   01 = 1 Significant clouds WERE present
+CLOUDSTATE   10 = 2 Mixed cloud present on pixel
+CLOUDSTATE   11 = 3 Cloud state not defined,assumed clear
+SCF_QC START 5 END 7 VALIDS 5
+SCF_QC       000=0 Main (RT) algorithm used, best result possible (no saturation)
+SCF_QC       001=1 Main (RT) algorithm used, saturation occured. Good, very usable.
+SCF_QC       010=2 Main algorithm failed due to bad geometry, empirical algorithm used
+SCF_QC       011=3 Main algorithm faild due to problems other than geometry, empirical algorithm used
+SCF_QC       100=4 Pixel not produced at all, value coudn't be retrieved (possible reasons: bad L1B data, unusable MOD09GA data)
+</MDI>
+        <MDI key="GEOANYABNORMAL">False</MDI>
+        <MDI key="GEOESTMAXRMSERROR">50.0</MDI>
+        <MDI key="GLOBALGRIDCOLUMNS500M">86400</MDI>
+        <MDI key="GLOBALGRIDROWS500M">43200</MDI>
+        <MDI key="GRANULEBEGINNINGDATETIME">2017-02-16T10:25:37.000Z</MDI>
+        <MDI key="GRANULEDAYNIGHTFLAG">Day</MDI>
+        <MDI key="GRANULEENDINGDATETIME">2017-02-16T10:25:37.000Z</MDI>
+        <MDI key="GRINGPOINTLATITUDE.1">49.7394264948349, 59.9999999946118, 60.0089388384779, 49.7424953501575</MDI>
+        <MDI key="GRINGPOINTLONGITUDE.1">-15.4860189105775, -19.9999999949462, 0.0325645816155362, 0.0125638874822839</MDI>
+        <MDI key="GRINGPOINTSEQUENCENO.1">1, 2, 3, 4</MDI>
+        <MDI key="HDFEOSVersion">HDFEOS_V2.17</MDI>
+        <MDI key="HORIZONTALTILENUMBER">17</MDI>
+        <MDI key="identifier_product_doi">10.5067/MODIS/MCD15A3H.006</MDI>
+        <MDI key="identifier_product_doi">10.5067/MODIS/MCD15A3H.006</MDI>
+        <MDI key="identifier_product_doi_authority">http://dx.doi.org</MDI>
+        <MDI key="identifier_product_doi_authority">http://dx.doi.org</MDI>
+        <MDI key="INPUTPOINTER">MYD15A1H.A2017048.h17v03.006.2017050060914.hdf, MYD15A1H.A2017047.h17v03.006.2017049094106.hdf, MYD15A1H.A2017046.h17v03.006.2017048064901.hdf, MYD15A1H.A2017045.h17v03.006.2017047060809.hdf, MOD15A1H.A2017048.h17v03.006.2017050103059.hdf, MOD15A1H.A2017047.h17v03.006.2017053100630.hdf, MOD15A1H.A2017046.h17v03.006.2017052201108.hdf, MOD15A1H.A2017045.h17v03.006.2017047102537.hdf, MCD15A3_ANC_RI4.hdf</MDI>
+        <MDI key="LOCALGRANULEID">MCD15A3H.A2017045.h17v03.006.2017053101326.hdf</MDI>
+        <MDI key="LOCALVERSIONID">5.0.4</MDI>
+        <MDI key="LONGNAME">MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500m SIN Grid</MDI>
+        <MDI key="long_name">MCD15A3H MODIS/Terra+Aqua QC for FPAR and LAI (4-day composite)</MDI>
+        <MDI key="MAXIMUMOBSERVATIONS500M">1</MDI>
+        <MDI key="MOD15A1_ANC_BUILD_CERT">mtAncUtil v. 1.8 Rel. 09.11.2000 17:36 API v. 2.5.6 release 09.14.2000 16:33 Rev.Index 102 (J.Glassy)
+</MDI>
+        <MDI key="MOD15A2_FILLVALUE_DOC">MOD15A2 FILL VALUE LEGEND
+255 = _Fillvalue, assigned when:
+    * the MOD09GA suf. reflectance for channel VIS, NIR was assigned its _Fillvalue, or
+    * land cover pixel itself was assigned _Fillvalus 255 or 254.
+254 = land cover assigned as perennial salt or inland fresh water.
+253 = land cover assigned as barren, sparse vegetation (rock, tundra, desert.)
+252 = land cover assigned as perennial snow, ice.
+251 = land cover assigned as "permanent" wetlands/inundated marshlands.
+250 = land cover assigned as urban/built-up.
+249 = land cover assigned as "unclassified" or not able to determine.
+</MDI>
+        <MDI key="MOD15A2_FparExtra_QC_DOC">
+FparExtra_QC 6 BITFIELDS IN 8 BITWORD
+LANDSEA PASS-THROUGH START 0 END 1 VALIDS 4
+LANDSEA   00 = 0 LAND       AggrQC(3,5)values{001}
+LANDSEA   01 = 1 SHORE      AggrQC(3,5)values{000,010,100}
+LANDSEA   10 = 2 FRESHWATER AggrQC(3,5)values{011,101}
+LANDSEA   11 = 3 OCEAN      AggrQC(3,5)values{110,111}
+SNOW_ICE (from Aggregate_QC bits) START 2 END 2 VALIDS 2
+SNOW_ICE  0 = No snow/ice detected
+SNOW_ICE  1 = Snow/ice were detected
+AEROSOL START 3 END 3 VALIDS 2
+AEROSOL   0 = No or low atmospheric aerosol levels detected
+AEROSOL   1 = Average or high aerosol levels detected
+CIRRUS (from Aggregate_QC bits {8,9} ) START 4 END 4 VALIDS 2
+CIRRUS    0 = No cirrus detected
+CIRRUS    1 = Cirrus was detected
+INTERNAL_CLOUD_MASK START 5 END 5 VALIDS 2
+INTERNAL_CLOUD_MASK 0 = No clouds
+INTERNAL_CLOUD_MASK 1 = Clouds were detected
+CLOUD_SHADOW START 6 END 6 VALIDS 2
+CLOUD_SHADOW        0 = No cloud shadow detected
+CLOUD_SHADOW        1 = Cloud shadow detected
+SCF_BIOME_MASK START 7 END 7 VALIDS 2
+SCF_BIOME_MASK  0 = Biome outside interval &lt;1,4&gt;
+SCF_BIOME_MASK  1 = Biome in interval &lt;1,4&gt;
+</MDI>
+        <MDI key="MOD15A2_FparLai_QC_DOC">
+FparLai_QC 5 BITFIELDS IN 8 BITWORD
+MODLAND_QC START 0 END 0 VALIDS 2
+MODLAND_QC   0 = Good Quality (main algorithm with or without saturation)
+MODLAND_QC   1 = Other Quality (back-up algorithm or fill value)
+SENSOR START 1 END 1 VALIDS 2
+SENSOR       0  = Terra
+SENSOR       1  = Aqua
+DEADDETECTOR START 2 END 2 VALIDS 2
+DEADDETECTOR 0 = Detectors apparently fine for up to 50% of channels 1,2
+DEADDETECTOR 1 = Dead detectors caused &gt;50% adjacent detector retrieval
+CLOUDSTATE START 3 END 4 VALIDS 4 (this inherited from Aggregate_QC bits {0,1} cloud state)
+CLOUDSTATE   00 = 0 Significant clouds NOT present (clear)
+CLOUDSTATE   01 = 1 Significant clouds WERE present
+CLOUDSTATE   10 = 2 Mixed cloud present on pixel
+CLOUDSTATE   11 = 3 Cloud state not defined,assumed clear
+SCF_QC START 5 END 7 VALIDS 5
+SCF_QC       000=0 Main (RT) algorithm used, best result possible (no saturation)
+SCF_QC       001=1 Main (RT) algorithm used, saturation occured. Good, very usable.
+SCF_QC       010=2 Main algorithm failed due to bad geometry, empirical algorithm used
+SCF_QC       011=3 Main algorithm faild due to problems other than geometry, empirical algorithm used
+SCF_QC       100=4 Pixel not produced at all, value coudn't be retrieved (possible reasons: bad L1B data, unusable MOD09GA data)
+</MDI>
+        <MDI key="MOD15A2_StdDev_QC_DOC">MOD15A2 STANDARD DEVIATION FILL VALUE LEGEND
+255 = _Fillvalue, assigned when:
+    * the MOD09GA suf. reflectance for channel VIS, NIR was assigned its _Fillvalue, or
+    * land cover pixel itself was assigned _Fillvalus 255 or 254.
+254 = land cover assigned as perennial salt or inland fresh water.
+253 = land cover assigned as barren, sparse vegetation (rock, tundra, desert.)
+252 = land cover assigned as perennial snow, ice.
+251 = land cover assigned as "permanent" wetlands/inundated marshlands.
+250 = land cover assigned as urban/built-up.
+249 = land cover assigned as "unclassified" or not able to determine.
+248 = no standard deviation available, pixel produced using backup method.
+</MDI>
+        <MDI key="NADIRDATARESOLUTION500M">500m</MDI>
+        <MDI key="NDAYS_COMPOSITED">8</MDI>
+        <MDI key="NORTHBOUNDINGCOORDINATE">59.9999999946118</MDI>
+        <MDI key="NUMBEROFGRANULES">1</MDI>
+        <MDI key="PARAMETERNAME.1">MCDPR15A3H</MDI>
+        <MDI key="PGEVERSION">6.0.5</MDI>
+        <MDI key="PROCESSINGCENTER">MODAPS</MDI>
+        <MDI key="PROCESSINGENVIRONMENT">Linux minion6010 2.6.32-642.6.2.el6.x86_64 #1 SMP Wed Oct 26 06:52:09 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</MDI>
+        <MDI key="PRODUCTIONDATETIME">2017-02-22T10:13:27.000Z</MDI>
+        <MDI key="QAPERCENTCLOUDCOVER.1">12</MDI>
+        <MDI key="QAPERCENTEMPIRICALMODEL">30</MDI>
+        <MDI key="QAPERCENTGOODFPAR">70</MDI>
+        <MDI key="QAPERCENTGOODLAI">70</MDI>
+        <MDI key="QAPERCENTGOODQUALITY">70</MDI>
+        <MDI key="QAPERCENTINTERPOLATEDDATA.1">0</MDI>
+        <MDI key="QAPERCENTMAINMETHOD">70</MDI>
+        <MDI key="QAPERCENTMISSINGDATA.1">77</MDI>
+        <MDI key="QAPERCENTOTHERQUALITY">100</MDI>
+        <MDI key="QAPERCENTOUTOFBOUNDSDATA.1">77</MDI>
+        <MDI key="RANGEBEGINNINGDATE">2017-02-14</MDI>
+        <MDI key="RANGEBEGINNINGTIME">00:00:00</MDI>
+        <MDI key="RANGEENDINGDATE">2017-02-17</MDI>
+        <MDI key="RANGEENDINGTIME">23:59:59</MDI>
+        <MDI key="REPROCESSINGACTUAL">reprocessed</MDI>
+        <MDI key="REPROCESSINGPLANNED">further update is anticipated</MDI>
+        <MDI key="SCIENCEQUALITYFLAG.1">Not Investigated</MDI>
+        <MDI key="SCIENCEQUALITYFLAGEXPLANATION.1">See http://landweb.nascom/nasa.gov/cgi-bin/QA_WWW/qaFlagPage.cgi?sat=aqua the product Science Quality status.</MDI>
+        <MDI key="SHORTNAME">MCD15A3H</MDI>
+        <MDI key="SOUTHBOUNDINGCOORDINATE">49.9999999955098</MDI>
+        <MDI key="SPSOPARAMETERS">5367, 2680</MDI>
+        <MDI key="SYSTEMFILENAME">MYD15A1H.A2017048.h17v03.006.2017050060914.hdf, MYD15A1H.A2017047.h17v03.006.2017049094106.hdf, MYD15A1H.A2017046.h17v03.006.2017048064901.hdf, MYD15A1H.A2017045.h17v03.006.2017047060809.hdf, MOD15A1H.A2017048.h17v03.006.2017050103059.hdf, MOD15A1H.A2017047.h17v03.006.2017053100630.hdf, MOD15A1H.A2017046.h17v03.006.2017052201108.hdf, MOD15A1H.A2017045.h17v03.006.2017047102537.hdf</MDI>
+        <MDI key="TileID">51017003</MDI>
+        <MDI key="UM_VERSION">U.MONTANA MODIS PGE34 Vers 5.0.4 Rev 4 Release 10.18.2006 23:59</MDI>
+        <MDI key="units">class-flag</MDI>
+        <MDI key="valid_range">0, 254</MDI>
+        <MDI key="VERSIONID">6</MDI>
+        <MDI key="VERTICALTILENUMBER">03</MDI>
+        <MDI key="WESTBOUNDINGCOORDINATE">-19.9999999949462</MDI>
+        <MDI key="_FillValue">255</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Description>MCD15A3H MODIS/Terra+Aqua QC for FPAR and LAI (4-day composite)</Description>
+        <Metadata>
+          <MDI key="STATISTICS_MAXIMUM">157</MDI>
+          <MDI key="STATISTICS_MEAN">128.76351493056</MDI>
+          <MDI key="STATISTICS_MINIMUM">0</MDI>
+          <MDI key="STATISTICS_STDDEV">55.617435975907</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+</PAMDataset>

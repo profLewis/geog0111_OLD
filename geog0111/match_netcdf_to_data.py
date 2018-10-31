@@ -3,9 +3,8 @@ import numpy as np
 from geog0111.process_timeseries import mosaic_and_clip
 
 def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
-                         country_code=country_code,shpfile=shpfile,\
+                         country_code='LU',shpfile="data/TM_WORLD_BORDERS-0.3.shp",\
                          nodata=-32767,frmat='GTiff',verbose=False):
-
     '''
     see :
     https://stackoverflow.com/questions/10454316/
@@ -43,7 +42,19 @@ def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
     src_geotrans = src.GetGeoTransform()
     nbands = src.RasterCount
     src_format = band1.DataType
-    
+   
+
+    # try to get the src projection 
+    src_proj = src.GetProjection ()
+
+    # if (when) we fail, tell it its wgs84
+    if len(src_proj) == 0:
+        # set up a spatial reference
+        # as wgs84 
+        wgs84 = osr.SpatialReference ()
+        wgs84.ImportFromEPSG ( 4326 )
+        src_proj = wgs84.ExportToWkt()
+ 
         
     if verbose: print(f'setting transform and projection info')
     if shpfile:
