@@ -46,20 +46,8 @@ def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
     src_geotrans = src.GetGeoTransform()
     nbands = src.RasterCount
     src_format = band1.DataType
-   
-
-    # try to get the src projection 
-    src_proj = src.GetProjection ()
-
-    # if (when) we fail, tell it its wgs84
-    if len(src_proj) == 0:
-        # set up a spatial reference
-        # as wgs84 
-        wgs84 = osr.SpatialReference ()
-        wgs84.ImportFromEPSG ( 4326 )
-        src_proj = wgs84.ExportToWkt()
- 
-        
+    src_proj = open('data/grb.wkt','r').readline()   
+    
     if verbose: print(f'setting transform and projection info')
     if shpfile:
         dst = gdal.GetDriverByName('MEM').Create(\

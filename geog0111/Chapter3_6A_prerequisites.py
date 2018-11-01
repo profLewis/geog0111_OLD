@@ -117,4 +117,39 @@ else: print(f'{ofile} exists')
 
 
 
+from osgeo import gdal
+import requests
+from pathlib import Path
+import numpy as np
 
+# download example grib file from
+url = "http://gribs2.gmn-usa.com/cgi-bin/" +\
+        "weather_fetch.pl?parameter=wind&days=7&region=Pacific&dataset=nww3"
+ofile = 'data/Pacific.wind.7days.grb'
+overwrite = False
+
+# get the example grib datafile
+# see
+# https://gis.stackexchange.com/questions/
+# 289314/using-gdal-to-read-data-from-grib-file-in-python
+output_fname = Path(ofile)
+with requests.Session() as session:
+    r1 = session.request('get',url)
+    if r1.url:
+        r2 = session.get(r1.url)
+        data = r2.content
+        d = 0
+        if overwrite or (not output_fname.exists()):  
+            with open(output_fname, 'wb') as fp:
+                d = fp.write(data)
+
+dataset = gdal.Open(path)
+wkt = dataset.GetProjection()
+with open('data/grb.wkt', 'w') as fp:
+    # write wkt to file
+    d = fp.write(wkt)
+    
+# test opening it
+wkt2 = open('data/grb.wkt','r').readlines()
+
+print(wkt2)
