@@ -55,7 +55,12 @@ data the next time you need it.
 
 If you have a slow network, you might set download=False
 '''
-country_code = 'UK'
+
+import sys
+if len(sys.argv) == 2:
+    country_code = sys.argv[1]
+else:
+    country_code = 'UK'
 year = 2017
 save = True
 download = True
@@ -143,7 +148,7 @@ with requests.Session() as session:
             with open(output_fname, 'wb') as fp:
                 d = fp.write(data)
 
-dataset = gdal.Open(path)
+dataset = gdal.Open(ofile)
 wkt = dataset.GetProjection()
 with open('data/grb.wkt', 'w') as fp:
     # write wkt to file
