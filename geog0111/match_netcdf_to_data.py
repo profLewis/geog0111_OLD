@@ -6,6 +6,7 @@ from datetime import datetime,timedelta
 
 
 def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
+                         xoff = 0, yoff = 40, \
                          country_code='LU',shpfile="data/TM_WORLD_BORDERS-0.3.shp",\
                          nodata=-32767,frmat='GTiff',verbose=False):
     '''
@@ -86,9 +87,24 @@ def match_netcdf_to_data(src_filename,match_filename,dst_filename,\
                     cutlineDSName=shpfile,
                     cutlineWhere=f"FIPS='{country_code:s}'",
                 cropToCutline=True)
+    xOrigin = match_geotrans[0]
+    yOrigin = match_geotrans[3]
+    pixelWidth = match_geotrans[1]
+    pixelHeight = match_geotrans[5]
+    # the +40 pixels in y is to reconcile gdal and cartoply
+    # it may be related to different ellispoids presumed
+    # It is likely to be different elsewhere but still a y-shift
+    # Its not important as we are using cartoply only to visiualise
+    extent = (xOrigin+xoff*pixelWidth,xOrigin+pixelWidth*(xoff+wide),\
+         yOrigin+pixelHeight*(high+yoff),yOrigin+yoff*pixelHeight)
+
+
+
     if verbose: print(f'writing to {dst_filename}')
     del dst # Flush
-    return(dst_filename)
+
+
+    return(extent)
 
 
 def calibrate_t2(dst_filename,meta):

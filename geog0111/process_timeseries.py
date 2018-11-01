@@ -48,6 +48,7 @@ def create_gdal_friendly_names(filenames, layer):
 def mosaic_and_clip(tiles,
                     doy,
                     year,
+                    ofolder=None,
                     folder="data/",
                     layer="Lai_500m",
                     shpfile="data/TM_WORLD_BORDERS-0.3.shp",
@@ -57,7 +58,13 @@ def mosaic_and_clip(tiles,
     #TODO docstring missing!!!!
     """
 
+    if ofolder == None:
+        ofolder = folder
     folder_path = Path(folder)
+    ofolder_path = Path(ofolder)
+    if not ofolder_path.exists():
+        ofolder_path.mkdir()
+
     # Find all files to mosaic together
     hdf_files = find_mcdfiles(year, doy, tiles, folder)
 
@@ -79,7 +86,7 @@ def mosaic_and_clip(tiles,
             raise RuntimeError(f'failed to warp {str(gdal_filenames)}')
     elif frmat == "GTiff":
         geotiff_fnamex = f"{layer:s}_{year:d}_{doy:03d}_{country_code:s}.tif"
-        geotiff_fname  = folder_path/geotiff_fnamex
+        geotiff_fname  = ofolder_path/geotiff_fnamex
         g = gdal.Warp(
             geotiff_fname.as_posix(),
             gdal_filenames,
@@ -100,6 +107,7 @@ def mosaic_and_clip(tiles,
 def process_single_date(tiles,
                     doy,
                     year,
+                    ofolder=None,
                     folder="data/",
                     shpfile="data/TM_WORLD_BORDERS-0.3.shp",
                     country_code="LU",
@@ -108,6 +116,7 @@ def process_single_date(tiles,
     lai_data = mosaic_and_clip(tiles,
                     doy,
                     year,
+                    ofolder=ofolder,
                     folder=folder,
                     layer="Lai_500m",
                     shpfile=shpfile,
@@ -118,6 +127,7 @@ def process_single_date(tiles,
     qa_data = mosaic_and_clip(tiles,
                     doy,
                     year,
+                    ofolder=ofolder,
                     folder=folder,
                     layer="FparLai_QC",
                     shpfile=shpfile,
@@ -133,6 +143,7 @@ from datetime import datetime, timedelta
 
 def process_timeseries(year,
                        tiles,
+                       ofolder=None,
                        folder="data/",
                        shpfile='data/TM_WORLD_BORDERS-0.3.shp',
                        country_code='LU',
@@ -151,6 +162,7 @@ def process_timeseries(year,
             tiles,
             doy,
             year,
+            ofolder=ofolder,
             folder=folder,
             shpfile=shpfile,
             country_code=country_code,
