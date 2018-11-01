@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 data/*.tif
+tmp/*
 data/*.grb
 *.py[cod]
 *$py.class
