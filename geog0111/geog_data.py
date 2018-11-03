@@ -74,7 +74,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                 break
         if not done:
            # maybe a modis dataset: try that
-           if(verbose): print("Testing to see if can download from NASA server")
+           if(verbose): print(f"Testing to see if can download {dataset_name} from NASA server")
            try:
                info = dataset_name.split('.')
                product = info[0]

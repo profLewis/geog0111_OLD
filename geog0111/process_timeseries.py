@@ -83,11 +83,12 @@ def mosaic_and_clip(tiles,
             data = g.ReadAsArray()
             return data
         else:
-            raise RuntimeError(f'failed to warp {str(gdal_filenames)}')
+            print(f'failed to warp {str(gdal_filenames)} {year}, {doy}, {tiles}, {folder}')
     elif frmat == "GTiff":
-        geotiff_fnamex = f"{layer:s}_{year:d}_{doy:03d}_{country_code:s}.tif"
-        geotiff_fname  = ofolder_path/geotiff_fnamex
-        g = gdal.Warp(
+        try:
+          geotiff_fnamex = f"{layer:s}_{year:d}_{doy:03d}_{country_code:s}.tif"
+          geotiff_fname  = ofolder_path/geotiff_fnamex
+          g = gdal.Warp(
             geotiff_fname.as_posix(),
             gdal_filenames,
             format=frmat,
@@ -95,13 +96,15 @@ def mosaic_and_clip(tiles,
             cutlineDSName=shpfile,
             cutlineWhere=f"FIPS='{country_code:s}'",
             cropToCutline=True)
+        except:
+          pass
         if g:
             del g
             return geotiff_fname.as_posix()
         else:
-            raise RuntimeError(f'failed to warp {str(gdal_filenames)}')
+            print(f'failed to warp {str(gdal_filenames)}  {year}, {doy}, {tiles}, {folder}')
     else:
-        raise ValueError("Only MEM or GTiff formats supported!")
+        print("Only MEM or GTiff formats supported!")
         
         
 def process_single_date(tiles,
@@ -112,8 +115,9 @@ def process_single_date(tiles,
                     shpfile="data/TM_WORLD_BORDERS-0.3.shp",
                     country_code="LU",
                     frmat="MEM"):
-    
-    lai_data = mosaic_and_clip(tiles,
+   
+    try: 
+      lai_data = mosaic_and_clip(tiles,
                     doy,
                     year,
                     ofolder=ofolder,
@@ -121,10 +125,12 @@ def process_single_date(tiles,
                     layer="Lai_500m",
                     shpfile=shpfile,
                     country_code=country_code,
-                    frmat="MEM")*0.1
-    # Note the scaling!
+                    frmat="MEM")
+      if lai_data != None:
+          lai_data *= 0.1
+      # Note the scaling!
     
-    qa_data = mosaic_and_clip(tiles,
+      qa_data = mosaic_and_clip(tiles,
                     doy,
                     year,
                     ofolder=ofolder,
@@ -133,10 +139,12 @@ def process_single_date(tiles,
                     shpfile=shpfile,
                     country_code=country_code,
                     frmat="MEM")
-    sfc_qa = get_sfc_qc(qa_data)
+      sfc_qa = get_sfc_qc(qa_data)
     
-    weights = get_scaling(sfc_qa)
-    return lai_data, weights
+      weights = get_scaling(sfc_qa)
+      return lai_data, weights
+    except:
+      return None,None
 
 from datetime import datetime, timedelta
 
@@ -153,12 +161,20 @@ def process_timeseries(year,
     dates = []
     for i in range(92):
         if (i%10 == 0) and verbose:
-            print(f"Doing {str(today):s}")
+            print(f"Testing {str(today):s}")
         if today.year != year:
             break
         doy = int(today.strftime("%j"))
 
-        this_lai, this_weight = process_single_date(
+        # try to pass back valid (zero) data
+        try:
+          lai_array = lai_array*0
+          weights_array = weights_array*0
+        except:
+          lai_array = None
+          weights_array = None
+        try:
+          this_lai, this_weight = process_single_date(
             tiles,
             doy,
             year,
@@ -167,13 +183,15 @@ def process_timeseries(year,
             shpfile=shpfile,
             country_code=country_code,
             frmat="MEM")
-        if doy == 1:
+          if doy == 1:
             # First day, create outputs!
             ny, nx = this_lai.shape
             lai_array = np.zeros((ny, nx, 92))
             weights_array = np.zeros((ny, nx, 92))
-        lai_array[:, :, i] = this_lai
-        weights_array[:, :, i] = this_weight
+          lai_array[:, :, i] = this_lai
+          weights_array[:, :, i] = this_weight
+        except:
+          pass
         dates.append(today)
         today = today + timedelta(days=4)
     return dates, lai_array, weights_array

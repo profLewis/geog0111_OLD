@@ -53,7 +53,7 @@ how-to-project-and-resample-a-grid-to-match-another-grid-with-gdal-python
 # first get an exemplar LAI file, clipped to
 # the required limits. We will use this to match  
 # the t2 dataset to
-match_filename = mosaic_and_clip(tiles,1,2017,ofolder='tmp',\
+match_filename = mosaic_and_clip(tiles,1,year,ofolder='tmp',\
                     country_code=country_code,shpfile=shpfile,frmat='GTiff')
 
 print(match_filename)
@@ -359,22 +359,23 @@ gaussian = np.exp((-(x/sigma)**2)/2.0)
 FIPS = country_code
 dates, lai_array, weights_array = lai['dates'],lai['lai'],lai['weights']
 print(lai_array.shape, weights_array.shape) #Check the output array shapes
+try:
+  numerator = scipy.ndimage.filters.convolve1d(lai_array * weights_array, gaussian, axis=2,mode='wrap')
+  denominator = scipy.ndimage.filters.convolve1d(weights_array, gaussian, axis=2,mode='wrap')
 
-numerator = scipy.ndimage.filters.convolve1d(lai_array * weights_array, gaussian, axis=2,mode='wrap')
-denominator = scipy.ndimage.filters.convolve1d(weights_array, gaussian, axis=2,mode='wrap')
+  # avoid divide by 0 problems by setting zero values
+  # of the denominator to not a number (NaN)
+  denominator[denominator==0] = np.nan
 
-# avoid divide by 0 problems by setting zero values
-# of the denominator to not a number (NaN)
-denominator[denominator==0] = np.nan
+  interpolated_lai = numerator/denominator
+  print(interpolated_lai.shape)
 
-interpolated_lai = numerator/denominator
-print(interpolated_lai.shape)
-
-# need to convert to dict to be able to assign
-lai = dict(lai)
-lai['interpolated_lai'] = interpolated_lai
-np.savez(ofile,**lai)
-
+  # need to convert to dict to be able to assign
+  lai = dict(lai)
+  lai['interpolated_lai'] = interpolated_lai
+  np.savez(ofile,**lai)
+except:
+  pass
 from geog0111.geog_data import procure_dataset
 import numpy as np
 from pathlib import Path
