@@ -95,8 +95,10 @@ from ecmwfapi import ECMWFDataServer
 from pathlib import Path
 from geog0111.geog_data import procure_dataset
 
-ofile = 'europe_data_2016_2017.nc'
-if not (Path('data')/ofile).exists():
+ecmwf_file = 'europe_data_2016_2017.nc'
+
+
+if not (Path('data')/ecmwf_file).exists():
     # try to get it from UCL servers
     done = procure_dataset(ofile,verbose=True)
     if not done:
@@ -116,9 +118,9 @@ if not (Path('data')/ofile).exists():
             "area": "75/-20/10/60",    # Subset or clip to an area, here to Europe. Specify as North/West/South/East in Geographic lat/long degrees. Southern latitudes and Western longitudes must be given as negative numbers.
             "grid": "0.25/0.25",        # Regrid from the default grid to a regular lat/lon with specified resolution. The first number is east-west resolution (longitude) and the second is north-south (latitude).
             "format": "netcdf",         # Convert the output file from the default GRIB format to NetCDF format. Requires "grid" to be set to a regular lat/lon grid.
-            "target": f"data/{ofile}",  # The output file name. Set this to whatever you like.
+            "target": f"data/{ecmwf_file}",  # The output file name. Set this to whatever you like.
         })
-else: print(f'{ofile} exists')
+else: print(f'{ecmwf_file} exists')
 
 
 
@@ -155,6 +157,68 @@ with open('data/grb.wkt', 'w') as fp:
     d = fp.write(wkt)
     
 # test opening it
-wkt2 = open('data/grb.wkt','r').readlines()
+wkt2 = open('data/grb.wkt','r').readline()
 
 print(wkt2)
+
+from osgeo import gdal
+import requests
+from pathlib import Path
+import numpy as np
+
+'''
+Get the SRS 6974 for MODIS
+'''
+
+url = 'http://spatialreference.org/ref/sr-org/6974/ogcwkt/'
+ofile = 'data/modis_6974.wkt'
+overwrite = False
+
+# http://spatialreference.org/ref/sr-org/6974
+output_fname = Path(ofile)
+with requests.Session() as session:
+    r1 = session.request('get',url)
+    if r1.url:
+        r2 = session.get(r1.url)
+        data = r2.text
+        d = 0
+        if overwrite or (not output_fname.exists()):  
+            with open(output_fname, 'w') as fp:
+                d = fp.write(data)
+
+# test opening it
+wkt2 = open(ofile,'r').readline()
+
+print(wkt2)
+
+import gdal
+from datetime import datetime,timedelta
+import numpy as np
+
+ifile = f'data/{ecmwf_file}'
+
+meta = gdal.Open(ifile).GetMetadata()
+# get time info
+timer = np.array([(datetime(1900,1,1) + timedelta(days=float(i)/24.)) \
+for i in meta['NETCDF_DIM_time_VALUES'][1:-1].split(',')])
+
+# pull the years info from ifile
+# if the file is multiple years eg europe_data_2010_2011.nc
+# then split it into multiple files
+years = np.array(Path(ifile).stem.split('_'))[2:].astype(int)
+
+# filter data for required year
+
+for year in years:
+    ofile = f'data/europe_data_{year}.nc'
+    mask = np.logical_and(timer >= datetime(year,1,1),timer <= datetime(year+1,1,1))
+    timer2 = timer[mask]
+    bands = ' '.join([f'-b {i}' for i in (np.where(mask)[0]+1)])    
+    timer3 = '{'+','.join(np.array(meta['NETCDF_DIM_time_VALUES'][1:-1].split(','))[mask])+'}'
+    timer4 = '{'+str(mask.sum())+',4}'
+    options = f"-of netcdf -unscale -ot Float32 {bands} -mo NETCDF_DIM_time_VALUES={timer3}" + \
+              f" -mo NETCDF_DIM_time_DEF={timer4} -a_srs data/grb.wkt"
+    gdal.Translate(ofile+'tmp',ifile,options=options)
+    Path(ofile+'tmp').replace(ofile)
+    print(ofile)
+
