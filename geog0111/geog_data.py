@@ -28,7 +28,7 @@ __email__ = "j.gomez-dans@ucl.ac.uk"
 
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     locations=["/data/selene/ucfajlg/geog0111_data/",\
-                               "/data/selene/ucfajlg/geog0111_data/lai_data/",\ 
+                               "/data/selene/ucfajlg/geog0111_data/lai_data/",\
                                "/archive/rsu_raid_0/plewis/public_html/geog0111_data"][::-1],\
                     modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
                                 'https://e4ftl01.cr.usgs.gov/MOLT',\
