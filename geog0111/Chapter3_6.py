@@ -4,7 +4,7 @@ year = 2017
 if len(sys.argv) == 3:
     country_code = sys.argv[1]
     year = int(sys.argv[2])
-if len(sys.argv) == 2:
+elif len(sys.argv) == 2:
     country_code = sys.argv[1]
 else:
     country_code = 'UK'

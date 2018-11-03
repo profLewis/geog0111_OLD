@@ -9,6 +9,17 @@ from datetime import datetime, timedelta
 # get the MODIS LAI dataset for 2016/2017 for W. Europe
 from geog0111.geog_data import procure_dataset
 from pathlib import Path
+import sys
+year = 2017
+if len(sys.argv) == 3:
+    country_code = sys.argv[1]
+    year = int(sys.argv[2])
+elif len(sys.argv) == 2:
+    country_code = sys.argv[1]
+else:
+    country_code = 'UK'
+
+print(sys.argv,year,country_code)
 
 files = list(Path('data').glob('MCD15A3H.A201[6-7]*h1[7-8]v0[3-4].006*hdf'))
 if len(files) < 732:
@@ -55,16 +66,6 @@ data the next time you need it.
 
 If you have a slow network, you might set download=False
 '''
-import sys
-year = 2017
-if len(sys.argv) == 3:
-    country_code = sys.argv[1]
-    year = int(sys.argv[2])
-if len(sys.argv) == 2:
-    country_code = sys.argv[1]
-else:
-    country_code = 'UK'
-
 save = True
 download = True
 
