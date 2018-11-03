@@ -28,6 +28,7 @@ __email__ = "j.gomez-dans@ucl.ac.uk"
 
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     locations=["/data/selene/ucfajlg/geog0111_data/",\
+                               "/data/selene/ucfajlg/geog0111_data/lai_data/",\ 
                                "/archive/rsu_raid_0/plewis/public_html/geog0111_data"][::-1],\
                     modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
                                 'https://e4ftl01.cr.usgs.gov/MOLT',\
@@ -37,7 +38,8 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                                 'https://n5eil01u.ecs.nsidc.org/MOSA/',\
                                 'https://n5eil01u.ecs.nsidc.org/VIIRS/'],\
                     urls=["http://www2.geog.ucl.ac.uk/~ucfajlg/geog0111_data/",\
-                          "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/"][::-1]):
+                          "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/",\
+                          "http://www2.geog.ucl.ac.uk/~plewis/geog0111_data/lai_files/"][::-1]):
 
     """Procure a Geog0111 dataset. This function will look for the dataset called
     `dataset_name`, and either provide symbolic links or download the relevant
