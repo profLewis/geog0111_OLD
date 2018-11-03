@@ -79,5 +79,5 @@ def match_netcdf_to_data(src_filename,match_filename,dst_filename,year,\
                     cutlineWhere=f"FIPS='{country_code:s}'",
                     cropToCutline=True)
     del dst
-    return(timer,dst_filename)
+    return(timer,dst_filename,extent)
 
