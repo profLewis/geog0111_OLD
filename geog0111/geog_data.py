@@ -25,7 +25,7 @@ __author__ = "J Gomez-Dans"
 __copyright__ = "Copyright 2018 J Gomez-Dans"
 __license__ = "GPLv3"
 __email__ = "j.gomez-dans@ucl.ac.uk"
-
+ 
 def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     locations=["/data/selene/ucfajlg/geog0111_data/",\
                                "/data/selene/ucfajlg/geog0111_data/lai_data/",\
