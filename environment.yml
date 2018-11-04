@@ -1,8 +1,10 @@
 name: geog0111
-channels:
+channels: 
     - conda-forge
     - anaconda
 dependencies:
+    - cython
+    - spyder
     - scp
     - lxml
     - requests
