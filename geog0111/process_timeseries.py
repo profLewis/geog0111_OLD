@@ -126,8 +126,8 @@ def process_single_date(tiles,
                     shpfile=shpfile,
                     country_code=country_code,
                     frmat="MEM")
-      if lai_data != None:
-          lai_data *= 0.1
+      if lai_data is not None:
+          lai_data = lai_data * 0.1
       # Note the scaling!
     
       qa_data = mosaic_and_clip(tiles,
@@ -161,7 +161,7 @@ def process_timeseries(year,
     dates = []
     for i in range(92):
         if (i%10 == 0) and verbose:
-            print(f"Testing {str(today):s}")
+            print(f"Looking for match to sample  {str(today):s}")
         if today.year != year:
             break
         doy = int(today.strftime("%j"))

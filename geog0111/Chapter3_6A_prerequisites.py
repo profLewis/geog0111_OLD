@@ -84,7 +84,7 @@ if ofile.exists():
 # try to download it from server
 if download:
     done = procure_dataset(fname,verbose=True)
-    
+
 if not done:
     # else generate it
     dates, lai_array, weights_array = process_timeseries(year,tiles,\

@@ -66,15 +66,15 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
             if done:
                 break
     else:
-        if(verbose): print("Running outside UCL Geography. Will try to download data. This might take a while!")
+        if(verbose): print("Running outside UCL Geography. Will try to download data.\n',\
+                            dataset_name,'\nThis might take a while!")
         for url in list(urls):
             if(verbose): print(f'trying {url}')
             done=download_data(dataset_name, url, verbose=verbose,destination_folder=destination_folder)
             if done:
                 break
         if not done:
-           # maybe a modis dataset: try that
-           if(verbose): print(f"Testing to see if can download {dataset_name} from NASA server")
+           # maybe a modis dataset: try that if its an hdf
            try:
                info = dataset_name.split('.')
                product = info[0]
@@ -82,15 +82,17 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                version = int(info[3])
                year = int(info[1][1:5])
                doy = int(info[1][5:])
-               for url in modis_urls:
-                   try:
-                       filename = get_modis_files(doy,year,[tile],base_url=url,\
+               dtype = info[-1]
+               if dtype in ['hdf','tif']:
+                   for url in modis_urls:
+                       try:
+                           filename = get_modis_files(doy,year,[tile],base_url=url,\
                                            version=version,\
                                            destination_folder=destination_folder,\
                                            product=product)[0]
-                       done = True
-                   except:
-                       pass
+                           done = True
+                       except:
+                           pass
            except:
                pass
     return(done)           
@@ -148,9 +150,13 @@ def download_data(dataset_name, url, destination_folder, verbose=True):
         except:
             return(False)
 
-
+    if (verbose):
+        print(f'Now looking into {url:s}/{dataset_name:s}:')
     soup = BeautifulSoup(resp, "lxml",
                          from_encoding=resp.info().get_param('charset'))
+
+    # this approach tries all the links if finds
+    # at the url  
 
     for pos, link in enumerate(soup.find_all('a', href=True)):
         try:
