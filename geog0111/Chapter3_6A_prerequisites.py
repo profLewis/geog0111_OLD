@@ -68,6 +68,10 @@ If you have a slow network, you might set download=False
 '''
 save = True
 download = True
+# want sigma as low as we can deal with, whilst 
+# still interpolating effectively
+sigma = 3
+
 
 tiles = []
 for h in [17, 18]:
@@ -85,13 +89,40 @@ if ofile.exists():
 if download:
     done = procure_dataset(fname,verbose=True)
 
+import scipy
+import scipy.ndimage.filters
+
 if not done:
     # else generate it
     dates, lai_array, weights_array = process_timeseries(year,tiles,\
                                                      country_code=country_code)
     lai = {'dates':dates, 'lai':lai_array, 'weights':weights_array}
+    # set up filter
+    x = np.arange(-3*sigma,3*sigma+1)
+    gaussian = np.exp((-(x/sigma)**2)/2.0)
+
+    FIPS = country_code
+    dates, lai_array, weights_array = lai['dates'],lai['lai'],lai['weights']
+    print(lai_array.shape, weights_array.shape) #Check the output array shapes
+    print('interpolating ...')
+    numerator = scipy.ndimage.filters.convolve1d(lai_array * weights_array, gaussian, axis=2,mode='wrap')
+    denominator = scipy.ndimage.filters.convolve1d(weights_array, gaussian, axis=2,mode='wrap')
+
+    # avoid divide by 0 problems by setting zero values
+    # of the denominator to not a number (NaN)
+    denominator[denominator==0] = np.nan
+
+    interpolated_lai = numerator/denominator
+    print(interpolated_lai.shape)
+
+    # need to convert to dict to be able to assign
+    lai['interpolated_lai'] = interpolated_lai
+    print('saving ...')
+
+
+
     if save:
-        np.savez(ofile,**lai)
+        np.savez_compressed(ofile,**lai)
 
 # Get the 2t dataset from ECMWF for Europe
 
@@ -100,6 +131,11 @@ from pathlib import Path
 from geog0111.geog_data import procure_dataset
 
 ecmwf_file = 'europe_data_2016_2017.nc'
+
+# pull the years info from ifile
+# if the file is multiple years eg europe_data_2010_2011.nc
+# then split it into multiple files
+years = np.array(Path(ecmwf_file).stem.split('_'))[2:].astype(int)
 
 
 if not (Path('data')/ecmwf_file).exists():
@@ -111,13 +147,13 @@ if not (Path('data')/ecmwf_file).exists():
         server.retrieve({
             "class": "ei",
             "dataset": "interim",
-            "date": "2016-01-01/to/2017-12-31", # Time period
+            "date": f"{years[0]}-01-01/to/{years[1]+1}-01-01", # Time period
             "expver": "1",
             "levtype": "sfc",
             "param": "2t",           # Parameters. Here we use 2m Temperature (2t)  See the ECMWF parameter database, at http://apps.ecmwf.int/codes/grib/param-db
             "stream": "oper",
             "type": "an",
-            "time": "12",
+            "time": "00/60/12/18",
             "step": "0",
             "area": "75/-20/10/60",    # Subset or clip to an area, here to Europe. Specify as North/West/South/East in Geographic lat/long degrees. Southern latitudes and Western longitudes must be given as negative numbers.
             "grid": "0.25/0.25",        # Regrid from the default grid to a regular lat/lon with specified resolution. The first number is east-west resolution (longitude) and the second is north-south (latitude).
@@ -144,21 +180,23 @@ overwrite = False
 # https://gis.stackexchange.com/questions/
 # 289314/using-gdal-to-read-data-from-grib-file-in-python
 output_fname = Path(ofile)
-with requests.Session() as session:
-    r1 = session.request('get',url)
-    if r1.url:
-        r2 = session.get(r1.url)
-        data = r2.content
-        d = 0
-        if overwrite or (not output_fname.exists()):  
+if (not Path('data/grb.wkt').exists()) or \
+    (not output_fname.exists()) or overwrite:
+
+    with requests.Session() as session:
+        r1 = session.request('get',url)
+        if r1.url:
+            r2 = session.get(r1.url)
+            data = r2.content
+            d = 0
             with open(output_fname, 'wb') as fp:
                 d = fp.write(data)
 
-dataset = gdal.Open(ofile)
-wkt = dataset.GetProjection()
-with open('data/grb.wkt', 'w') as fp:
-    # write wkt to file
-    d = fp.write(wkt)
+    dataset = gdal.Open(ofile)
+    wkt = dataset.GetProjection()
+    with open('data/grb.wkt', 'w') as fp:
+        # write wkt to file
+        d = fp.write(wkt)
     
 # test opening it
 wkt2 = open('data/grb.wkt','r').readline()
@@ -180,20 +218,22 @@ overwrite = False
 
 # http://spatialreference.org/ref/sr-org/6974
 output_fname = Path(ofile)
-with requests.Session() as session:
-    r1 = session.request('get',url)
-    if r1.url:
-        r2 = session.get(r1.url)
-        data = r2.text
-        d = 0
-        if overwrite or (not output_fname.exists()):  
-            with open(output_fname, 'w') as fp:
-                d = fp.write(data)
+
+if overwrite or (not output_fname.exists()):
+    with requests.Session() as session:
+        r1 = session.request('get',url)
+        if r1.url:
+            r2 = session.get(r1.url)
+            data = r2.text
+            d = 0
+            if overwrite or (not output_fname.exists()):  
+                with open(output_fname, 'w') as fp:
+                    d = fp.write(data)
 
 # test opening it
 wkt2 = open(ofile,'r').readline()
 
-print(wkt2)
+print(f'Refreshing nc file {ecmwf_file}')
 
 import gdal
 from datetime import datetime,timedelta
@@ -205,11 +245,6 @@ meta = gdal.Open(ifile).GetMetadata()
 # get time info
 timer = np.array([(datetime(1900,1,1) + timedelta(days=float(i)/24.)) \
 for i in meta['NETCDF_DIM_time_VALUES'][1:-1].split(',')])
-
-# pull the years info from ifile
-# if the file is multiple years eg europe_data_2010_2011.nc
-# then split it into multiple files
-years = np.array(Path(ifile).stem.split('_'))[2:].astype(int)
 
 # filter data for required year
 

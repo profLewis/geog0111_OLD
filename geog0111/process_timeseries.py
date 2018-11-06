@@ -84,6 +84,25 @@ def mosaic_and_clip(tiles,
             return data
         else:
             print(f'failed to warp {str(gdal_filenames)} {year}, {doy}, {tiles}, {folder}')
+    elif frmat == "VRT":
+
+        try:
+          geotiff_fnamex = f"{layer:s}_{year:d}_{doy:03d}_{country_code:s}.vrt"
+          geotiff_fname  = ofolder_path/geotiff_fnamex
+          g = gdal.Warp(
+            geotiff_fname.as_posix(),
+            gdal_filenames,
+            format=frmat,
+            dstNodata=255,
+            cutlineDSName=shpfile,
+            cutlineWhere=f"FIPS='{country_code:s}'",
+            cropToCutline=True)
+        except:
+          pass
+        if g:
+            del g
+            return geotiff_fname.as_posix()
+
     elif frmat == "GTiff":
         try:
           geotiff_fnamex = f"{layer:s}_{year:d}_{doy:03d}_{country_code:s}.tif"
@@ -104,7 +123,7 @@ def mosaic_and_clip(tiles,
         else:
             print(f'failed to warp {str(gdal_filenames)}  {year}, {doy}, {tiles}, {folder}')
     else:
-        print("Only MEM or GTiff formats supported!")
+        print("Only MEM, VRT or GTiff formats supported!")
         
         
 def process_single_date(tiles,
@@ -155,6 +174,7 @@ def process_timeseries(year,
                        folder="data/",
                        shpfile='data/TM_WORLD_BORDERS-0.3.shp',
                        country_code='LU',
+                       frmat="MEM",
                        verbose=True):
 
     today = datetime(year, 1, 1)
@@ -166,32 +186,33 @@ def process_timeseries(year,
             break
         doy = int(today.strftime("%j"))
 
-        # try to pass back valid (zero) data
-        try:
-          lai_array = lai_array*0
-          weights_array = weights_array*0
-        except:
-          lai_array = None
-          weights_array = None
-        try:
-          this_lai, this_weight = process_single_date(
-            tiles,
-            doy,
-            year,
-            ofolder=ofolder,
-            folder=folder,
-            shpfile=shpfile,
-            country_code=country_code,
-            frmat="MEM")
-          if doy == 1:
-            # First day, create outputs!
-            ny, nx = this_lai.shape
-            lai_array = np.zeros((ny, nx, 92))
-            weights_array = np.zeros((ny, nx, 92))
-          lai_array[:, :, i] = this_lai
-          weights_array[:, :, i] = this_weight
-        except:
-          pass
+        if frmat=="MEM":
+          # try to pass back valid (zero) data
+          try:
+            lai_array = lai_array*0
+            weights_array = weights_array*0
+          except:
+            lai_array = None
+            weights_array = None
+          try:
+            this_lai, this_weight = process_single_date(
+              tiles,
+              doy,
+              year,
+              ofolder=ofolder,
+              folder=folder,
+              shpfile=shpfile,
+              country_code=country_code,
+              frmat=frmat)
+            if doy == 1:
+              # First day, create outputs!
+              ny, nx = this_lai.shape
+              lai_array = np.zeros((ny, nx, 92))
+              weights_array = np.zeros((ny, nx, 92))
+            lai_array[:, :, i] = this_lai
+            weights_array[:, :, i] = this_weight
+          except:
+            pass
         dates.append(today)
         today = today + timedelta(days=4)
     return dates, lai_array, weights_array
