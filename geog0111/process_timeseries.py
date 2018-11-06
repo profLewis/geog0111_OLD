@@ -148,7 +148,8 @@ def process_single_date(tiles,
       if lai_data is not None:
           lai_data = lai_data * 0.1
       # Note the scaling!
-    
+      else:
+          return None,None 
       qa_data = mosaic_and_clip(tiles,
                     doy,
                     year,
@@ -179,6 +180,7 @@ def process_timeseries(year,
 
     today = datetime(year, 1, 1)
     dates = []
+    lai_array = None
     for i in range(92):
         if (i%10 == 0) and verbose:
             print(f"Looking for match to sample  {str(today):s}")
@@ -187,13 +189,6 @@ def process_timeseries(year,
         doy = int(today.strftime("%j"))
 
         if frmat=="MEM":
-          # try to pass back valid (zero) data
-          try:
-            lai_array = lai_array*0
-            weights_array = weights_array*0
-          except:
-            lai_array = None
-            weights_array = None
           try:
             this_lai, this_weight = process_single_date(
               tiles,
@@ -204,13 +199,15 @@ def process_timeseries(year,
               shpfile=shpfile,
               country_code=country_code,
               frmat=frmat)
-            if doy == 1:
-              # First day, create outputs!
-              ny, nx = this_lai.shape
-              lai_array = np.zeros((ny, nx, 92))
-              weights_array = np.zeros((ny, nx, 92))
-            lai_array[:, :, i] = this_lai
-            weights_array[:, :, i] = this_weight
+            if this_lai is not None:
+              if verbose == 2: print(doy,np.median(this_lai[this_lai<25.5])) 
+              if lai_array is None:
+                # First day, create outputs!
+                ny, nx = this_lai.shape
+                lai_array = np.zeros((ny, nx, 92))
+                weights_array = np.zeros((ny, nx, 92))
+              lai_array[:, :, i] = this_lai
+              weights_array[:, :, i] = this_weight
           except:
             pass
         dates.append(today)

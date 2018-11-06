@@ -18,6 +18,7 @@ elif len(sys.argv) == 2:
     country_code = sys.argv[1]
 else:
     country_code = 'UK'
+verbose = True
 
 print(sys.argv,year,country_code)
 
@@ -58,7 +59,7 @@ if force or not Path(shape_file).exists():
 from geog0111.process_timeseries import process_timeseries
 '''
 Note, the saved npz file can be quite large
-e.g. 8.1 G for France.
+e.g. 8.1 G for France uncompressed, so we use compression.
 
 You can override saving it by setting save = False
 but if it is saved, it will be faster to access
@@ -91,12 +92,15 @@ if download:
 
 import scipy
 import scipy.ndimage.filters
-
 if not done:
     # else generate it
     dates, lai_array, weights_array = process_timeseries(year,tiles,\
                                                      country_code=country_code)
     lai = {'dates':dates, 'lai':lai_array, 'weights':weights_array}
+    if verbose: 
+        print(np.nanmean(lai_array))
+        print(np.nanmean(weights_array))
+
     # set up filter
     x = np.arange(-3*sigma,3*sigma+1)
     gaussian = np.exp((-(x/sigma)**2)/2.0)

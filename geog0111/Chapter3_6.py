@@ -285,24 +285,6 @@ FIPS = country_code
 dates, lai_array, weights_array = lai['dates'],lai['lai'],lai['weights']
 print(lai_array.shape, weights_array.shape) #Check the output array shapes
 
-if not 'interpolated_lai' in list[dict(lai).keys()] or force:
-  try:
-    numerator = scipy.ndimage.filters.convolve1d(lai_array * weights_array, gaussian, axis=2,mode='wrap')
-    denominator = scipy.ndimage.filters.convolve1d(weights_array, gaussian, axis=2,mode='wrap')
-
-    # avoid divide by 0 problems by setting zero values
-    # of the denominator to not a number (NaN)
-    denominator[denominator==0] = np.nan
-
-    interpolated_lai = numerator/denominator
-    print(interpolated_lai.shape)
-
-    # need to convert to dict to be able to assign
-    lai = dict(lai)
-    lai['interpolated_lai'] = interpolated_lai
-    np.savez_compressed(ofile,**lai)
-  except:
-    pass
 from geog0111.geog_data import procure_dataset
 import numpy as np
 from pathlib import Path

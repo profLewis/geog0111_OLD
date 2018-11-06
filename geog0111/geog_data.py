@@ -66,8 +66,8 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
             if done:
                 break
     else:
-        if(verbose): print("Running outside UCL Geography. Will try to download data.\n',\
-                            dataset_name,'\nThis might take a while!")
+        if(verbose): print("Running outside UCL Geography. Will try to download data.\n",\
+                            dataset_name,"\nThis might take a while!")
         for url in list(urls):
             if(verbose): print(f'trying {url}')
             done=download_data(dataset_name, url, verbose=verbose,destination_folder=destination_folder)
