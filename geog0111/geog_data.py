@@ -33,6 +33,7 @@ def procure_dataset(dataset_name, destination_folder="data",verbose=False,
                     modis_urls=['https://e4ftl01.cr.usgs.gov/MOTA',\
                                 'https://e4ftl01.cr.usgs.gov/MOLT',\
                                 'https://e4ftl01.cr.usgs.gov/MOLA',\
+                                'https://e4ftl01.cr.usgs.gov//MODV6_Cmp_C/MOTA/',\
                                 'https://e4ftl01.cr.usgs.gov/VIIRS',\
                                 'https://n5eil01u.ecs.nsidc.org/MOST/',\
                                 'https://n5eil01u.ecs.nsidc.org/MOSA/',\

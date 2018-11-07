@@ -19,26 +19,31 @@ def get_scaling(sfc_qa, golden_ratio=0.61803398875):
     return weight
 
 
-def find_mcdfiles(year, doy, tiles, folder):
+def find_mcdfiles(year, doy, tiles, folder, product='MCD15A3H'):
     data_folder = Path(folder)
     # Find all MCD files
     mcd_files = []
     for tile in tiles:
         sel_files = data_folder.glob(
-            f"MCD15*.A{year:d}{doy:03d}.{tile:s}.*hdf")
+            f"{product}.A{year:d}{doy:03d}.{tile:s}.*hdf")
         for fich in sel_files:
             mcd_files.append(fich)
     return mcd_files
 
 
-def create_gdal_friendly_names(filenames, layer):
+def create_gdal_friendly_names(filenames, layer, product='MCD15A3H'):
+
+    if product == 'MCD15A3H':
+        grid = 'MOD_Grid_MCD15A3H'
+    else:
+        grid = product
 
     # Create GDAL friendly-names...
     gdal_filenames = []
     for file_name in filenames:
         fname = f'HDF4_EOS:EOS_GRID:'+\
                     f'"{file_name.as_posix()}":'+\
-                    f'MOD_Grid_MCD15A3H:{layer:s}'
+                    f'{grid}:{layer:s}'
 
         gdal_filenames.append(fname)
     return gdal_filenames
@@ -53,6 +58,7 @@ def mosaic_and_clip(tiles,
                     layer="Lai_500m",
                     shpfile="data/TM_WORLD_BORDERS-0.3.shp",
                     country_code="LU",
+                    product='MCD15A3H',
                     frmat="MEM"):
     """
     #TODO docstring missing!!!!
@@ -66,10 +72,10 @@ def mosaic_and_clip(tiles,
         ofolder_path.mkdir()
 
     # Find all files to mosaic together
-    hdf_files = find_mcdfiles(year, doy, tiles, folder)
+    hdf_files = find_mcdfiles(year, doy, tiles, folder,product=product)
 
     # Create GDAL friendly-names...
-    gdal_filenames = create_gdal_friendly_names(hdf_files, layer)
+    gdal_filenames = create_gdal_friendly_names(hdf_files, layer, product=product)
     if frmat == "MEM":
         g = gdal.Warp(
             "",
