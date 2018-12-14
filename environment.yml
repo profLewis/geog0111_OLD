@@ -1,21 +1,15 @@
 name: geog0111
 channels: 
     - conda-forge
-    - anaconda
 dependencies:
     - numpy
     - beautifulsoup4
     - lxml
     - cryptography
     - python>=3.6
-    - ipython
     - numpy 
     - scipy
     - matplotlib 
     - gdal>2.2
     - pandas  
-    - scikit-learn 
-    - scikit-image 
-    - cartopy
-    - pip:
-      - requests
+    - requests
