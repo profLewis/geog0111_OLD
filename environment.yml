@@ -17,5 +17,5 @@ dependencies:
     - scikit-learn 
     - scikit-image 
     - cartopy
-    - pip
+    - pip:
       - requests
