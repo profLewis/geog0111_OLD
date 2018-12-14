@@ -3,47 +3,19 @@ channels:
     - conda-forge
     - anaconda
 dependencies:
-    - cython
-    - spyder
-    - scp
-    - lxml
-    - requests
     - numpy
-    - cryptography
     - beautifulsoup4
+    - lxml
+    - cryptography
     - python>=3.6
     - ipython
     - numpy 
     - scipy
     - matplotlib 
-    - ncurses
     - gdal>2.2
     - pandas  
-    - fiona
-    - rasterio 
-    - jupyter_contrib_nbextensions 
-    - jupyter_latex_envs 
-    - jupyter_nbextensions_configurator 
-    - jupyterlab 
-    - jupyterlab_launcher
-    - ipyleaflet 
     - scikit-learn 
     - scikit-image 
-    - geopandas 
-    - sphinx 
-    - pandoc 
-    - seaborn 
-    - shapely 
-    - spyder 
-    - statsmodels 
-    - xarray 
-    - pyephem 
-    - requests 
-    - pep8 
-    - pyflakes 
-    - autopep8 
-    - yapf
-    - anaconda-client
-    - anaconda-navigator
-    - conda-build
     - cartopy
+    - pip
+      - requests
