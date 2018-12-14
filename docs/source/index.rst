@@ -8,10 +8,16 @@ Welcome to geog0111: Scientific Computing
 UCL Geography: Level 7 course, Scientific Computing
  
 |image0|
- 
-`Go to Binder version`_
 
-`index`_
+Online Notebooks via Binder:
+----------------------------
+ 
+Run the notebooks on Binder server directly by click on different chaper, it may take 
+some time to start but just wait a bit....
+
+`Go to full list of notebooks`_
+
+Go to individual chapter:
 
 `Chapter0_help`_
 
@@ -158,6 +164,39 @@ Python
 `Python`_ is a high level programming language that is freely available,
 elatively easy to learn and portable acros
  
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   Chapter0_help.rst
+   Chapter1_Python_introduction_answers.rst
+   Chapter1_Python_introduction.rst
+   Chapter2_Numpy_matplotlib_answers.rst
+   Chapter2_Numpy_matplotlib.rst
+   Chapter3_0_GDAL.rst
+   Chapter3_1_GDAL_answers.rst
+   Chapter3_1_GDAL.rst
+   Chapter3_2_MODIS_download_answers.rst
+   Chapter3_2_MODIS_download.rst
+   Chapter3_3_GDAL_masking.rst
+   Chapter3_4a_GDAL_stacking_and_interpolating-convolution.rst
+   Chapter3_4_GDAL_stacking_and_interpolating.rst
+   Chapter3_5_Movies.rst
+   Chapter3_6A_GDAL_Reconciling_projections_prerequisites.rst
+   Chapter3_6_GDAL_Reconciling_projections.rst
+   Chapter4_Practical_Part1.rst
+   Chapter5_Linear_models.rst
+   Chapter5_Modelling_and_optimisation.rst
+   Chapter6_NonLinear_Model_Fitting.rst
+   Chapter6_NonLinear_Model_Fitting_Solutions.rst
+   Chapter7_FittingPhenologyModels.rst
+   Chapter7_FittingPhenologyModels_Solutions.rst
+   Chapter8_Practical_Part2.rst
+   Chapter9_Fire_and_Teleconnections.rst
+   Chapter9_Fire_and_Teleconnections_Solution.rst
+   Connection.rst
+
 .. _Go to Binder version: https://mybinder.org/v2/gh/profLewis/geog0111.git/master
 .. _Chapter0_help: https://mybinder.org/v2/gh/profLewis/geog0111.git/master?filepath=Chapter0_help.ipynb
 .. _Chapter1_Python_introduction: https://mybinder.org/v2/gh/profLewis/geog0111.git/master?filepath=Chapter1_Python_introduction.ipynb
@@ -200,38 +239,6 @@ elatively easy to learn and portable acros
 .. _Python: http://www.python.org/
 
 .. |image0| image:: images/ucl_logo.png     
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-    Chapter0_help.rst
-    Chapter1_Python_introduction_answers.rst
-    Chapter1_Python_introduction.rst
-    Chapter2_Numpy_matplotlib_answers.rst
-    Chapter2_Numpy_matplotlib.rst
-    Chapter3_0_GDAL.rst
-    Chapter3_1_GDAL_answers.rst
-    Chapter3_1_GDAL.rst
-    Chapter3_2_MODIS_download_answers.rst
-    Chapter3_2_MODIS_download.rst
-    Chapter3_3_GDAL_masking.rst
-    Chapter3_4a_GDAL_stacking_and_interpolating-convolution.rst
-    Chapter3_4_GDAL_stacking_and_interpolating.rst
-    Chapter3_5_Movies.rst
-    Chapter3_6A_GDAL_Reconciling_projections_prerequisites.rst
-    Chapter3_6_GDAL_Reconciling_projections.rst
-    Chapter4_Practical_Part1.rst
-    Chapter5_Linear_models.rst
-    Chapter5_Modelling_and_optimisation.rst
-    Chapter6_NonLinear_Model_Fitting.rst
-    Chapter6_NonLinear_Model_Fitting_Solutions.rst
-    Chapter7_FittingPhenologyModels.rst
-    Chapter7_FittingPhenologyModels_Solutions.rst
-    Chapter8_Practical_Part2.rst
-    Chapter9_Fire_and_Teleconnections.rst
-    Chapter9_Fire_and_Teleconnections_Solution.rst
-    Connection.rst
-
 Indices and tables
 ==================
 
