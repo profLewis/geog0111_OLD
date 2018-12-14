@@ -33,7 +33,7 @@ f this code has received funding from the European Union’s Horizon 2020 resear
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+    Introduction.rst
     Chapter0_help.rst
     Chapter1_Python_introduction_answers.rst
     Chapter1_Python_introduction.rst
