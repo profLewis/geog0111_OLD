@@ -330,7 +330,7 @@ hitting the keys (‘typing’) and at the same time.
 -  Try running the code block below
 -  Explain what happened (‘what the computer did’)
 
-.. code:: ipython3
+.. code:: python
 
     # Hello world
 
@@ -344,7 +344,7 @@ You can also use text blocks (contained in quotes) to contain comments,
 but note that if it is the last statement in the code, the text block
 may be printed out to the terminal.
 
-.. code:: ipython3
+.. code:: python
 
     # single line text
     'hello world is not printed'
@@ -373,7 +373,7 @@ may be printed out to the terminal.
 
 -  What does the ``\n`` mean/do?
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -412,7 +412,7 @@ of a new line.
 To print some statement (by default, to the screen you are using), use
 the ``print`` method:
 
-.. code:: ipython3
+.. code:: python
 
     print('hello world')
 
@@ -422,7 +422,7 @@ the ``print`` method:
     hello world
 
 
-.. code:: ipython3
+.. code:: python
 
     print('hello','world')
 
@@ -444,7 +444,7 @@ string you want printed) enclosed in the function’s (round) brackets.
 -  Add some comments to the code block explaining what you have done and
    seen.
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -475,7 +475,7 @@ So let’s start with a variable we will call (*declare to be*) ``x``.
 
 We will give a *value* of the string ``'one'`` to this variable:
 
-.. code:: ipython3
+.. code:: python
 
     x = 'one'
     
@@ -496,7 +496,7 @@ We will give a *value* of the string ``'one'`` to this variable:
 
 -  Try this again, putting some ‘newlines’ (``\n``) in the string
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -519,7 +519,7 @@ We will give a *value* of the string ``'one'`` to this variable:
      hello world
 
 
-.. code:: ipython3
+.. code:: python
 
     # Now we set x to the value 1
     
@@ -552,7 +552,7 @@ In ‘natural language’, we might read the example above as ‘x is one’.
 
 -  change the data type used for ``x`` to something else (e.g. a string)
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -571,7 +571,7 @@ In ‘natural language’, we might read the example above as ‘x is one’.
 
 Setting ``x = 1`` is different to:
 
-.. code:: ipython3
+.. code:: python
 
     x = 'one'
 
@@ -581,7 +581,7 @@ because here we have set value of the variable ``x`` to a **string**
 A string is enclosed in quotes, e.g. \ ``"one"`` or ``'one'``, or even
 ``"'one'"`` or ``'"one"'``.
 
-.. code:: ipython3
+.. code:: python
 
     print ("one")
     print ('one')
@@ -604,7 +604,7 @@ A string is enclosed in quotes, e.g. \ ``"one"`` or ``'one'``, or even
 -  using this variable and the print function, print out a statement
    such as ``my name is Fred`` (if your name were ``Fred``)
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -620,7 +620,7 @@ A string is enclosed in quotes, e.g. \ ``"one"`` or ``'one'``, or even
 
 Setting ``x = 1`` or ``x = 'one'`` is different to:
 
-.. code:: ipython3
+.. code:: python
 
     x = 1.0
 
@@ -630,7 +630,7 @@ computing).
 
 This in turn is different to:
 
-.. code:: ipython3
+.. code:: python
 
     x = True
 
@@ -646,7 +646,7 @@ where ``True`` is a **logical** or **boolean** datatype (something is
 -  print the value of the variable to the screen, along with the data
    type.
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -677,7 +677,7 @@ these different data types.
 As we saw above, if you want to know what the data type of a variable
 is, you can use the method ``type()``
 
-.. code:: ipython3
+.. code:: python
 
     print (type(1));
     print (type(1.0));
@@ -695,7 +695,7 @@ is, you can use the method ``type()``
 
 You can explicitly convert between data types, e.g.:
 
-.. code:: ipython3
+.. code:: python
 
     print ('int(1.1) = ',int(1.1))
     print ('float(1) = ',float(1))
@@ -713,7 +713,7 @@ You can explicitly convert between data types, e.g.:
 
 but only when it makes sense:
 
-.. code:: ipython3
+.. code:: python
 
     print ("converting the string '1' to an integer makes sense:",int('1'))
 
@@ -723,7 +723,7 @@ but only when it makes sense:
     converting the string '1' to an integer makes sense: 1
 
 
-.. code:: ipython3
+.. code:: python
 
     print ("converting the string 'one' to an integer doesn't:",int('one'))
 
@@ -751,7 +751,7 @@ the error message to work out what you did wrong.
 
 -  type some other data conversions below that *do* work.
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -780,7 +780,7 @@ operators for this.
 
 Note the way this works for integers and floating point representations.
 
-.. code:: ipython3
+.. code:: python
 
     '''
         Some examples of arithmetic operations in Python
@@ -822,7 +822,7 @@ Note the way this works for integers and floating point representations.
 
 -  see what happens when you add (i.e. use ``+``) strings together
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -859,7 +859,7 @@ i.e. \ ``129 = floor * 2 + remainder``
 1.1.4 Assignment Operators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: ipython3
+.. code:: python
 
     '''
         Assignment operators
@@ -917,7 +917,7 @@ i.e. \ ``129 = floor * 2 + remainder``
    happened with the arithmetic and also to simplify the code (use fewer
    statements to achieve the same thing).
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -948,7 +948,7 @@ i.e. \ ``129 = floor * 2 + remainder``
     42.0
 
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER ... not so magic after all
@@ -973,7 +973,7 @@ i.e. \ ``129 = floor * 2 + remainder``
 
 Logical operators combine boolean variables. Recall from above:
 
-.. code:: ipython3
+.. code:: python
 
     print (type(True),type(False));
 
@@ -999,7 +999,7 @@ T F
 F T
 = =====
 
-.. code:: ipython3
+.. code:: python
 
     print('not True is',not True)
     print('not False is',not False)
@@ -1018,7 +1018,7 @@ F T
 
 -  what does ``not not x`` give? Make sure you understand why
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -1043,7 +1043,7 @@ understand: they have the same meaning as in normal english. Note that
 ``or`` is ‘inclusive’ (so, read ``A or B`` as ‘either A or B or both of
 them’).
 
-.. code:: ipython3
+.. code:: python
 
     print ('True and True is',True and True)
     print ('True and False is',True and False)
@@ -1086,7 +1086,7 @@ F F F
 
 If you are unsure, test the response using code, below.
 
-.. code:: ipython3
+.. code:: python
 
     # do the testing here e.g.
     print (True or False)
@@ -1129,7 +1129,7 @@ F F F
 If you are unsure, or to check your answers, test the response using
 code, below.
 
-.. code:: ipython3
+.. code:: python
 
     # do the testing here e.g.
     print ((True and False) or True)
@@ -1168,7 +1168,7 @@ value as’ (‘equivalent to’) the value of some variable ``b``, we use the
 equivalence operator (``==``). To test for non equivalence, we use the
 not equivalent operator ``!=`` (read the ``!`` as ‘not’):
 
-.. code:: ipython3
+.. code:: python
 
     a = 100
     b = 10
@@ -1197,7 +1197,7 @@ not equivalent operator ``!=`` (read the ``!`` as ‘not’):
 -  write some code to see if ``(a or b)`` is equivalent to ``(b or a)``
    or not
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -1265,7 +1265,7 @@ is not is not identical to
 
 so that, for example:
 
-.. code:: ipython3
+.. code:: python
 
     # Comparison examples
     
@@ -1354,7 +1354,7 @@ are *indented*.
 The indent can be one or more spaces or a ``<tab>`` character, the
 choice is up to the programmer. However, it **must be consistent**.
 
-.. code:: ipython3
+.. code:: python
 
     test = [1+1]
     print('test is {}'.format(test))
@@ -1395,7 +1395,7 @@ choice is up to the programmer. However, it **must be consistent**.
 -  try out some more complicated conditions, e.g. multipler tests,
    combined with an ``and`` operator.
 
-.. code:: ipython3
+.. code:: python
 
     # do the exercise here
     # ANSWER
@@ -1459,7 +1459,7 @@ they’re “escaped”. For example, some we have come across are:
 -  ``\n``: the carriage return
 -  ``\t``: a tabulator
 
-.. code:: ipython3
+.. code:: python
 
     print ("I'm a happy string")
     print ('I\'m a happy string') # the apostrophe has been escaped as not to be confused by end of string
@@ -1488,7 +1488,7 @@ strings using the ``+`` symbol as we saw above.
 
 Gives the length of the string as number of characters:
 
-.. code:: ipython3
+.. code:: python
 
     t = ''
     print ('the length of',t,'is',len(t))
@@ -1512,7 +1512,7 @@ Gives the length of the string as number of characters:
    words. Copy the code to the block below and modify it to have spaces.
 -  confirm that you get the expected increase in length.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1541,7 +1541,7 @@ and ``group`` is a set of values.
 The loop is run so that ``item`` takes on the first value in ``group``,
 then the second, etc.
 
-.. code:: ipython3
+.. code:: python
 
     # for loop
     group = [4,3,2,1]
@@ -1578,7 +1578,7 @@ choice is up to the programmer. However, it **must be consistent**.
    of) the items in your pocket or bag (or make some up!)
 -  set up a ``for`` loop to go through and print each item
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1602,7 +1602,7 @@ One way to do this would be to use a variable (called ``count`` here).
 
 Before we enter the loop, we initialise the value to zero.
 
-.. code:: ipython3
+.. code:: python
 
     # for loop
     group = ['hat','dog','keys']
@@ -1633,7 +1633,7 @@ Before we enter the loop, we initialise the value to zero.
    this be so?
 -  change the code so that the counting starts at 1, rather than 0.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1670,7 +1670,7 @@ Before we enter the loop, we initialise the value to zero.
 Since counting in loops is a common task, we can use the built in method
 ``enumerate()`` to achieve the same thing as above. The syntax is then:
 
-.. code:: ipython3
+.. code:: python
 
     # for loop
     group = ['hat','dog','keys']
@@ -1696,7 +1696,7 @@ Since counting in loops is a common task, we can use the built in method
 
 Hint: how can you make it print ``count+1`` rather than ``count``?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1742,7 +1742,7 @@ We can index a string, so that e.g. \ ``'hello'[0]`` is ``h``,
 We have seen above the idea of the ‘length’ of a string. In this
 example, the length of the string ``hello`` is 5.
 
-.. code:: ipython3
+.. code:: python
 
     string = 'hello'
     
@@ -1775,7 +1775,7 @@ example, the length of the string ``hello`` is 5.
 -  make the code robust to this issue, but using an ``if`` statement to
    test if ``index`` is in the required range.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1826,7 +1826,7 @@ example, the length of the string ``hello`` is 5.
     IndexError: string index out of range
 
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1891,7 +1891,7 @@ would give values in the array ``array`` from 0 to the end, in steps of
 This idea is fundamental to array processing in Python. We will see
 later that the same mechanism applies to all ordered groups.
 
-.. code:: ipython3
+.. code:: python
 
     s = "Hello World"
     print (s,len(s))
@@ -1927,7 +1927,7 @@ array.
 -  write code to print out the 4\ :math:`^{th}` letter (character) of
    the string ``s``.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1957,7 +1957,7 @@ We can replace all occurrences of a string within a string by some other
 string. We can also replace a string by an empty string, thus in effect
 removing it:
 
-.. code:: ipython3
+.. code:: python
 
     print ("I'm a very happy string".replace("happy", "unhappy"))
 
@@ -1975,7 +1975,7 @@ removing it:
 Hint: you want to replace the string ``very`` with, effectively,
 nothing, i.e. a zero-length string.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -1998,7 +1998,7 @@ string) where this string occurs. We can use the ``find`` method, which
 will return either a ``-1`` if the string isn’t found, or an integer
 giving the index of where the string starts (for the first time).
 
-.. code:: ipython3
+.. code:: python
 
     print ("I'm a very happy string".find("a"))
     print ("I'm a very happy string".find("happy"))
@@ -2032,7 +2032,7 @@ this in a browser, it is rendered appropriately.
 
 If you access the html directly, you will get the following:
 
-.. code:: ipython3
+.. code:: python
 
     # Web scraping example
     
@@ -2082,7 +2082,7 @@ the data we want to access starts when we see the string ``YEAR``.
 
 We can use ``find()`` to discover the index of this in the string:
 
-.. code:: ipython3
+.. code:: python
 
     start = txt.find('YEAR')
     
@@ -2122,7 +2122,7 @@ the end of the useful data is delimited by two newlines and the string
    containing all of the useful data (i.e. ``txt[start:stop]``).
 -  print the string ``data_table``.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2234,7 +2234,7 @@ One approach to this would be split the string into ‘lines’ of text
 strings whenever we hit a ``\n`` character. Rather than do that
 explicitly, we use the ``splitlines()`` method:
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     url = "http://www.esrl.noaa.gov/psd/enso/mei/table.html"
@@ -2282,7 +2282,7 @@ this (or data missing for other reasons). How you want to deal with the
 One option (the simplest) would be to simply remove the last line
 (ignore this year’s data):
 
-.. code:: ipython3
+.. code:: python
 
     header = data_lines[0]
     
@@ -2312,7 +2312,7 @@ One option (the simplest) would be to simply remove the last line
 -  copy the code from above and explore the response using line indices
    ``-1`` and ``-2``.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2350,7 +2350,7 @@ We can split an individual string (such as ``data[0]`` into a list of
 strings, using the string method ``split()``. By default, this splits on
 ‘white space’ (i.e. spaces or tab characters), so, e.g.:
 
-.. code:: ipython3
+.. code:: python
 
     line = data[0].split()
     print(data[0])
@@ -2368,7 +2368,7 @@ So, we have split the long string into 13 strings in a list.
 We want to generate a new list with 13 corresponding floating point
 values:
 
-.. code:: ipython3
+.. code:: python
 
     # split the line on whitespace
     line = data[0].split()
@@ -2411,7 +2411,7 @@ into a list of strings, but this time the
 `separator <https://python-reference.readthedocs.io/en/latest/docs/str/split.html>`__
 is a comma, rather than whitespace.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2468,7 +2468,7 @@ becomes:
 with the additional feature that everything returned by ``doit(group)``
 for each item of ``group`` is put in a list.
 
-.. code:: ipython3
+.. code:: python
 
     # split the line on whitespace
     
@@ -2503,7 +2503,7 @@ In the examples above, we converted only the data in ``data[0]`` to a
 list of floating point numbers. If we wanted to process *all* lines of
 data, we would have to loop over them as well, in an ‘outer’ loop.
 
-.. code:: ipython3
+.. code:: python
 
     # use a step of 10 for illustration purposes
     # to save space when printing
@@ -2533,7 +2533,7 @@ line, it gets over-written with each new line as things stand.
 We can do the same thing, and generate a list of the responses more
 neatly, using an implicit loop inside another implicit loop:
 
-.. code:: ipython3
+.. code:: python
 
     all_float_data = [[float(line_data) for line_data in line.split()] for line in data_table.splitlines()[1:-1]]
 
@@ -2551,7 +2551,7 @@ also that we have used ``{:.0f}`` to specify the format term. This
 indicates that the term is to be printed as a floating point number (the
 ``f``) with zero numbers after the decimal point (``.0``)
 
-.. code:: ipython3
+.. code:: python
 
     nrows = len(all_float_data)
     i = 0
@@ -2580,7 +2580,7 @@ on this, we give you the implicit loop code for extracting the column
 containing the ``YEAR`` data (column 0). We also give you the code to
 achieve the plotting.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2685,7 +2685,7 @@ A tuple is a group of items separated by commas. In the case of a tuple,
 the brackets are optional. You can have a group of differnt types in a
 tuple (e.g. int, int, str, bool)
 
-.. code:: ipython3
+.. code:: python
 
     # load into the tuple
     t = (1, 2, 'three', False)
@@ -2706,7 +2706,7 @@ tuple (e.g. int, int, str, bool)
 If there is only one element in a tuple, you must put a comma , at the
 end, otherwise it is not interpreted as a tuple:
 
-.. code:: ipython3
+.. code:: python
 
     t = (1)
     print (t,type(t))
@@ -2722,7 +2722,7 @@ end, otherwise it is not interpreted as a tuple:
 
 You can have an empty tuple though:
 
-.. code:: ipython3
+.. code:: python
 
     t = ()
     print (t,type(t))
@@ -2739,7 +2739,7 @@ You can have an empty tuple though:
 -  print out the value of t
 -  use the tuple to set variables a1,a2,a3,a4,a5
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2764,7 +2764,7 @@ can change individual elements in a list but not in a tuple. To convert
 between a list and tuple, use the ‘casting’ methods ``list()`` and
 ``tuple()``:
 
-.. code:: ipython3
+.. code:: python
 
     
     # a tuple
@@ -2788,7 +2788,7 @@ between a list and tuple, use the ‘casting’ methods ``list()`` and
 
 You can concatenate (join) lists or tuples with the ``+`` operator:
 
-.. code:: ipython3
+.. code:: python
 
     l0 = [1,2,3]
     l1 = [4,5,6]
@@ -2808,7 +2808,7 @@ the data type and value of the element
 
 Hint: use a ``for ... in ...`` construct.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2839,7 +2839,7 @@ A common method associated with lists or tuples is: \* ``index()``
 Some useful methods that will operate on lists and tuples are: \*
 ``len()`` \* ``sort()`` \* ``min(),max()``
 
-.. code:: ipython3
+.. code:: python
 
     l0 = (2,8,4,32,16)
     
@@ -2880,7 +2880,7 @@ Some useful methods that will operate on lists and tuples are: \*
 -  what is the length of the tuple/list?
 -  what is the index of the last item?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -2945,7 +2945,7 @@ through an ‘index’. The index values start at 0 as we saw above. The
 index of the last element in a list/tuple is the length of the group,
 minus 1. This can also be referred to an index ``-1``.
 
-.. code:: ipython3
+.. code:: python
 
     l0 = [2,8,4,32,16]
     
@@ -2987,7 +2987,7 @@ minus 1. This can also be referred to an index ``-1``.
    ``l1 = l0.copy()``, i.e. just use ``l1 = l0``? `Why is
    this? <https://www.afternerd.com/blog/python-copy-list/>`__
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -3020,7 +3020,7 @@ minus 1. This can also be referred to an index ``-1``.
     the list [2, 8, 4, 64, 32, 16] once sorted is [2, 4, 8, 16, 32, 64]
 
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -3111,7 +3111,7 @@ what will indicate ``missing_values`` in the input and what we would
 like to replace them with (``filling_values``) which can be useful for
 tidying up datasets.
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import numpy as np
@@ -3196,7 +3196,7 @@ Hint: You will need to consider what, if anything to set of ``usecols``
 (what happends if you don’t set ``usecols``?) and provide a looping
 structure for the plotting.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     #ANSWER
@@ -3287,7 +3287,7 @@ gridded dataset.
 A dictionary is defined as a group in braces (curley brackets). For each
 elerment, we specify the key and then the value, separated by ``:``.
 
-.. code:: ipython3
+.. code:: python
 
     a = {'one': 1, 'two': 2, 'three': 3}
     
@@ -3315,7 +3315,7 @@ Because dictionaries are not ordered, we cannot guarantee the order they
 will come out in a ``for`` loop, but we will often use such a loop to
 iterate over the items in a dictionary.
 
-.. code:: ipython3
+.. code:: python
 
     for key,value in a.items():
         print(key,value)
@@ -3330,7 +3330,7 @@ iterate over the items in a dictionary.
 
 We refer to specific items using the key e.g.:
 
-.. code:: ipython3
+.. code:: python
 
     print(a['one'])
 
@@ -3342,7 +3342,7 @@ We refer to specific items using the key e.g.:
 
 You can add to a dictionary:
 
-.. code:: ipython3
+.. code:: python
 
     a.update({'four':4,'five':5})
     print(a)
@@ -3364,7 +3364,7 @@ dictionary as a list or array, and the values in another list.
 In such a case, we can use the method ``zip(keys,values)`` to load into
 the dictionary. For example:
 
-.. code:: ipython3
+.. code:: python
 
     values = [1,2,3,4]
     keys = ['one','two','three','four']
@@ -3384,7 +3384,7 @@ the items in the header for the keys. In this way, we obtain a more
 elegant representation of the dataset, and can refer to items by names
 (keys) instead of column numbers.
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import numpy as np
@@ -3434,7 +3434,7 @@ elegant representation of the dataset, and can refer to items by names
 
 Hint: use a for loop
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -3496,7 +3496,7 @@ dictionary as additional named arguments to this function call”.
 
 So, in the example:
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import numpy as np
@@ -3555,7 +3555,7 @@ numpy dataset to file.
 If the data are numpy arrays in a dictionary as above, we can store the
 dataset using:
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import numpy as np
@@ -3587,7 +3587,7 @@ What we load from the file is a dictionary-like object
 If needed, we can cast this to a dictionary with ``dict()``, but it is
 generally more efficient to keep the original type.
 
-.. code:: ipython3
+.. code:: python
 
     # load the dataset
     
@@ -3632,7 +3632,7 @@ generally more efficient to keep the original type.
 -  produce a plot of October rainfall using these data for the years
    1900 onwards
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
     # ANSWER
@@ -3687,7 +3687,7 @@ generally more efficient to keep the original type.
     # save the dataset
     np.savez_compressed(filename,**data_dict)
 
-.. code:: ipython3
+.. code:: python
 
     # ANSWER
     
@@ -3719,7 +3719,7 @@ generally more efficient to keep the original type.
     	 ANN True
 
 
-.. code:: ipython3
+.. code:: python
 
     # ANSWER
     

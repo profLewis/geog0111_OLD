@@ -1,5 +1,5 @@
 
-.. code:: ipython3
+.. code:: python
 
     # All imports go here. Run me first!
     import datetime
@@ -73,7 +73,7 @@ world <http://science.sciencemag.org/content/334/6057/787.full>`__.
 
 Here’s Richard Feynman talking about fire and the carbon cycle.
 
-.. code:: ipython3
+.. code:: python
 
     from IPython.display import YouTubeVideo
     YouTubeVideo('ITpDrdtGAmo')

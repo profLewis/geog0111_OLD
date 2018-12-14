@@ -44,7 +44,7 @@ Table of Contents
 You can get help on an object using the ``help()`` method. This will
 return a full manual page of the class documentation.
 
-.. code:: ipython3
+.. code:: python
 
     #the method help()
     help(list)
@@ -178,14 +178,14 @@ object.
 In a notebook, this will show in a new window at the bottom of the book.
 You can get rid of this by clicking the x.
 
-.. code:: ipython3
+.. code:: python
 
     list?
 
 Another useful thing is to see a list of potential methods in a class.
 This is achieved by hitting the ``<tab>`` key, e.g.
 
-.. code:: ipython3
+.. code:: python
 
     # place the cursor after the `.` below
     # hit the <tab> key, rather than <return> in this cell
@@ -198,7 +198,7 @@ name completion.
 This means that if you e.g. have variables called ``the_long_one`` and
 ``the_long_two`` set:
 
-.. code:: ipython3
+.. code:: python
 
     the_long_one = 1
     the_long_two = 2
@@ -220,7 +220,7 @@ names, then hit ``<tab>`` to complete the name as far as possible.
    far as it can, here, up to ``the_long_``. Use this to write the line
    of code ``the_long_two = 2000``
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here ... put the cursor after the t or th and
     # use <tab> for completion. Dont run this cell

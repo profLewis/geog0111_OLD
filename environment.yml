@@ -7,7 +7,6 @@ dependencies:
     - lxml
     - cryptography
     - python>=3.6
-    - ipython
     - numpy 
     - scipy
     - matplotlib 

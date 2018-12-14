@@ -1,5 +1,5 @@
 
-.. code:: ipython3
+.. code:: python
 
     # All imports go here. Run me first!
     import datetime
@@ -47,7 +47,7 @@ The phenology model is the double logistic/sigmoid curve, given by
 We also define a cost function for it based on observations of LAI,
 uncertainty and a mask to indicate missing observations.
 
-.. code:: ipython3
+.. code:: python
 
     def dbl_sigmoid_function(p, t):
         """The double sigmoid function defined over t (where t is an array).
@@ -73,7 +73,7 @@ at bits 5 to 7, and turning them into a weight given by
 indicating a decreasing quality in the retrieval, and hence, a lower
 weight.
 
-.. code:: ipython3
+.. code:: python
 
     def get_sfc_qc(qa_data, mask57 = 0b11100000):
         sfc_qa = np.right_shift(np.bitwise_and(qa_data, mask57), 5)
@@ -185,7 +185,7 @@ Clearly, changing the order of the parameters in
 
       </p>
 
-.. code:: ipython3
+.. code:: python
 
         import osr
     
@@ -259,7 +259,7 @@ Let’s see a whole example of this zooming in the fAPAR map from the
 MODIS MCD15 product near the fine city of A Coruña in Galicia, NW Spain
 (latitude: 43.3623, longitude: -8.4115):
 
-.. code:: ipython3
+.. code:: python
 
     %%html
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d238659.69294928786!2d-8.664931741126212!3d43.39317238062582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1542817273641" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -271,7 +271,7 @@ MODIS MCD15 product near the fine city of A Coruña in Galicia, NW Spain
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d238659.69294928786!2d-8.664931741126212!3d43.39317238062582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1542817273641" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 
-.. code:: ipython3
+.. code:: python
 
     ##################################################################
     # Define transformations and variables. This is like above!
@@ -371,7 +371,7 @@ number. Clearly, the code above is a bit of a mess, and needs to be
 cleaned up, split into functions and tested. This is an example, and you
 can take this as a reference of how to document functions etc.
 
-.. code:: ipython3
+.. code:: python
 
     def convert_coordinates(x_location, y_location,
                            src_transform={'EPSG':4326},
@@ -444,7 +444,7 @@ can take this as a reference of how to document functions etc.
     (-680000.4782137175, 4821673.202327191)
 
 
-.. code:: ipython3
+.. code:: python
 
     def get_pixel(raster, point_x, point_y):
         """Get the pixel for given coordinates (in the raster's convention, not
@@ -494,7 +494,7 @@ We have produced 4 rasters, with the LAI value for 2016 and 2017, as
 well as the correspodingn ``FparLai_QC`` layer. They’re avaialable in
 ``data/euro_lai``. Let’s quickly have a look at the data:
 
-.. code:: ipython3
+.. code:: python
 
     success = procure_dataset("euro_lai", destination_folder="data/euro_lai/",
                              verbose=True)
@@ -526,7 +526,7 @@ this function calls the previous pixel-location functions, and then
 reads the entire time series for a pixel in one go. The function is
 defined below:
 
-.. code:: ipython3
+.. code:: python
 
     
     #def get_pixel(raster, point_x, point_y):
@@ -582,7 +582,7 @@ we have is sensible or not.
 
       </p>
 
-.. code:: ipython3
+.. code:: python
 
     %%html
     
@@ -610,7 +610,7 @@ we have is sensible or not.
     </div>~
 
 
-.. code:: ipython3
+.. code:: python
 
     
     y_location, x_location = 43.0156, -6.7038
@@ -672,7 +672,7 @@ It’s like the ``plt.plot`` method, but it also takes a ``yerr`` (or
 ``xerr``) keyword with the extent of the error in the :math:`y`
 direction.
 
-.. code:: ipython3
+.. code:: python
 
     from scipy.optimize import minimize
     
@@ -778,7 +778,7 @@ direction.
 A model isn’t very useful if you can’t use it to make predictions. So
 let’s just use the optimal solution to predict the LAI for 2017:
 
-.. code:: ipython3
+.. code:: python
 
     plt.figure(figsize=(15, 6))
     
@@ -848,7 +848,7 @@ are different or not if we don’t have error bars in the parameters!
 
       </p>
 
-.. code:: ipython3
+.. code:: python
 
     plt.figure(figsize=(15, 6))
     
@@ -1004,7 +1004,7 @@ I have fished out some suitable location from the paper from `Wingate et
 al (2015) <https://doi.org/10.5194/bg-12-5995-2015>`__, and you can see
 the results of fitting to the model to (some of) the sites below:
 
-.. code:: ipython3
+.. code:: python
 
     def read_data(year, x_location, y_location):
         """A function to read in data from the given LAI and QC maps. The
@@ -1098,7 +1098,7 @@ the results of fitting to the model to (some of) the sites below:
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_27_3.png
 
 
-.. code:: ipython3
+.. code:: python
 
     y_location, x_location = 51.775511, -1.336993
     fit_data_year(2016, 2017, x_location, y_location)
@@ -1138,7 +1138,7 @@ the results of fitting to the model to (some of) the sites below:
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_28_4.png
 
 
-.. code:: ipython3
+.. code:: python
 
     
     y_location, x_location = 45.8444, 7.5781
@@ -1179,7 +1179,7 @@ the results of fitting to the model to (some of) the sites below:
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_29_4.png
 
 
-.. code:: ipython3
+.. code:: python
 
     y_location, x_location = 50.5516, 4.7461
     fit_data_year(2016, 2017, x_location, y_location)
@@ -1219,7 +1219,7 @@ the results of fitting to the model to (some of) the sites below:
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_30_4.png
 
 
-.. code:: ipython3
+.. code:: python
 
     y_location, x_location = 50.9500, 13.5126
     fit_data_year(2016, 2017, x_location, y_location)
@@ -1259,7 +1259,7 @@ the results of fitting to the model to (some of) the sites below:
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_31_4.png
 
 
-.. code:: ipython3
+.. code:: python
 
     y_location, x_location = 55.4859,11.6446
     fit_data_year(2016, 2017, x_location, y_location)
@@ -1299,7 +1299,7 @@ the results of fitting to the model to (some of) the sites below:
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_32_4.png
 
 
-.. code:: ipython3
+.. code:: python
 
     
     y_location, x_location =52.253000000000, 5.702000000000
@@ -1423,7 +1423,7 @@ numbers between 0 and 1
 
    </div>
 
-.. code:: ipython3
+.. code:: python
 
     def metropolis_hastings(xstart, lklhood, year, x_location, y_location, 
                             n_iter=50000):
@@ -1473,7 +1473,7 @@ numbers between 0 and 1
     
         return samples
 
-.. code:: ipython3
+.. code:: python
 
     y_location, x_location = 43.0156, -6.7038
     
@@ -1517,7 +1517,7 @@ We can also use these samples and propagate them through the phenology
 model to produce an *ensemble* of model trajectories that define a
 region of uncertainty.
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=3, ncols=2, figsize=(9, 9), sharex=True)
     axs = axs.flatten()
@@ -1547,7 +1547,7 @@ region of uncertainty.
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_38_2.png
 
 
-.. code:: ipython3
+.. code:: python
 
     n_samples = samples.shape[0]
     y_location, x_location = 43.0156, -6.7038
@@ -1598,12 +1598,12 @@ region of uncertainty.
 .. image:: Chapter7_FittingPhenologyModels_Solutions_files/Chapter7_FittingPhenologyModels_Solutions_39_3.png
 
 
-.. code:: ipython3
+.. code:: python
 
     cov = np.corrcoef(samples[60000::20, :].T)
 
 
-.. code:: ipython3
+.. code:: python
 
     def hinton(matrix, max_weight=None, ax=None):
         """Draw Hinton diagram for visualizing a weight matrix."""

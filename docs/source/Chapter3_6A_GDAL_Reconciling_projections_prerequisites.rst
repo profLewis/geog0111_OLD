@@ -199,7 +199,7 @@ We will need to:
 -  get the temperature datasset from ECMWF for 2006 and 2017 for Europe
 -  get the country borders shapefile
 
-.. code:: ipython3
+.. code:: python
 
     # required general imports
     import matplotlib.pyplot as plt
@@ -216,7 +216,7 @@ We will need to:
 You can run all of the below with the script, unless you want to change
 any of the conditions (e.g. year or country):
 
-.. code:: ipython3
+.. code:: python
 
     # This does the same as the cells below but in one script
     %run geog0111/Chapter3_6A_prerequisites.py $country_code $year
@@ -245,7 +245,7 @@ any of the conditions (e.g. year or country):
 You will probably already have this dataset, but running the code below
 will make sure that you do.
 
-.. code:: ipython3
+.. code:: python
 
     # get the MODIS LAI dataset for 2016/2017 for W. Europe
     # should be 736 files 
@@ -261,7 +261,7 @@ will make sure that you do.
 
 Again, you should already have this, but just to make sure:
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import shutil
@@ -300,7 +300,7 @@ interfaced through ``process_timeseries()``.
 In the code, we can save the dataset as an ``npz`` file, so that we can
 access it faster next time.
 
-.. code:: ipython3
+.. code:: python
 
     # read in the LAI data for given country code
     from geog0111.process_timeseries import process_timeseries
@@ -372,7 +372,7 @@ access it faster next time.
         if save:
             np.savez_compressed(ofile,**lai)
 
-.. code:: ipython3
+.. code:: python
 
     # test that LAI is sensible
     # a quick look at some stats to see if there are data there
@@ -461,7 +461,7 @@ The first time:
 Help is available
 `online <https://confluence.ecmwf.int/display/UDOC/User+Documentation>`__.
 
-.. code:: ipython3
+.. code:: python
 
     # install ecmwf api -- do this once only
     ECMWF = 'https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-api-client-python.tgz'
@@ -488,7 +488,7 @@ If the file already exists locally, the request will be ignored.
 If you do need to run the request, it may take several hours, depending
 on the ECMWF queue at the time.
 
-.. code:: ipython3
+.. code:: python
 
     from ecmwfapi import ECMWFDataServer
     from pathlib import Path
@@ -551,7 +551,7 @@ The code below is quite complicated, buit needed to fix file format
 problems. It also converts the integer data into physical units
 (temperature in K) using the ``-unscale`` option.
 
-.. code:: ipython3
+.. code:: python
 
     from osgeo import gdal
     import requests
@@ -623,7 +623,7 @@ problems. It also converts the integer data into physical units
     data/europe_data_2017.nc
 
 
-.. code:: ipython3
+.. code:: python
 
     from osgeo import gdal
     import requests
@@ -731,7 +731,7 @@ This is interpreted as:
 |               |                  | because of missing inputs.        |
 +---------------+------------------+-----------------------------------+
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.get_modis_files import get_modis_files
     '''
@@ -754,7 +754,7 @@ This is interpreted as:
     server may be down
 
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.process_timeseries import mosaic_and_clip
     
@@ -771,7 +771,7 @@ This is interpreted as:
                         product='MCD12Q1',
                         frmat="MEM")
 
-.. code:: ipython3
+.. code:: python
 
     '''
     Define LC table from userguide
@@ -801,7 +801,7 @@ This is interpreted as:
     np.savez_compressed(f'data/landcover_{year}_{country_code}.npz',
                        LC_Type3=LC_Type3,lc_data=lc_data)
 
-.. code:: ipython3
+.. code:: python
 
     # Unique values for "LC_Type3"
     def plot_land_cover(lc_data,year,country_code,cmap='tab20b'):
@@ -881,7 +881,7 @@ This is interpreted as:
 .. image:: Chapter3_6A_GDAL_Reconciling_projections_prerequisites_files/Chapter3_6A_GDAL_Reconciling_projections_prerequisites_25_1.png
 
 
-.. code:: ipython3
+.. code:: python
 
     lc = 1
     
@@ -902,7 +902,7 @@ This is interpreted as:
 .. image:: Chapter3_6A_GDAL_Reconciling_projections_prerequisites_files/Chapter3_6A_GDAL_Reconciling_projections_prerequisites_26_1.png
 
 
-.. code:: ipython3
+.. code:: python
 
     # uncomment to run all LCs
     _='''for year in [2016,2017]:

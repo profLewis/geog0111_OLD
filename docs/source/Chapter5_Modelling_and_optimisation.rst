@@ -86,7 +86,7 @@ These are the MODIS LAI and land cover data and associated ECMWF
 temperature data. Datasets are available in ``npz`` files that we have
 previously generated.
 
-.. code:: ipython3
+.. code:: python
 
     # required general imports
     import matplotlib.pyplot as plt
@@ -100,13 +100,13 @@ previously generated.
     from datetime import datetime, timedelta
     from geog0111.geog_data import procure_dataset
 
-.. code:: ipython3
+.. code:: python
 
     # conditions
     year = 2016
     country_code = 'UK'
 
-.. code:: ipython3
+.. code:: python
 
     '''
     Load the prepared LAI data
@@ -182,7 +182,7 @@ Recall that land cover is interpreted as:
 |               |                  | because of missing inputs.        |
 +---------------+------------------+-----------------------------------+
 
-.. code:: ipython3
+.. code:: python
 
     '''
     Load the prepared landcover data
@@ -217,7 +217,7 @@ Recall that land cover is interpreted as:
 .. image:: Chapter5_Modelling_and_optimisation_files/Chapter5_Modelling_and_optimisation_7_1.png
 
 
-.. code:: ipython3
+.. code:: python
 
     
     '''
@@ -241,7 +241,7 @@ Recall that land cover is interpreted as:
 
 Now let’s plot the datasets:
 
-.. code:: ipython3
+.. code:: python
 
     # visualise the interpolated dataset
     import matplotlib.pylab as plt
@@ -323,7 +323,7 @@ temperature is around 10 C.
 
 Now let’s look at a particular land cover type: grasslands.
 
-.. code:: ipython3
+.. code:: python
 
     lc = 1
     
@@ -337,7 +337,7 @@ Now let’s look at a particular land cover type: grasslands.
         d[mask]  = 1
         d[~mask] = 0
 
-.. code:: ipython3
+.. code:: python
 
     '''
     filter datasets by land cover

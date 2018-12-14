@@ -1,5 +1,5 @@
 
-.. code:: ipython3
+.. code:: python
 
     # All imports go here. Run me first!
     import datetime
@@ -85,7 +85,7 @@ might be
 
       </p>
 
-.. code:: ipython3
+.. code:: python
 
     def dbl_sigmoid_function(p, t):
     
@@ -130,7 +130,7 @@ A synthetic experiment
 A first step is to do a synthetic experiment. This has the marked
 advantage of being a situation where we’re in control of everything.
 
-.. code:: ipython3
+.. code:: python
 
     def dbl_sigmoid_function(p, t):
     
@@ -224,7 +224,7 @@ have the **log-likelihood**:
    plot) how a negative exponential curve looks like, and what
    conditions are for some interesting points.
 
-.. code:: ipython3
+.. code:: python
 
     x = np.linspace(-5, 5, 100)
     for a in [-2, 0, 2]:
@@ -271,7 +271,7 @@ cost function given by :math:`L(\vec{p})`**
    Write the cost function! Test it possibly shifting one parameter over
    some range of values
 
-.. code:: ipython3
+.. code:: python
 
     def cost_function(p, t, y_obs, passer, sigma_obs, func=dbl_sigmoid_function):
         y_pred = func(p, t)
@@ -343,11 +343,11 @@ The ``minimize`` function returns an object with the
    (``nfev``)
 5. Some diagnostics
 
-.. code:: ipython3
+.. code:: python
 
     from scipy.optimize import minimize
 
-.. code:: ipython3
+.. code:: python
 
     from scipy.optimize import minimize
     
@@ -443,7 +443,7 @@ The ``minimize`` function returns an object with the
    Try to think what the expected result of these changes is, and write
    a set of functions that simplify the exploration.
 
-.. code:: ipython3
+.. code:: python
 
     p = np.array([0.1, 2.5, 0.19, 120, 0.13, 220])
     
@@ -512,7 +512,7 @@ The ``minimize`` function returns an object with the
 .. image:: Chapter6_NonLinear_Model_Fitting_Solutions_files/Chapter6_NonLinear_Model_Fitting_Solutions_13_6.png
 
 
-.. code:: ipython3
+.. code:: python
 
     plt.plot([0,1], [0,1], 'o')
 
@@ -543,7 +543,7 @@ machinery we encountered earlier. A mosaic of MODIS LAI and QA over
 Europe has been prepared for you (you should be able to do this
 yourselves by now though!). We also rescuing the functions
 
-.. code:: ipython3
+.. code:: python
 
     def get_sfc_qc(qa_data, mask57 = 0b11100000):
         sfc_qa = np.right_shift(np.bitwise_and(qa_data, mask57), 5)

@@ -229,7 +229,7 @@ convention.
 
 Let’s first test your NASA login:
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from geog0111.cylog import cylog
@@ -262,7 +262,7 @@ Let’s first test your NASA login:
 Note that we have used a ``try ... except`` structure above to trap any
 errors.
 
-.. code:: ipython3
+.. code:: python
 
     import sys
     try:
@@ -308,7 +308,7 @@ If you divide by zero, the result will be infinity, which is often not
 what you want to happen. Instead, try dividing by a small number, such
 as that provided by ``sys.float_info.epsilon``.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -321,7 +321,7 @@ files ``MCD15A3H.A2018273.h17v03.006.2018278143630.hdf`` and
 ``MCD15A3H.A2018273.h18v03.006.2018278143633.hdf`` (and some files
 ``*v04*hdf`` we will need later) by running the code below.
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.geog_data import *
     
@@ -355,7 +355,7 @@ To do this with ``gdal``:
 -  open the file, store as ``g``
 -  get the list ``g.GetSubDatasets()`` and loop over this
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     from pathlib import Path
@@ -499,7 +499,7 @@ link <https://n5eil01u.ecs.nsidc.org/MOSA/>`__.
 .. |image0| image:: https://nsidc.org/sites/nsidc.org/files/images/modis-sin-grid.png
 .. |image1| image:: images/BROWSE.MYD10A1.A2018001.h25v05.006.2018003025825.1.jpg
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -517,7 +517,7 @@ directly, e.g.:
 We can read the dataset with ``g.ReadAsArray()``, after we have opened
 it. It returns a numpy array.
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     import numpy as np
@@ -555,7 +555,7 @@ it. It returns a numpy array.
 -  print out the data type and ``shape``
 -  how many rows and columns does the dataset have?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -569,7 +569,7 @@ the dataset, and projection and other information.
 In ``gdal``, w access the metedata using ``g.GetMetadata()``. A
 dictionary is returned.
 
-.. code:: ipython3
+.. code:: python
 
     filename = 'data/MCD15A3H.A2018273.h17v03.006.2018278143630.hdf'
     dataset_name = f'HDF4_EOS:EOS_GRID:"{filename:s}":MOD_Grid_MCD15A3H:Lai_500m'
@@ -680,7 +680,7 @@ dictionary is returned.
 
 Let’s look at some of these metadata fields:
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     import numpy as np
@@ -730,7 +730,7 @@ look at the metadata to discover:
 -  the number of rows and columns in the dataset
 -  the range of valid values
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -751,7 +751,7 @@ module.
 
 Let’s look in the ``data`` directory:
 
-.. code:: ipython3
+.. code:: python
 
     from pathlib import Path
     
@@ -838,7 +838,7 @@ sub-directories <https://docs.python.org/3/library/pathlib.html#pathlib.Path.glo
 We could be more subtle with this, e.g. matching only files ending
 ``hdf``:
 
-.. code:: ipython3
+.. code:: python
 
     from pathlib import Path
     
@@ -911,7 +911,7 @@ We could be more subtle with this, e.g. matching only files ending
 -  adapt the code above to return only hdf filenames for the tile
    ``h18v03``
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -970,7 +970,7 @@ If we want to save the plotted image to a file, e.g. in the directory
 
    plt.savefig(out_filename)
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     from pathlib import Path
@@ -1036,7 +1036,7 @@ If we want to save the plotted image to a file, e.g. in the directory
 .. image:: Chapter3_3_GDAL_masking_files/Chapter3_3_GDAL_masking_34_2.png
 
 
-.. code:: ipython3
+.. code:: python
 
     # Let's check the images we saved are there!
     # and access some file info while we are here
@@ -1072,7 +1072,7 @@ The way we set the title and other features is slightly diifferent, but
 there are many example of different plot types on the web we can follow
 as examples.
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     from pathlib import Path
@@ -1151,7 +1151,7 @@ The result should look like:
 
 .. |image0| image:: images/joinedup4.pdf
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1193,7 +1193,7 @@ We could achieve this by stitching things together “by hand”…
 
 and plot the dataset
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     from pathlib import Path
@@ -1241,7 +1241,7 @@ and plot the dataset
 -  If a ``float`` is 64 bits, how many bytes is this data array likely
    to be?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1258,7 +1258,7 @@ This function takes two inputs: the output filename (``stitch_up.vrt``)
 and a set of GDAL format filenames. It returns the open output dataset,
 so that we can check what it looks like with e.g. \ ``gdal.Info``
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     from pathlib import Path
@@ -1306,7 +1306,7 @@ so that we can check what it looks like with e.g. \ ``gdal.Info``
 So we see that we now have 4800 columns by 4800 rows dataset, centered
 around 0 degrees North, 0 degrees W. Let’s plot the data…
 
-.. code:: ipython3
+.. code:: python
 
     # stitch_vrt is an already opened GDAL dataset, needs to be read in
     plt.figure(figsize=(10,10))
@@ -1340,7 +1340,7 @@ need to download and unzip this file… We’ll use requests as before, and
 we’ll unpack the zip file using
 ```shutil.unpack_archive`` <https://docs.python.org/3/library/shutil.html#shutil.unpack_archive>`__
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import shutil 
@@ -1364,7 +1364,7 @@ It is worth noting that using OGR’s queries trying to match a string,
 the string needs to be surrounded by ``'``. You can also use more
 complicated SQL queries if you wanted to.
 
-.. code:: ipython3
+.. code:: python
 
     !ogrinfo -nomd -geom=NO -where "FIPS='UK'"  data/TM_WORLD_BORDERS-0.3.shp TM_WORLD_BORDERS-0.3 
 
@@ -1443,7 +1443,7 @@ are already indicated to be invalid.
 
 We can then just very quickly perform this and check…
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     import matplotlib.pylab as plt
@@ -1488,7 +1488,7 @@ valid (0 to 100 here). This will generally save a lot of computer
 memory. You’ll be pleased to know that this is a great slicing
 application!
 
-.. code:: ipython3
+.. code:: python
 
     import numpy as np
     
@@ -1536,7 +1536,7 @@ application!
 -  Use this function to show separate images of: France, Belgium, the
    Netherlands
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1570,6 +1570,6 @@ rather than
 
 as the latter would include invalid pixels.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here

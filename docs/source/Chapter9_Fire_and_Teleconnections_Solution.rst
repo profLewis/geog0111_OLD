@@ -1,5 +1,5 @@
 
-.. code:: ipython3
+.. code:: python
 
     # All imports go here. Run me first!
     import datetime
@@ -479,7 +479,7 @@ and looks like this:
                iloc = np.argmax([x.rvalue ** 2 for x in reg])
                # etc
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.fire_practical_model import *
     from geog0111.fire_practical_satellite import *
@@ -491,7 +491,7 @@ and looks like this:
     slope, intercept, best_r2, best_lag = fit_model(
         telecon, peak_fire_month, fire_count_year, train_years=12)
 
-.. code:: ipython3
+.. code:: python
 
     plt.plot(telecon[:, 12:].T, '-')
 
@@ -529,7 +529,7 @@ and looks like this:
 .. image:: Chapter9_Fire_and_Teleconnections_Solution_files/Chapter9_Fire_and_Teleconnections_Solution_10_2.png
 
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(21,9))
     cmap = plt.cm.get_cmap("hsv", 12)
@@ -572,7 +572,7 @@ and looks like this:
 .. image:: Chapter9_Fire_and_Teleconnections_Solution_files/Chapter9_Fire_and_Teleconnections_Solution_11_3.png
 
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(31,12))
     
@@ -611,7 +611,7 @@ and looks like this:
 .. image:: Chapter9_Fire_and_Teleconnections_Solution_files/Chapter9_Fire_and_Teleconnections_Solution_12_2.png
 
 
-.. code:: ipython3
+.. code:: python
 
     plt.hist(best_r2[best_r2 >= 0.1], bins=np.arange(0.1, 1, 0.1)-0.05, cumulative=True, histtype="stepfilled",
             color="0.8")
@@ -636,7 +636,7 @@ and looks like this:
 .. image:: Chapter9_Fire_and_Teleconnections_Solution_files/Chapter9_Fire_and_Teleconnections_Solution_13_2.png
 
 
-.. code:: ipython3
+.. code:: python
 
     sensible_grids = best_r2 >= 0.1
     
@@ -670,7 +670,7 @@ and looks like this:
 .. image:: Chapter9_Fire_and_Teleconnections_Solution_files/Chapter9_Fire_and_Teleconnections_Solution_14_1.png
 
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(12,12))
     axs = axs.flatten()

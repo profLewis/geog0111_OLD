@@ -102,7 +102,7 @@ For example, for the two tiles covering Madegascar, we would set:
 
    tiles = ['h22v10','h22v11']
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -128,7 +128,7 @@ password in these notes**.
 ``cylog().login()`` returns the tuple ``(username,password)`` in plain
 text.
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.cylog import cylog
     import requests
@@ -159,7 +159,7 @@ then.
 
 We should now check to see if you have ``gdal`` properly installed.
 
-.. code:: ipython3
+.. code:: python
 
     import gdal
     version = gdal.VersionInfo()  

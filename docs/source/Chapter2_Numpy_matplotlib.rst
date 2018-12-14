@@ -53,7 +53,7 @@ A Python function will have a name (and we hope that the name is
 self-explanatory as to what the function does), and a set of input
 parameters. In the case above, the function would look like this:
 
-.. code:: ipython3
+.. code:: python
 
     def fahrenheit_to_centigrade(deg_fahrenheit):
         """A function to convert from degrees Fahrenheit to degrees Centigrade
@@ -86,7 +86,7 @@ Notice that the document string
 ``"""A function to convert from temperature... """`` is what is printed
 when you request ``help`` on the function:
 
-.. code:: ipython3
+.. code:: python
 
     help(fahrenheit_to_centigrade)
 
@@ -124,7 +124,7 @@ names, a brief docmentation string, and remember to test the functions
 work: just demonstrate running the function with some input pairs where
 you know the output and checking it makese sense.
 
-.. code:: ipython3
+.. code:: python
 
     # Space for your solution
 
@@ -147,7 +147,7 @@ elements are of the same type, floating point numbers for example.
 
 Let’s see some arrays in action…
 
-.. code:: ipython3
+.. code:: python
 
     import numpy as np  # Import the numpy library
     
@@ -187,7 +187,7 @@ numbers.
 What can we do with arrays? We can efficiently operate on individual
 elements without loops:
 
-.. code:: ipython3
+.. code:: python
 
     arr = np.ones(10)
     print(2 * arr)
@@ -205,7 +205,7 @@ We can also multiply two arrays of the same size. So let’s create an
 array with the numbers 0 to 9 and one with the numbers 9 to 0 and do a
 times table:
 
-.. code:: ipython3
+.. code:: python
 
     arr1 = 9 * np.ones(10)
     arr2 = np.arange(1, 11)  # arange gives an array from 1 to 11, 11 not included
@@ -241,14 +241,14 @@ times table:
         [ 9 18 27 36 45 54 63 72 81 90]
         [ 10  20  30  40  50  60  70  80  90 100]
 
-.. code:: ipython3
+.. code:: python
 
     # Your solution here
 
 If the arrays are of the same *shape*, you can do standard operations
 between them **element-wise**:
 
-.. code:: ipython3
+.. code:: python
 
     arr1 = np.array([3, 4, 5, 6.])
     arr2 = np.array([30, 40, 50, 60.])
@@ -296,7 +296,7 @@ on. The ``shape`` of the array provides a tuple with the number of
 elements along each axis. Let’s see this with some generally useful
 array creation options:
 
-.. code:: ipython3
+.. code:: python
 
     # Create a 2D array from a list of rows. Note that the 3 rows have the same number of elements!
     arr1 = np.array([[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14]])
@@ -327,7 +327,7 @@ Quite often, we will want to initialise an array to be all the same
 number. The methods for doing this as 0,1 and unspecified in ``numpy``
 are ``np.zeros()``, ``np.ones()``, ``np.empty()`` respectively.
 
-.. code:: ipython3
+.. code:: python
 
     # Creates a 3*4 array of 0s
     arr = np.zeros((3, 4))
@@ -391,7 +391,7 @@ The result should look like:
 **Hint**: You could use a ``for`` loop, but what does ``data[indices]``
 give?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -402,7 +402,7 @@ give?
    shape of ``data`` are specified through function keyword arguments
    (e.g. ``indices=((0, 1, 2, 3, 4),(5, 6, 7, 8, 9)),value=1,shape=(5,10)``)
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -411,7 +411,7 @@ also want to initialise with common data patterns. This includes simple
 integer ranges ``(start, stop, skip)`` in a similar fashion to slicing
 in the last session, or variations on this theme:
 
-.. code:: ipython3
+.. code:: python
 
     ### array creators
     
@@ -457,7 +457,7 @@ in the last session, or variations on this theme:
 Hint: what value of skip would be appropriate here? what about ``start``
 and ``stop``?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -467,7 +467,7 @@ and ``stop``?
 Below are some typical arithmetic operations that you can use on arrays.
 Remember that they happen **elementwise** (i.e. to the whole array).
 
-.. code:: ipython3
+.. code:: python
 
     b = np.arange(4)
     print(f'{b}^2 = {b**2}\n')
@@ -507,7 +507,7 @@ launches to illustrate this.
 
    SpaceX landing
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.nsat import nsat
     
@@ -541,7 +541,7 @@ launches to illustrate this.
 -  copy the code above but generate a fuller set of summary statistics
    including the standard deviation, minimum and maximum.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -564,7 +564,7 @@ To be able to address these, we need some new concepts:
 
 To illustrate:
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.nsat import nsat
     import numpy as np
@@ -617,7 +617,7 @@ To illustrate:
 -  which month do launches mostly take place in? which month do launches
    most seldom take place in?
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -626,7 +626,7 @@ numpy array of the same shape as that operated on (``sum_per_year``
 here) of ``bool`` data type. It has entries of ``True`` where the
 condition is met, and ``False`` where it is not met.
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.nsat import nsat
     # sum the data over all months (axis 0)
@@ -678,7 +678,7 @@ representation of the ``bool`` arrays ``high`` and ``low``. Where the
 
 .. |image0| image:: images/arrayviz.png
 
-.. code:: ipython3
+.. code:: python
 
     print(f'{sum_per_year[high]}')
     print(f'{sum_per_year[low]}')
@@ -697,7 +697,7 @@ To do this, we can use the ``np.where()`` method. This takes a ``bool``
 array as its argument (such as our data masks or other conditions) and
 returns a tuple of the indices where this is set ``True``.
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.nsat import nsat
     data,years = nsat().data,nsat().years
@@ -762,7 +762,7 @@ returns a tuple of the indices where this is set ``True``.
 Hint: this is just adding another column to the print statement in the
 for loop
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -783,7 +783,7 @@ the *indices* of the sorted array, rather than the values.
 So here, we can find the *indices* of the year-sorted array, and apply
 them to both ``month`` and ``year`` datasets:
 
-.. code:: ipython3
+.. code:: python
 
     # prepare data as above
     from geog0111.nsat import nsat
@@ -826,7 +826,7 @@ them to both ``month`` and ``year`` datasets:
 -  Use this example of ``argsort()`` to redo Exercise E2.2.7, putting
    the data in correct year order
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -887,7 +887,7 @@ the notebook as PNG files.
 
 The most basic plots are 2D plots (e.g. x and y).
 
-.. code:: ipython3
+.. code:: python
 
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -967,7 +967,7 @@ improved ploitting, lets use e.g.:
 What you choose to do will depend on what you want to show on the graph,
 but the examples above are quite common.
 
-.. code:: ipython3
+.. code:: python
 
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -1013,7 +1013,7 @@ Hint: do a simple plot first, then add some improvements gradually. You
 might set up a list of months to process and use a loop to go over each
 month.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1033,7 +1033,7 @@ a function:
 Hint: to plot with red and green line ``plot(x,y,'r')`` and
 ``plot(x,y,'g')``
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1060,7 +1060,7 @@ negative you count from the back.
 All this probably appears mind bogging, but it’s easier shown in
 practice. You’ll get used to it quite quickly once you start using it
 
-.. code:: ipython3
+.. code:: python
 
     import numpy as np
     
@@ -1086,7 +1086,7 @@ practice. You’ll get used to it quite quickly once you start using it
 
 The concept extends cleanly to multidimensional arrays…
 
-.. code:: ipython3
+.. code:: python
 
     b = np.array([[0, 1, 2, 3], [10, 11, 12, 13], [20, 21, 22, 23], [30, 31, 32, 33],
          [40, 41, 42, 43]])
@@ -1117,7 +1117,7 @@ The concept extends cleanly to multidimensional arrays…
 Hint: Don’t use looping, instead work out how to define the slice of the
 central 3 x 3 samples.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1128,7 +1128,7 @@ A useful way to select elements is by using what’s called a mask as we
 saw above: an array of logical (boolean) elements that only selects the
 elements that are ``True``:
 
-.. code:: ipython3
+.. code:: python
 
     a = np.arange(10)
     select_me = a >= 7
@@ -1150,7 +1150,7 @@ to use specialised functions like
 ```np.logical_and`` <https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_and.html>`__
 and friends
 
-.. code:: ipython3
+.. code:: python
 
     a = np.arange(100)
     sel1 = a > 45
@@ -1173,7 +1173,7 @@ and friends
 -  print the values of ``x`` for which ``y`` is greater than or equal to
    zero and ``x`` lies between 3.5 and 4.5
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1227,7 +1227,7 @@ telling it…
 -  to ignore the first column as it’s text
 -  to note that the separator is a comma
 
-.. code:: ipython3
+.. code:: python
 
     air_travel = np.loadtxt("data/airtravel.csv", comments="#", skiprows=6, \
                             usecols=[1,2,3], delimiter=",")
@@ -1269,7 +1269,7 @@ our airtravel data
 
 Hint: Remember the ``.sum()``, ``.mean()`` methods for arrays?
 
-.. code:: ipython3
+.. code:: python
 
     # Space for your solution
 
@@ -1278,7 +1278,7 @@ lines, so the x axis will be month number (running from 1 to 12) and the
 y axis will be 1000s of passengers. Different line colours will be used
 for every year. We’ll also add x and y axes labels, as well as a legend:
 
-.. code:: ipython3
+.. code:: python
 
     # You can probably just put this at the top of every notebook you write
     # Adding it here for completeness
@@ -1316,7 +1316,7 @@ for every year. We’ll also add x and y axes labels, as well as a legend:
 You may not want to use lines to join the data points, but symbols like
 dots, crosses, etc.
 
-.. code:: ipython3
+.. code:: python
 
     plt.figure(figsize=(10,3))
     plt.plot(mths, air_travel[0], 'x', label="1958")
@@ -1342,7 +1342,7 @@ dots, crosses, etc.
 We can also use dots **and** lines. Moreover, we can change the type of
 line: from full lines to dashed to dash-dot…
 
-.. code:: ipython3
+.. code:: python
 
     plt.figure(figsize=(10,3))
     plt.plot(mths, air_travel[0], 'x-', label="1958")
@@ -1390,7 +1390,7 @@ Hint: the options on ``np.loadtxt`` you probably want to use are:
 select the data that meet the required conditions, combining the
 conditions with ``np.logical_and()``.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1410,7 +1410,7 @@ We will use the ``requests`` package to do this and pull the data as a
 string. We then use ``StringIO`` to allow ``np.loadtxt`` to think the
 string comes from a data file.
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     from io import StringIO
@@ -1438,7 +1438,7 @@ string comes from a data file.
 
 If we want to store the data file, we can do so by opening a file:
 
-.. code:: ipython3
+.. code:: python
 
     # We open the output file, `daymet.csv`
     with open("data/daymet_tmax.csv", 'w') as fp:
@@ -1467,7 +1467,7 @@ How can we plot such data? the technical issue we face is needing to use
 the first *two* columns of data (day of year and year) to describe the
 x-axis location.
 
-.. code:: ipython3
+.. code:: python
 
     print('Year ',temperature[0])
     print('DOY  ',temperature[1])
@@ -1501,7 +1501,7 @@ appropriate to use ``datetime`` for date information when plotting.
    dates = [datetime.datetime(int(y), 1, 1) + \
         datetime.timedelta(d - 1) for y,d in zip(year,doy)]
 
-.. code:: ipython3
+.. code:: python
 
     import datetime
     
@@ -1534,7 +1534,7 @@ appropriate to use ``datetime`` for date information when plotting.
 -  print out the value of ``dates`` for the first 10 entries to see what
    the format looks like
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -1547,7 +1547,7 @@ would then emphasise the 2-D nature.
 
 We can do this with the ``numpy`` method ``reshape()``.
 
-.. code:: ipython3
+.. code:: python
 
     year = temperature[0].reshape(10,365)
     doy  = temperature[1].reshape(10,365)
@@ -1634,7 +1634,7 @@ consider
    Allows you to fill the space between two curves. You may want to give
    the option ``color=0.8`` for a nice grey effect.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 

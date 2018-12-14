@@ -95,7 +95,7 @@ modules that we’ll require: numpy, matplotlib as well as pandas to read
 the data file. If you put all your imports at the top and run them
 first, they should be available for all other cells…
 
-.. code:: ipython3
+.. code:: python
 
     from pathlib import Path  # Checks for files and so on
     import numpy as np  # Numpy for arrays and so on
@@ -125,7 +125,7 @@ In this case, because the url is an FTP one we will use the ``urllib2``
 package rather than requests, that doesn’t deal with FTP. We will save
 it to a file with the same name locally:
 
-.. code:: ipython3
+.. code:: python
 
     # The remote URL for the data file is address:
     address = 'ftp://aftp.cmdl.noaa.gov/products/trends/co2/'
@@ -165,7 +165,7 @@ We can peek at the data (first 73 lines) using the UNIX shell
 ```head`` <http://www.linfo.org/head.html>`__ command (this will not
 work on Windows, but will probably work on OSX):
 
-.. code:: ipython3
+.. code:: python
 
     !head -n 73 co2_mm_mlo.txt
 
@@ -184,7 +184,7 @@ This is quite straightforward using
 We will also “mask” if the data is missing checking for the value
 -99.99…
 
-.. code:: ipython3
+.. code:: python
 
     hdr = [
         "year", "month", "decimal_date", "average", "interpolated", "trend", "days"
@@ -245,7 +245,7 @@ linear scaling of the time :math:`t_i`:
 
 We can define a Python function for this very easily:
 
-.. code:: ipython3
+.. code:: python
 
     def linear_model(p, t):
         m, c = p
@@ -264,7 +264,7 @@ timesteps:
 
 :math:`c` is the minimum value, so :math:`c\approx 310`.
 
-.. code:: ipython3
+.. code:: python
 
     n_times = co2.interpolated.shape[0]
     max_co2 = co2.interpolated.max()
@@ -334,7 +334,7 @@ squares <https://en.wikipedia.org/wiki/Least_squares>`__. Let’s see how
 this works *intuitevely*: we’ll loop over the parameters and plot the
 different predicted concentrations… First we need our model function…
 
-.. code:: ipython3
+.. code:: python
 
     def quadratic_model(p, t):
         a0, a1, a2 = p
@@ -368,7 +368,7 @@ We can just basically run the model around these numbers and plot the
 different model predictions with a loop over :math:`a_0` and another one
 over :math:`a_1` (assuming :math:`a_2` is well defined)
 
-.. code:: ipython3
+.. code:: python
 
     plt.figure(figsize=(12, 4))
     
@@ -404,7 +404,7 @@ the goodness of fit metric (sum of squared residuals) in a 2D array and
 then plot it as an image. It should be more obvious where the minimum
 lies…
 
-.. code:: ipython3
+.. code:: python
 
     # Define a 2D array for the sum of squares (sos)
     sos = np.zeros((10, 20))
@@ -474,7 +474,7 @@ is. We can do this quickly by creating a mask where all the elements are
 then use this mask to multiply our ``x`` and ``y`` axes and just select
 the unique values that are larger than 0.
 
-.. code:: ipython3
+.. code:: python
 
     print(f"Best SoS: {sos.min():g}")
     sos_mask = sos == sos.min()
@@ -499,7 +499,7 @@ for the model outside the training region. Which isn’t cool.
 We can plot now the cost function, as well as our first rough guess and
 the final guess:
 
-.. code:: ipython3
+.. code:: python
 
     # Plotting!
     plt.figure(figsize=(15, 5))
@@ -547,7 +547,7 @@ how well our model really fits the observations! Let’s plot the
 prediction (with the “optimised parameters” as well as the roughly
 guessed ones):
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(15, 4))
     
@@ -661,7 +661,7 @@ things:
 We’re really only interested in the first two (the other two outputs are
 important, but this is not your methods course!).
 
-.. code:: ipython3
+.. code:: python
 
     # We create the A matrix
     x = np.arange(n_times)
@@ -710,7 +710,7 @@ good solution.
 As usual, let’s us plot model, data and residuals and see what we can
 spot…
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(15, 4))
     x = np.arange(n_times)
@@ -803,7 +803,7 @@ In this case, the :math:`\mathbf{A}` matrix is now given by
 We can still solve the problem by making use of ``lstsq``. Let’s see how
 that works!
 
-.. code:: ipython3
+.. code:: python
 
     def quadratic_with_season(p, t, period=12.):
         a0, a1, a2, a3 = p
@@ -849,7 +849,7 @@ to previous results…
    Doing these sort of plots should be second nature to you by now. So
    do them!
 
-.. code:: ipython3
+.. code:: python
 
     fig, axs = plt.subplots(nrows=2, ncols=1, figsize=(15, 4))
     x = np.arange(n_times)
@@ -931,7 +931,7 @@ extra term is to have **uncorrelated residuals around 0**.
    You should be able to do this yourself, including model fitting and
    plotting.
 
-.. code:: ipython3
+.. code:: python
 
     def quadratic_with_season_shift(p, t, period=12.):
         a0, a1, a2, a3, a4 = p
@@ -1034,7 +1034,7 @@ ignored it…
    In the 30 year training experiment, can you sketch how you think
    uncertainty should look like?
 
-.. code:: ipython3
+.. code:: python
 
     def quadratic_with_season_shift(p, t, period=12.):
         a0, a1, a2, a3, a4 = p

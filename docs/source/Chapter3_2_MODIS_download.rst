@@ -170,7 +170,7 @@ You should already know:
 
 Let’s first just test your NASA login:
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from geog0111.cylog import cylog
@@ -334,7 +334,7 @@ the lines of:
 
 assuming version is an integer.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -348,7 +348,7 @@ we will obtain the information in
 this language in any great depth, but knowing some of the basics is
 oftem useful.
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from geog0111.get_url import get_url
@@ -428,7 +428,7 @@ and link to the URL specified in the ``href`` field:
 We could interpret this information by searching for strings etc., but
 the package ``BeautifulSoup`` can help us a lot in this.
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from geog0111.get_url import get_url
@@ -491,7 +491,7 @@ met. That’s a bit of a pointless test, but illustrates the pattern
 required. Try this now with the condition you want to use to select
 ``hdf`` files.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -527,7 +527,7 @@ where ``*`` represents a wildcard (unknown element of the URL/filename).
 
 Putting together the code from above to get a list of the ``hdf`` files:
 
-.. code:: ipython3
+.. code:: python
 
     #from geog0111.nasa_requests import nasa_requests
     from bs4 import BeautifulSoup
@@ -580,13 +580,13 @@ than a newline between each item printed.
 **Hint 2**: recall what the logical statement ``(A and B)`` gives when
 thinking about the combined ``if`` statement
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
 You should end up with something like:
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from bs4 import BeautifulSoup
@@ -629,13 +629,13 @@ You should end up with something like:
        import numpy as np
        tile_filenames = np.unique(tile_filenames)
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
 You should end up with something like:
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.modis_tiles import modis_tiles
     
@@ -649,7 +649,7 @@ You should end up with something like:
 -  print out the first 10 items in ``tile_urls`` and check the result is
    as you expect.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -713,7 +713,7 @@ To test if a file exists:
    to see if this file is in the folder ``destination_folder``. If not,
    print a message to say so.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -737,7 +737,7 @@ Then close ``fp``
 
    fp.close()
 
-.. code:: ipython3
+.. code:: python
 
     input_fname = 'data/test_image.bin'
     fp = open(input_fname, 'rb')
@@ -771,7 +771,7 @@ and closing as before:
 
    fp.close()
 
-.. code:: ipython3
+.. code:: python
 
     output_fname = 'data/test.bin'
     fp = open(output_fname, 'wb')
@@ -791,7 +791,7 @@ We can avoid the need for the ``close`` by using the construct:
    with open(output_fname, 'wb') as fp:
        d = fp.write(data)
 
-.. code:: ipython3
+.. code:: python
 
     d = 0
     with open(output_fname, 'wb') as fp:
@@ -823,7 +823,7 @@ With the ideas above, write some code to:
 -  add a keyword option to ``save_data()`` that will overwrite the
    filename, even if it already exists.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
@@ -841,7 +841,7 @@ url to derive the filename, and print this out.
 The binary dataset is available as ``r.content``, which we store to the
 variable ``data`` here:
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from geog0111.modis_tiles import modis_tiles
@@ -884,13 +884,13 @@ variable ``data`` here:
    defaults to ``modis_tiles()``. It should return a list of the output
    filenames.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 
 You should end up with something like:
 
-.. code:: ipython3
+.. code:: python
 
     import geog0111.nasa_requests as nasa_requests
     from geog0111.save_data import save_data
@@ -932,7 +932,7 @@ You might want to look at the
 `FIPS <https://en.wikipedia.org/wiki/List_of_FIPS_country_codes>`__
 country codes for selecting boundary data.
 
-.. code:: ipython3
+.. code:: python
 
     import requests
     import shutil 
@@ -948,7 +948,7 @@ country codes for selecting boundary data.
     shutil.unpack_archive("data/TM_WORLD_BORDERS-0.3.zip",
                          extract_dir="data/")
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.get_modis_files import get_modis_files
     import gdal
@@ -1010,7 +1010,7 @@ country codes for selecting boundary data.
 .. image:: Chapter3_2_MODIS_download_files/Chapter3_2_MODIS_download_50_1.png
 
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.get_modis_files import get_modis_files
     import gdal
@@ -1090,7 +1090,7 @@ cover dataxset is
 **N.B. You will be required to download this dataset for your assessed
 practical, so it is a good idea to sort code for this now**
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
 

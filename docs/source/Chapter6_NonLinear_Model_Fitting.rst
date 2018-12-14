@@ -1,5 +1,5 @@
 
-.. code:: ipython3
+.. code:: python
 
     # All imports go here. Run me first!
     import datetime
@@ -91,7 +91,7 @@ A synthetic experiment
 A first step is to do a synthetic experiment. This has the marked
 advantage of being a situation where we’re in control of everything.
 
-.. code:: ipython3
+.. code:: python
 
     
     t = np.arange(1, 366)
@@ -262,11 +262,11 @@ The ``minimize`` function returns an object with the
    (``nfev``)
 5. Some diagnostics
 
-.. code:: ipython3
+.. code:: python
 
     from scipy.optimize import minimize
 
-.. code:: ipython3
+.. code:: python
 
     from scipy.optimize import minimize
     

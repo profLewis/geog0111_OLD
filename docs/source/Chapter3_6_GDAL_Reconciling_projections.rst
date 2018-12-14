@@ -463,7 +463,7 @@ In the code below, we plot the dataset in the ‘earth disk’
 (Orthographic) projection, then re-map it to the equal area Sinusoidal
 projection.
 
-.. code:: ipython3
+.. code:: python
 
     try:
         from urllib2 import urlopen
@@ -559,7 +559,7 @@ is quite entensive.
    a note of their features.
 -  Read up (follow the links in the text above) on projections.
 
-.. code:: ipython3
+.. code:: python
 
     #do exercise here
 
@@ -576,7 +576,7 @@ We will need to:
 
 **Set up the conditions**
 
-.. code:: ipython3
+.. code:: python
 
     # required general imports
     import matplotlib.pyplot as plt
@@ -589,7 +589,7 @@ We will need to:
     from datetime import datetime, timedelta
     import cartopy.crs as ccrs
 
-.. code:: ipython3
+.. code:: python
 
     '''
     Set the country code and year to be used here
@@ -617,7 +617,7 @@ section <Chapter3_6A_GDAL_Reconciling_projections_prerequisites.ipynb>`__
 
 -  Run the [prerequisites script]:
 
-.. code:: ipython3
+.. code:: python
 
     # install ecmwf api -- do this once only
     ECMWF = 'https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-api-client-python.tgz'
@@ -631,7 +631,7 @@ section <Chapter3_6A_GDAL_Reconciling_projections_prerequisites.ipynb>`__
             !pip install --user $ECMWF
 
 
-.. code:: ipython3
+.. code:: python
 
     # just make sure the pre-requisites are run
     %run geog0111/Chapter3_6A_prerequisites.py $country_code $year
@@ -663,7 +663,7 @@ section <Chapter3_6A_GDAL_Reconciling_projections_prerequisites.ipynb>`__
     data/europe_data_2017.nc
 
 
-.. code:: ipython3
+.. code:: python
 
     # read in the LAI data for given country code
     tiles = []
@@ -687,7 +687,7 @@ section <Chapter3_6A_GDAL_Reconciling_projections_prerequisites.ipynb>`__
     (2624, 1396, 92)
 
 
-.. code:: ipython3
+.. code:: python
 
     import numpy as np
     # a quick look at some stats to see if there are data there
@@ -763,7 +763,7 @@ dataset we want to match up to.
 
 We save the exemplar as a GeoTiff format file here.
 
-.. code:: ipython3
+.. code:: python
 
     from osgeo import gdal, gdalconst,osr
     import numpy as np
@@ -849,7 +849,7 @@ We need to know:
 
 and access these from the source dataset.
 
-.. code:: ipython3
+.. code:: python
 
     from osgeo import gdal, gdalconst,osr
     import numpy as np
@@ -918,7 +918,7 @@ The processing may take some time if the LAI dataset is large
 The result will be of the same size, projection etc as the cropped LAI
 dataset.
 
-.. code:: ipython3
+.. code:: python
 
     dst_filename = src_filename.replace('.nc',f'_{country_code}.tif')
     force = False
@@ -942,7 +942,7 @@ dataset.
         _ = gdal.ReprojectImage(src, dst, src_proj, match_proj, gdalconst.GRA_Bilinear)
 
 
-.. code:: ipython3
+.. code:: python
 
     xOrigin = match_geotrans[0]
     yOrigin = match_geotrans[3]
@@ -992,7 +992,7 @@ dataset.
 Finally, we crop the temperature dataset using ``gdal.Warp()`` and save
 it to a (GeoTiff) file:
 
-.. code:: ipython3
+.. code:: python
 
      # Output / destination
     dst_filename = src_filename.replace('.nc',f'_{country_code}.tif')
@@ -1014,7 +1014,7 @@ it to a (GeoTiff) file:
         del dst # Flush
         del g
 
-.. code:: ipython3
+.. code:: python
 
     # visualise
     print(dst_filename)
@@ -1049,7 +1049,7 @@ it to a (GeoTiff) file:
 
 Now let’s look at the time information in the metadata:
 
-.. code:: ipython3
+.. code:: python
 
     meta = gdal.Open(src_filename).GetMetadata()
     
@@ -1065,7 +1065,7 @@ The time information is in hours since ``1900-01-01 00:00:00.0``. This
 is not such a convenient unit for plotting, so we can use ``datetime``
 to fix that:
 
-.. code:: ipython3
+.. code:: python
 
     timer = meta['NETCDF_DIM_time_VALUES']
     print(timer[:100])
@@ -1076,7 +1076,7 @@ to fix that:
     {1025628,1025652,1025676,1025700,1025724,1025748,1025772,1025796,1025820,1025844,1025868,1025892,102
 
 
-.. code:: ipython3
+.. code:: python
 
     # split the string into integers
     timer = [int(i) for i in meta['NETCDF_DIM_time_VALUES'][1:-1].split(',')]
@@ -1089,7 +1089,7 @@ to fix that:
     [1025628, 1025652, 1025676, 1025700, 1025724, 1025748, 1025772, 1025796, 1025820, 1025844, 1025868, 1025892, 1025916, 1025940, 1025964, 1025988, 1026012, 1026036, 1026060, 1026084]
 
 
-.. code:: ipython3
+.. code:: python
 
     # split the string into integers
     # convert to days
@@ -1103,7 +1103,7 @@ to fix that:
     [42734.5, 42735.5, 42736.5, 42737.5, 42738.5, 42739.5, 42740.5, 42741.5, 42742.5, 42743.5, 42744.5, 42745.5, 42746.5, 42747.5, 42748.5, 42749.5, 42750.5, 42751.5, 42752.5, 42753.5]
 
 
-.. code:: ipython3
+.. code:: python
 
     from datetime import datetime,timedelta
     
@@ -1127,7 +1127,7 @@ to fix that:
 We can now put these codes together to make a function
 ``match_netcdf_to_data()``:
 
-.. code:: ipython3
+.. code:: python
 
     from osgeo import gdal, gdalconst,osr
     import numpy as np
@@ -1215,7 +1215,7 @@ We can now put these codes together to make a function
      
         return(timer,dst_filename,extent)
 
-.. code:: ipython3
+.. code:: python
 
     from osgeo import gdal, gdalconst,osr
     import numpy as np
@@ -1292,7 +1292,7 @@ We can now put these codes together to make a function
     done
 
 
-.. code:: ipython3
+.. code:: python
 
     # visualise the interpolated dataset
     import matplotlib.pylab as plt
@@ -1352,7 +1352,7 @@ providers in different projections.
 
 In this section, we have developed the following datasets:
 
-.. code:: ipython3
+.. code:: python
 
     from geog0111.geog_data import procure_dataset
     import numpy as np
@@ -1387,7 +1387,7 @@ In this section, we have developed the following datasets:
     data/europe_data_2017_UK.npz ['timer', 'temp2', 'extent']
 
 
-.. code:: ipython3
+.. code:: python
 
     import numpy as np
     # a quick look at some stats to see if there are data there
@@ -1451,6 +1451,6 @@ how to use Python code to deal with it. Try to stick to one geospatial
 package as far as possible (``gdal`` here) as you can make problems for
 yourself by mixing them.
 
-.. code:: ipython3
+.. code:: python
 
     # do exercise here
