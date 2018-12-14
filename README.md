@@ -3,6 +3,8 @@ UCL Geography: Level 7 course, Scientific Computing
 
 ![](images/ucl_logo.png)
 
+[![Documentation Status](https://readthedocs.org/projects/geog0111/badge/?version=latest)](https://geog0111.readthedocs.io/en/latest/?badge=latest)
+
 Online Notebooks via Binder:
 ----------------------------
  
