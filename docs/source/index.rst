@@ -197,7 +197,7 @@ elatively easy to learn and portable acros
    Chapter9_Fire_and_Teleconnections_Solution.rst
    Connection.rst
 
-.. _Go to Binder version: https://mybinder.org/v2/gh/profLewis/geog0111.git/master
+.. _Go to full list of notebooks: https://mybinder.org/v2/gh/profLewis/geog0111.git/master
 .. _Chapter0_help: https://mybinder.org/v2/gh/profLewis/geog0111.git/master?filepath=Chapter0_help.ipynb
 .. _Chapter1_Python_introduction: https://mybinder.org/v2/gh/profLewis/geog0111.git/master?filepath=Chapter1_Python_introduction.ipynb
 .. _Chapter1_Python_introduction_answers: https://mybinder.org/v2/gh/profLewis/geog0111.git/master?filepath=Chapter1_Python_introduction_answers.ipynb
