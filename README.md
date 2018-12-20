@@ -3,7 +3,74 @@ UCL Geography: Level 7 course, Scientific Computing
 
 ![](images/ucl_logo.png)
 
-[Go to Binder version](https://mybinder.org/v2/gh/profLewis/geog0111.git/master)
+[![Documentation Status](https://readthedocs.org/projects/geog0111/badge/?version=latest)](https://geog0111.readthedocs.io/en/latest/?badge=latest)
+
+Online Notebooks via Binder:
+----------------------------
+ 
+Run the notebooks on Binder server directly by click on different
+chaper, it may take some time to start but just wait a bit....
+ 
+[Go to full list of
+notebooks](https://mybinder.org/v2/gh/profLewis/geog0111/master)
+ 
+Go to individual chapter:
+ 
+[Chapter0\_help](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter0_help.ipynb)
+ 
+[Chapter1\_Python\_introduction](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter1_Python_introduction.ipynb)
+ 
+[Chapter1\_Python\_introduction\_answers](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter1_Python_introduction_answers.ipynb)
+ 
+[Chapter2\_Numpy\_matplotlib](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter2_Numpy_matplotlib.ipynb)
+ 
+[Chapter2\_Numpy\_matplotlib\_answers](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter2_Numpy_matplotlib_answers.ipynb)
+ 
+[Chapter3\_0\_GDAL](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_0_GDAL.ipynb)
+ 
+[Chapter3\_1\_GDAL](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_1_GDAL.ipynb)
+ 
+[Chapter3\_1\_GDAL\_answers](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_1_GDAL_answers.ipynb)
+ 
+[Chapter3\_2\_MODIS\_download](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_2_MODIS_download.ipynb)
+ 
+[Chapter3\_2\_MODIS\_download\_answers](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_2_MODIS_download_answers.ipynb)
+ 
+[Chapter3\_3\_GDAL\_masking](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_3_GDAL_masking.ipynb)
+ 
+[Chapter3\_4\_GDAL\_stacking\_and\_interpolating](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_4_GDAL_stacking_and_interpolating.ipynb)
+ 
+[Chapter3\_4a\_GDAL\_stacking\_and\_interpolating-convolution](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_4a_GDAL_stacking_and_interpolating-convolution.ipynb)
+ 
+[Chapter3\_5\_Movies](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_5_Movies.ipynb)
+ 
+[Chapter3\_6A\_GDAL\_Reconciling\_projections\_prerequisites](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_6A_GDAL_Reconciling_projections_prerequisites.ipynb)
+ 
+[Chapter3\_6\_GDAL\_Reconciling\_projections](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter3_6_GDAL_Reconciling_projections.ipynb)
+ 
+[Chapter4\_Practical\_Part1](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter4_Practical_Part1.ipynb)
+ 
+[Chapter5\_Linear\_models](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter5_Linear_models.ipynb)
+ 
+[Chapter5\_Modelling\_and\_optimisation](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter5_Modelling_and_optimisation.ipynb)
+ 
+[Chapter6\_NonLinear\_Model\_Fitting](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter6_NonLinear_Model_Fitting.ipynb)
+ 
+[Chapter6\_NonLinear\_Model\_Fitting\_Solutions](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter6_NonLinear_Model_Fitting_Solutions.ipynb)
+ 
+[Chapter7\_FittingPhenologyModels](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter7_FittingPhenologyModels.ipynb)
+ 
+[Chapter7\_FittingPhenologyModels\_Solutions](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter7_FittingPhenologyModels_Solutions.ipynb)
+ 
+[Chapter8\_Practical\_Part2](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter8_Practical_Part2.ipynb)
+ 
+[Chapter9\_Fire\_and\_Teleconnections](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter9_Fire_and_Teleconnections.ipynb)
+ 
+[Chapter9\_Fire\_and\_Teleconnections\_Solution](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Chapter9_Fire_and_Teleconnections_Solution.ipynb)
+ 
+[Connection](https://mybinder.org/v2/gh/profLewis/geog0111/master?filepath=Connection.ipynb)
+
+
 
 ## Course information
 
@@ -95,9 +162,9 @@ If you are taking this course at UCL, the notes should already have been downloa
 If so, then:
 
 ```
-berlin% cd ~/DATA/geog0111
-berlin% git reset --hard HEAD
-berlin% git pull
+cd /directory/to/geog0111
+git reset --hard HEAD
+git pull
 ```
 
 will update the notes (for any changes I make over the sessions).
@@ -105,8 +172,8 @@ will update the notes (for any changes I make over the sessions).
 If you need to download the notes and want to run the session directly in the notebook, you will need to download the course material from [github](https://github.com/profLewis/geog0111) and run the notebook with e.g.:
 
 ```
-berlin% cd ~/DATA
-berlin% git clone https://github.com/profLewis/geog0111.git
+cd /directory/to/
+git clone https://github.com/profLewis/geog0111.git
 ```
 
 to obtain the notes. 
@@ -120,15 +187,15 @@ You may also find it of value to have [git](http://git-scm.com/) installed.
 Assuming you have a copy of the notes in the directory ('folder') `~/DATA/geog0111` then you can set up a specific 'environment' in which to run these notes:
 
 ```
-berlin% cd ~/DATA/geog0111
-berlin% conda env create -f environment.yml
+cd /directory/to/geog0111
+conda env create -f environment.yml
 ```
 
 If you are updating the notes, and geog0111 already exists, use instead:
 
 ```
-berlin% cd ~/DATA/geog0111
-berlin% conda env update -f environment.yml
+cd /directory/to/geog0111
+conda env update -f environment.yml
 ```
 
 This will create an environment called `geog0111` and make sure you have all of the required dependencies.
@@ -136,8 +203,8 @@ This will create an environment called `geog0111` and make sure you have all of 
 If you have created the environment, you can activate it with:
 
 ```
-berlin% conda activate geog0111
-berlin% python setup.py install
+conda activate geog0111
+python setup.py install
 ```
 
 
@@ -146,8 +213,8 @@ For further advice on checking, setting or deleting `conda` environments, see th
 
 To go to the directory for the first session:  
 
-`berlin% cd ~/DATA/geog0111`  
-`berlin% jupyter notebook Chapter1_Python_intro.ipynb`  
+`cd /directory/to/geog0111`  
+`jupyter notebook Chapter1_Python_intro.ipynb`  
 
 You quit an `jupyter` notebook session with `^C` (`Control C`).
 
@@ -155,8 +222,8 @@ To exectute ('run') blocks of Python code in the notebook, use `^<return>` (`SHI
 
 Alternatively, just run `ipython`:  
 ```
-berlin% cd ~/DATA/geog0111
-berlin% ipython
+cd /directory/to/geog0111
+ipython
 ```
 
 and type your own commands in at the prompt, following the class or the material on the webpages.
