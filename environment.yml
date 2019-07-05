@@ -13,3 +13,4 @@ dependencies:
     - gdal>2.2
     - pandas  
     - requests
+    - earthengine-api
