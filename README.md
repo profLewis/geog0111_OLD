@@ -78,7 +78,7 @@ Go to individual chapter:
 
 [Prof P. Lewis](http://www.geog.ucl.ac.uk/~plewis)
 
-N.B. 2018-19 Course Convenors: Dr Qingling Wu and Dr. Jose Gomez-Dans
+N.B. 2019-20 Course Convenors: Dr Qingling Wu 
 
 ### Course and Contributing Staff
 
@@ -87,10 +87,6 @@ N.B. 2018-19 Course Convenors: Dr Qingling Wu and Dr. Jose Gomez-Dans
 [Dr. Jose Gomez-Dans](http://www.geog.ucl.ac.uk/about-the-department/people/research-staff/research-staff/jose-gomez-dans/)
 
 [Dr Qingling Wu](http://www.geog.ucl.ac.uk/about-the-department/people/research-staff/research-staff/qingling-wu/)
-
-[Mr Feng Yin](https://www.geog.ucl.ac.uk/people/research-staff/feng-yin)
-
-[Mr James Brennan](https://www.geog.ucl.ac.uk/people/research-students/james-brennan)
 
 
 ### Purpose of this course
@@ -130,11 +126,11 @@ The timetable is available on the UCL Academic Calendar
 
 Assessment is through two pieces of coursework, submitted in both paper form and electronically via Moodle. 
 
-See the [Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796) for more details.
+See the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=2796) for more details.
 
 ### Useful links
 
-[Course Moodle page](https://moodle-1819.ucl.ac.uk/course/view.php?id=2796)  
+[Course Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=2796)  
 
 ### Python
 
