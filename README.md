@@ -78,7 +78,7 @@ Go to individual chapter:
 
 [Prof P. Lewis](http://www.geog.ucl.ac.uk/~plewis)
 
-N.B. 2019-20 Course Convenors: Dr Qingling Wu 
+N.B. 2019-20 Course Convenors: [Dr Qingling Wu](http://www.geog.ucl.ac.uk/about-the-department/people/research-staff/research-staff/qingling-wu/) 
 
 ### Course and Contributing Staff
 
