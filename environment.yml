@@ -16,3 +16,6 @@ dependencies:
     - earthengine-api
     - ipython
     - jupyter
+    - matplotlib
+    - ipywidgets
+    - jupyter_contrib_nbextensions
