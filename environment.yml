@@ -27,4 +27,12 @@ dependencies:
     - nodejs
     - ipympl
     - ipywidgets
+    - itkwidgets
+    - gmaps
+    - ipyleaflet
+    - repr
+    - pandas
+    - pyspark
+    - tensorflow
+    - keras
 

@@ -6,4 +6,13 @@ jupyter nbextension enable rubberband/main
 jupyter nbextension enable exercise2/main
 jupyter labextension install @jupyterlab/toc
 jupyter labextension install @jupyterlab/debugger
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib jupyterlab-datawidgets itkwidgets
+jupyter labextension install jupyterlab-spreadsheet
+jupyter labextension install @osscar/jupyterlab-hide-code
+jupyter nbextension enable --py --sys-prefix widgetsnbextension
+jupyter labextension install jupyterlab-python-file
+jupyter nbextension enable --py --sys-prefix ipyleaflet
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
+jupyter labextension install @lckr/jupyterlab_variableinspector
+
 
