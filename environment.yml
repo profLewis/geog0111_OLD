@@ -19,3 +19,10 @@ dependencies:
     - matplotlib
     - ipywidgets
     - jupyter_contrib_nbextensions
+    - xeus=0.23.14 
+    - xeus-python=0.7.1 
+    - notebook=6 
+    - jupyterlab=2 
+    - ptvsd 
+    - nodejs
+

@@ -3,7 +3,6 @@ import numpy as np
 from io import StringIO
 from dateutil import parser
 import matplotlib.pylab as plt
-%matplotlib inline
 
 url = 'https://waterservices.usgs.gov/nwis/dv/?sites=08220000&format=rdb&startDT=2001-01-01&parameterCd=00060'
 data = np.loadtxt(StringIO(requests.get(url).text),skiprows=30,\
