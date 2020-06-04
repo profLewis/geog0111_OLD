@@ -14,5 +14,6 @@ jupyter labextension install jupyterlab-python-file
 jupyter nbextension enable --py --sys-prefix ipyleaflet
 jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
 jupyter labextension install @lckr/jupyterlab_variableinspector
+jupyter labextension install jupyterlab-cpustatus
 
 
