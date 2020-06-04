@@ -35,4 +35,6 @@ dependencies:
     - pyspark
     - tensorflow
     - keras
-
+    - k3d
+    - ee
+    - earthengine-api

@@ -15,5 +15,10 @@ jupyter nbextension enable --py --sys-prefix ipyleaflet
 jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
 jupyter labextension install @lckr/jupyterlab_variableinspector
 jupyter labextension install jupyterlab-cpustatus
-
+jupyter labextension install edc-jlab
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install k3d
+jupyter labextension install jupyterlab_autoversion
+jupyter serverextension enable --py jupyterlab_autoversion
+jupyter labextension install @jupyterlab/google-drive
 
