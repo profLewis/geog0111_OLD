@@ -25,4 +25,4 @@ dependencies:
     - jupyterlab=2 
     - ptvsd 
     - nodejs
-
+    - ipympl
