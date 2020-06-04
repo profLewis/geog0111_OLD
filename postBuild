@@ -1,8 +1,9 @@
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
+jupyter lab build
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter nbextension enable rubberband/main
 jupyter nbextension enable exercise2/main
 jupyter labextension install @jupyterlab/toc
-jupyter lab build
+jupyter labextension install @jupyterlab/debugger
 
