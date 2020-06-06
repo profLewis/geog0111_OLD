@@ -1,6 +1,7 @@
 name: geog0111
 channels: 
     - conda-forge
+    - conda-forge/label/prerelease-jupyterlab
 dependencies:
     - numpy
     - beautifulsoup4
