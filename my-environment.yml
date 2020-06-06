@@ -1,0 +1,4 @@
+name: my-environment
+channels:
+  - defaults
+prefix: /Users/plewis/anaconda3/envs/my-environment
