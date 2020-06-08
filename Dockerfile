@@ -17,9 +17,10 @@ ADD data geog0111/
 # Create the environment:
 COPY environment.yml .
 RUN conda env create -f environment.yml
+RUN conda install jupyter
 
 # Make RUN commands use the new environment:
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
-SHELL ["conda", "run", "-n", "geog0111", "/bin/bash", "-c"]
-RUN /opt/conda/bin/jupyter notebook --notebook-dir=/home/user/geog0111 --ip=0.0.0.0 --port=8888 --no-browser  --allow-root
+SHELL ["conda", "run", "-n", "geog0111"]
+RUN jupyter notebook --notebook-dir=/home/user/geog0111 --ip=0.0.0.0 --port=8888 --no-browser  --allow-root
 
