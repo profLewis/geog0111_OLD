@@ -17,12 +17,16 @@ ADD data geog0111/
 # Create the environment:
 COPY environment.yml .
 COPY postBuild .
+
+# create env geog0111
 RUN conda env create -f environment.yml
-RUN conda activate geog0111 
+
+SHELL ["conda", "run", "-n", "geog0111", "/bin/bash", "-c"]
 RUN conda install jupyter
-RUN /bin/bash postBuild
 
 # Make RUN commands use the new environment:
-ENTRYPOINT [ "/usr/bin/tini", "--" ]
-CMD = ["/bin/bash","-c"]
+SHELL ["conda", "run", "-n", "geog0111", "/bin/bash"]
+RUN postBuild
 
+# The code to run when container is started:
+ENTRYPOINT ["conda", "run", "-n", "geog0111", "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"
