@@ -30,4 +30,4 @@ SHELL ["conda", "run", "-n", "geog0111", "/bin/bash"]
 RUN postBuild
 
 # The code to run when container is started:
-ENTRYPOINT ["conda", "run", "-n", "geog0111", "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"
+ENTRYPOINT ["conda", "run", "-n", "geog0111", "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
