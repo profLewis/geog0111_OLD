@@ -10,9 +10,9 @@ LABEL version="1.0"
 WORKDIR /home/user
 
 # add notebooks to <WORKDIR>
-ADD *.ipynb geog0111
-ADD images geog0111
-ADD data geog0111
+ADD *.ipynb geog0111/
+ADD images geog0111/
+ADD data geog0111/
 
 # Create the environment:
 COPY environment.yml .
