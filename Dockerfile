@@ -19,6 +19,7 @@ COPY environment.yml .
 COPY postBuild .
 
 # create env geog0111
+RUN conda update -n base -c defaults conda
 RUN conda env create -f environment.yml
 
 SHELL ["conda", "run", "-n", "geog0111", "/bin/bash", "-c"]
