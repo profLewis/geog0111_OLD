@@ -1,6 +1,5 @@
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
-jupyter lab build
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter nbextension enable rubberband/main
 jupyter nbextension enable exercise2/main
@@ -18,7 +17,6 @@ jupyter labextension install edc-jlab
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter labextension install k3d
 jupyter labextension install jupyterlab_autoversion
-jupyter serverextension enable --py jupyterlab_autoversion
 jupyter labextension install @jupyterlab/google-drive
 jupyter labextension install @jupyterlab/debugger@0.3.0-alpha.1 --debug
 
