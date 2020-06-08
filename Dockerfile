@@ -22,5 +22,5 @@ RUN conda install jupyter
 # Make RUN commands use the new environment:
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 SHELL ["conda", "run", "-n", "geog0111"]
-RUN jupyter notebook --notebook-dir=/home/user/geog0111 --ip=0.0.0.0 --port=8888 --no-browser  --allow-root
+RUN ["jupyter", "notebook", "--notebook-dir=/home/user/geog0111", "--ip=0.0.0.0", "--port=8888", "--no-browser",  "--allow-root"]
 
