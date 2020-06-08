@@ -34,5 +34,3 @@ dependencies:
   - setuptools>=47.1.1
   - six>=1.15.0
   - yaml>=0.2.5
-  - pip:
-    - itk-core==5.1.0.post2
