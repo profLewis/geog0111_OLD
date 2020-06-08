@@ -1,22 +1,7 @@
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter nbextension enable rubberband/main
 jupyter nbextension enable exercise2/main
-jupyter labextension install @jupyterlab/toc
-jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib jupyterlab-datawidgets itkwidgets
-jupyter labextension install jupyterlab-spreadsheet
-jupyter labextension install @osscar/jupyterlab-hide-code
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
-jupyter labextension install jupyterlab-python-file
 jupyter nbextension enable --py --sys-prefix ipyleaflet
-jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
-jupyter labextension install @lckr/jupyterlab_variableinspector
-jupyter labextension install jupyterlab-cpustatus
-jupyter labextension install edc-jlab
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-jupyter labextension install k3d
-jupyter labextension install jupyterlab_autoversion
-jupyter labextension install @jupyterlab/google-drive
-jupyter labextension install @jupyterlab/debugger@0.3.0-alpha.1 --debug
 
